@@ -1,0 +1,38 @@
+name: Build documentation
+
+on:
+  # only run on PRs, not on pushes to main
+  # (this is handled by deploy_docs.yml)
+  pull_request:
+
+  workflow_call:
+    inputs:
+      artifact_name:
+        required: false
+        type: string
+
+jobs:
+  build-docs:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install system requirements
+        run: sudo apt-get update -q
+          && sudo apt-get install doxygen -q -y
+
+      - name: Configure
+        run: cmake --preset=ci-docs
+
+      - name: Build docs
+        run: cmake --build build/docs
+
+      - name: Upload HTML files
+        uses: actions/upload-artifact@v4
+        if: ${{ inputs.artifact_name }}
+        with:
+          name: ${{ inputs.artifact_name }}
+          path: build/docs/html
+          if-no-files-found: error
