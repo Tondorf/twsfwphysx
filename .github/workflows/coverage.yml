@@ -1,0 +1,45 @@
+name: Find coverage and publish via codecov
+
+on:
+  pull_request:
+
+  push:
+    branches:
+      - main
+
+jobs:
+  coverage:
+    runs-on: ubuntu-latest
+
+    permissions:
+      pull-requests: write
+      contents: read
+      id-token: write
+
+    steps:
+      - name: Set up Git repository
+        uses: actions/checkout@v4
+
+      - name: Install LCov
+        run: sudo apt-get update -q
+          && sudo apt-get install lcov -q -y
+
+      - name: Configure
+        run: cmake --preset=ci-coverage
+
+      - name: Build
+        run: cmake --build build/coverage
+
+      - name: Test
+        working-directory: build/coverage
+        run: ctest --output-on-failure --no-tests=error
+
+      - name: Process coverage info
+        run: cmake --build build/coverage -t coverage
+
+      - name: Submit to codecov.io
+        uses: codecov/codecov-action@v5
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+        with:
+          files: build/coverage/coverage.info
