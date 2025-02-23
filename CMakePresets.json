@@ -131,27 +131,8 @@
         "dev-mode"
       ],
       "cacheVariables": {
-        "CMAKE_C_COMPILER": "clang",
-        "CMAKE_CXX_COMPILER": "clang++",
         "CMAKE_BUILD_TYPE": "Sanitize",
-        "CMAKE_C_FLAGS_SANITIZE": "-U_FORTIFY_SOURCE -Og -g -fsanitize=address,undefined -fno-omit-frame-pointer -fno-common",
-        "CMAKE_CXX_FLAGS_SANITIZE": "-U_FORTIFY_SOURCE -Og -g -fsanitize=address,undefined -fno-omit-frame-pointer -fno-common"
-      }
-    },
-    {
-      "name": "ci-fuzzing",
-      "binaryDir": "${sourceDir}/build/fuzzing",
-      "inherits": [
-        "ci-linux",
-        "dev-mode"
-      ],
-      "cacheVariables": {
-        "BUILD_FUZZING": "ON",
-        "CMAKE_C_COMPILER": "clang",
-        "CMAKE_CXX_COMPILER": "clang++",
-        "CMAKE_BUILD_TYPE": "Sanitize",
-        "CMAKE_C_FLAGS_SANITIZE": "-U_FORTIFY_SOURCE -Og -g -fno-omit-frame-pointer -fno-common",
-        "CMAKE_CXX_FLAGS_SANITIZE": "-U_FORTIFY_SOURCE -Og -g -fno-omit-frame-pointer -fno-common"
+        "CMAKE_C_FLAGS_SANITIZE": "-U_FORTIFY_SOURCE -Og -g -DUNDEBUG -fsanitize=address,undefined -fno-omit-frame-pointer -fno-common"
       }
     },
     {

@@ -3,9 +3,8 @@
 
   Welcome to the twsfwphysx library documentation.
 
-  twsfwphysx is a lightweight physics engine for twsfw
-  (the 'w' stands for WASM), designed for handling agents, missiles and their
-  interactions.
+  twsfwphysx is a lightweight physics engine for twsfw (the 'w' stands for
+  WASM), designed for handling agents, missiles and their interactions.
 
   The entire library is implemented in \ref twsfwphysx.h. Define
   `TWSFWPHYSX_IMPLEMENTATION` in **one** source file before including
@@ -47,9 +46,16 @@
  * the missile hits the agent's back, \ref twsfwphysx_agent.hp is reduced by
  * `3`.
  *
- * The entire API (except for \ref twsfwphysx_version) is centered around
+ * Most of the API (see section below for exceptions) is centered around
  * \ref twsfwphysx_simulate. Start reading the documentation from here and then
  * follow the links to learn how to get the required arguments.
+ *
+ * Besides \ref twsfwphysx_simulate, there are two helper functions:
+ * \ref twsfwphysx_rotate_agent and \ref twsfwphysx_version.
+ * The former helps to rotate (the angular momentum vector of) agents by a
+ * given angle. The latter returns the version of the API. Expect breaking
+ * changes between **all** `0.*.*` releases and an __almost__ stable ABI for
+ * between versions within the same major release `>= 1`.
  *
  * HAVE FUN!
  */
@@ -86,36 +92,39 @@ struct twsfwphysx_vec {
  * @brief Represents an agent with position, momentum, and attributes.
  *
  * The position vector `r` points to a position on the unit sphere and thus has
- * to be normalized to `1`. The angular momentum `L` is the cross product of `r`
- * and the velocity vector `v`. Due to the normalization of `r`, the magnitude
- * of `L` and the velocity vector are the same. Extract the velocity **vector**
- * `v` by evaluation the cross product of `L` and `r`. This works because `r`
- * and `v` are always perpendicular along the surface of a sphere.
+ * to be normalized to `1`. Similarly, `u` is a normalized vector that
+ * represents the rotation axis. Scaled by `v`, this vector becomes the angular
+ * momentum vector of the agent: `L = u * v`. `u` and `r` are perpendicular,
+ * thus their cross product is the normalized velocity vector.
  *
  * **Example**
  * \code{.c}
  * struct twsfwphysx_vec3 r = {0.F, 0.F, 1.F};  // North Pole
+ * struct twsfwphysx_angular_momentum u = {1, 0.F, 0.F, v};  // x-axis
  *
- * float v = 2.F;  // velocity
- * struct twsfwphysx_vec3 L = {v, 0.F, 0.F};  // Rotation around x-axis
+ * float v = 2.F;
+ * float a = 10.F;
+ * int32_t hp = 3;
  *
- * // Agent 42, rotating around the x-axis, currently moving with `v=2` at the
- * // North Pole, has 3 HP and propels with `a=5`.
- * struct twsfwphysx_agent agent = {42, 3, 5.F, r, L};
+ * // A new agent, rotating around the x-axis, currently moving with `v=2` at
+ * // the North Pole, has 3 HPs and propels with `a=10.F`.
+ * struct twsfwphysx_agent agent = {r, L, v, a, hp};
  *
- * float vx = L.y * r.z - L.z * r.y  // x-component of velocity vector
- * float vy = L.z * r.x - L.x * r.z  // y-component of velocity vector
- * float vz = L.x * r.y - L.y * r.x  // z-component of velocity vector
+ * float vx = v * (u.y * r.z - u.z * r.y)  // x-component of velocity vector
+ * float vy = v * (u.z * r.x - u.x * r.z)  // y-component of velocity vector
+ * float vz = v * (u.x * r.y - u.y * r.x)  // z-component of velocity vector
  * \endcode
  */
 struct twsfwphysx_agent {
 	struct twsfwphysx_vec r;
 	///< Normalized vector pointing to the position of the agent on the unit sphere.
 
-	struct twsfwphysx_vec L;
-	///< Cross product of `r` and the velocity vector (angular momentum) of the agent.
+	struct twsfwphysx_vec u; ///< Rotation axis.
 
-	float a; ///< Acceleration used for propulsion
+	float v; ///< Velocity magnitude
+
+	float a; ///< Acceleration used for propulsion.
+
 	int32_t hp; ///< Health points
 };
 
@@ -153,11 +162,12 @@ struct twsfwphysx_agents {
 /**
  * @brief Represents a missile with position and angular momentum.
  *
- * See \ref twsfwphysx_agent for explanations for `r` and `L`.
+ * See \ref twsfwphysx_agent for explanations for `r`, `u` and `v`.
  */
 struct twsfwphysx_missile {
 	struct twsfwphysx_vec r; ///< Position
-	struct twsfwphysx_vec L; ///< Angular momentum
+	struct twsfwphysx_vec u; ///< Rotation axis
+	float v; ///< Velocity magnitude
 };
 
 /**
@@ -204,6 +214,7 @@ struct twsfwphysx_world {
 	///< Coefficient of restitution. (See comment above.)
 
 	float agent_radius; ///< Radius of cross-section of agents
+
 	float missile_acceleration; ///< Acceleration used for propulsion missiles
 };
 
@@ -217,7 +228,7 @@ struct twsfwphysx_world {
 struct twsfwphysx_simulation_buffer;
 
 /**
- * @brief Creates a batch of new agents
+ * @brief Creates a batch of new agents.
  *
  * Creates a batch of new **uninitialized** agents. Use
  * \ref twsfwphysx_set_agent to initialize up to `size` agents.
@@ -228,7 +239,7 @@ struct twsfwphysx_simulation_buffer;
 struct twsfwphysx_agents twsfwphysx_create_agents(int32_t size);
 
 /**
- * @brief Deletes all agents in a batch
+ * @brief Deletes all agents in a batch.
  *
  * Deletes a batch of agents that was previously created with
  * \ref twsfwphysx_create_agents.
@@ -238,7 +249,7 @@ struct twsfwphysx_agents twsfwphysx_create_agents(int32_t size);
 void twsfwphysx_delete_agents(struct twsfwphysx_agents *agents);
 
 /**
- * @brief Overrides a slot in the agent batch
+ * @brief Overrides a slot in the agent batch.
  *
  * Sets `agents->agents[index] = agent`. Note that `index` has to be a valid
  * index, i.e., non-negative and smaller than the batch size that was given
@@ -255,7 +266,7 @@ void twsfwphysx_set_agent(const struct twsfwphysx_agents *batch,
 						  int32_t index);
 
 /**
- * @brief Creates a new batch of missiles
+ * @brief Creates a new batch of missiles.
  *
  * Creates a new batch of missiles. Add missiles using
  * \ref twsfwphysx_add_missile and remember to delete the batch via
@@ -267,7 +278,7 @@ void twsfwphysx_set_agent(const struct twsfwphysx_agents *batch,
 struct twsfwphysx_missiles twsfwphysx_new_missile_batch(void);
 
 /**
- * @brief Deletes missile batch
+ * @brief Deletes missile batch.
  *
  * Deletes a batch of missiles that was previously created with
  * \ref twsfwphysx_new_missile_batch.
@@ -277,7 +288,7 @@ struct twsfwphysx_missiles twsfwphysx_new_missile_batch(void);
 void twsfwphysx_delete_missile_batch(struct twsfwphysx_missiles *missiles);
 
 /**
- * @brief Adds a new missile to the batch
+ * @brief Adds a new missile to the batch.
  *
  * Adds a new missile to the batch. Adding a missile increases
  * \ref twsfwphysx_missiles.size of `batch` by one.
@@ -289,7 +300,7 @@ void twsfwphysx_add_missile(struct twsfwphysx_missiles *missiles,
 							struct twsfwphysx_missile missile);
 
 /**
- * @brief Creates a new simulation buffer
+ * @brief Creates a new simulation buffer.
  *
  * This buffer is needed during simulation to save intermediary results. See
  * \ref twsfwphysx_simulate for more details and remember to delete this buffer
@@ -300,7 +311,7 @@ void twsfwphysx_add_missile(struct twsfwphysx_missiles *missiles,
 struct twsfwphysx_simulation_buffer *twsfwphysx_create_simulation_buffer(void);
 
 /**
- * @brief Deletes the simulation buffer
+ * @brief Deletes the simulation buffer.
  *
  * Deletes the simulation buffer that was previously created using
  * \ref twsfwphysx_create_simulation_buffer.
@@ -311,7 +322,7 @@ void twsfwphysx_delete_simulation_buffer(
 	struct twsfwphysx_simulation_buffer *buffer);
 
 /**
- * @brief Simulates the movements and interactions of agents and missiles
+ * @brief Simulates the movements and interactions of agents and missiles.
  *
  * This function simulates the movement of agents and missiles for a time
  * duration `t` by propagating them for `n_steps` _short(er)_ time steps.
@@ -346,11 +357,23 @@ void twsfwphysx_simulate(struct twsfwphysx_agents *agents,
 						 int32_t n_steps,
 						 struct twsfwphysx_simulation_buffer *buffer);
 
+/**
+	 * @brief Changes orientation of agent.
+	 *
+	 * This helper function rotates the orientation of an agent by the given
+	 * angle. Setting `alpha = 0` (or to multiples of two pi) does not change
+     * the orientation.
+	 *
+	 * @param agent Agent
+	 * @param angle Rotation angle (in radians).
+	 */
+void twsfwphysx_rotate_agent(struct twsfwphysx_agent *agent, float angle);
+
 #ifdef TWSFWPHYSX_IMPLEMENTATION
 
 const char *twsfwphysx_version(void)
 {
-	return "0.1.0";
+	return "0.2.0";
 }
 
 struct twsfwphysx_agents twsfwphysx_create_agents(const int32_t size)
@@ -416,7 +439,17 @@ void twsfwphysx_add_missile(struct twsfwphysx_missiles *missiles,
 
 static float vec_length(const struct twsfwphysx_vec v)
 {
-	return sqrtf(v.x * v.x + v.y * v.y + v.z * v.z);
+	return sqrtf((v.x * v.x) + (v.y * v.y) + (v.z * v.z));
+}
+
+static struct twsfwphysx_vec normalize(struct twsfwphysx_vec v)
+{
+	const float length = vec_length(v);
+	v.x /= length;
+	v.y /= length;
+	v.z /= length;
+
+	return v;
 }
 
 static float dot(const struct twsfwphysx_vec v, const struct twsfwphysx_vec w)
@@ -433,28 +466,13 @@ static struct twsfwphysx_vec cross(const struct twsfwphysx_vec v,
 	return res;
 }
 
-static void rotate(struct twsfwphysx_vec *r,
-				   const struct twsfwphysx_vec u,
-				   const float theta)
-{
-	const float udr = dot(u, *r);
-	const struct twsfwphysx_vec uxr = cross(u, *r);
-	const struct twsfwphysx_vec uxr_x_u = cross(uxr, u);
-
-	const float sin_theta = sinf(theta);
-	const float cos_theta = cosf(theta);
-
-	r->x = udr * u.x + cos_theta * uxr_x_u.x + sin_theta * uxr.x;
-	r->y = udr * u.y + cos_theta * uxr_x_u.y + sin_theta * uxr.y;
-	r->z = udr * u.z + cos_theta * uxr_x_u.z + sin_theta * uxr.z;
-}
-
-static void propagate(
-	struct twsfwphysx_vec *r, // NOLINT(bugprone-easily-swappable-parameters)
-	struct twsfwphysx_vec *L, // NOLINT(bugprone-easily-swappable-parameters)
-	const float a, // NOLINT(bugprone-easily-swappable-parameters)
-	const float dt, // NOLINT(bugprone-easily-swappable-parameters)
-	const float mu) // NOLINT(bugprone-easily-swappable-parameters)
+static void
+propagate(struct twsfwphysx_vec *r,
+		  const struct twsfwphysx_vec u,
+		  float *v,
+		  const float a, // NOLINT(bugprone-easily-swappable-parameters)
+		  const float dt, // NOLINT(bugprone-easily-swappable-parameters)
+		  const float mu) // NOLINT(bugprone-easily-swappable-parameters)
 {
 	const float x = mu * dt;
 	float f;
@@ -478,20 +496,16 @@ static void propagate(
 		g = mu > 1e-5F ? (1.F - f) / mu : dt * (1.F - f) / x;
 	}
 
-	const struct twsfwphysx_vec v = cross(*L, *r);
-	float v_abs = vec_length(v);
-	const struct twsfwphysx_vec u = { L->x / v_abs,
-									  L->y / v_abs,
-									  L->z / v_abs };
+	const float theta = (*v * f + a * g) * dt;
+	const float sin_theta = sinf(theta);
+	const float cos_theta = cosf(theta);
 
-	const float theta = (v_abs * f + a * g) * dt;
+	*v = *v * expf(-x) + a * dt * f;
 
-	v_abs = v_abs * expf(-x) + a * dt * f;
-	L->x = u.x * v_abs;
-	L->y = u.y * v_abs;
-	L->z = u.z * v_abs;
-
-	rotate(r, u, theta);
+	const struct twsfwphysx_vec w = cross(u, *r);
+	r->x = cos_theta * r->x + sin_theta * w.x;
+	r->y = cos_theta * r->y + sin_theta * w.y;
+	r->z = cos_theta * r->z + sin_theta * w.z;
 }
 
 static void collide(struct twsfwphysx_agent *p1,
@@ -507,8 +521,16 @@ static void collide(struct twsfwphysx_agent *p1,
 	n.y /= length;
 	n.z /= length;
 
-	struct twsfwphysx_vec v1 = cross(p1->L, p1->r);
-	struct twsfwphysx_vec v2 = cross(p2->L, p2->r);
+	struct twsfwphysx_vec v1 = cross(p1->u, p1->r);
+	v1.x *= p1->v;
+	v1.y *= p1->v;
+	v1.z *= p1->v;
+
+	struct twsfwphysx_vec v2 = cross(p2->u, p2->r);
+	v2.x *= p2->v;
+	v2.y *= p2->v;
+	v2.z *= p2->v;
+
 	const struct twsfwphysx_vec dv = { v1.x - v2.x, v1.y - v2.y, v1.z - v2.z };
 	const float J = (1.F + epsilon) / 2.F * dot(n, dv);
 
@@ -520,8 +542,16 @@ static void collide(struct twsfwphysx_agent *p1,
 	v2.y = v2.y + J * n.y;
 	v2.z = v2.z + J * n.z;
 
-	p1->L = cross(p1->r, v1);
-	p2->L = cross(p2->r, v2);
+	p1->v = vec_length(v1);
+	p2->v = vec_length(v2);
+
+	if (p1->v > 1e-10F) {
+		p1->u = normalize(cross(p1->r, v1));
+	}
+
+	if (p2->v > 1e-10F) {
+		p2->u = normalize(cross(p2->r, v2));
+	}
 }
 
 static void fill_distance_buffer(const struct twsfwphysx_agent *agents,
@@ -544,8 +574,7 @@ static void hit(struct twsfwphysx_agent *agent,
 				const int32_t i)
 {
 	const struct twsfwphysx_missile missile = missiles->missiles[i];
-	const float cos_theta =
-		dot(agent->L, missile.L) / vec_length(agent->L) / vec_length(missile.L);
+	const float cos_theta = dot(agent->u, missile.u);
 	const long damage = lroundf(2.F + cos_theta);
 
 	agent->hp = (int32_t)(agent->hp - damage);
@@ -598,10 +627,12 @@ struct twsfwphysx_simulation_buffer *twsfwphysx_create_simulation_buffer(void)
 void twsfwphysx_delete_simulation_buffer(
 	struct twsfwphysx_simulation_buffer *buffer)
 {
-	free(buffer->p);
-	free(buffer->s1);
-	free(buffer->s2);
-	free(buffer);
+	if (buffer != NULL) {
+		free(buffer->p);
+		free(buffer->s1);
+		free(buffer->s2);
+		free(buffer);
+	}
 }
 
 static struct twsfwphysx_simulation_buffer
@@ -653,21 +684,25 @@ void twsfwphysx_simulate(struct twsfwphysx_agents *agents,
 
 	// !!! WARNING !!!
 	// cos(.) makes small angles large and large angles small!
-	// Hence, search for distances *above* `threshold` when looking for
+	// Hence, search for distances *above* `*_threshold` when looking for
 	// *close* objects.
-	const float threshold = cosf(2.F * world->agent_radius);
+	const float missile_agent_threshold = cosf(world->agent_radius);
+	const float agent_agent_threshold = cosf(2.F * world->agent_radius);
 
 	struct twsfwphysx_agent *p = agents->agents;
 
 	const float dt = t / (float)n_steps;
 	while (n_steps-- > 0) {
 		for (int i = missiles->size - 1; i >= 0; i--) {
-			const int j = nearest_hit(agents, missiles->missiles[i], threshold);
+			const int j = nearest_hit(agents,
+									  missiles->missiles[i],
+									  missile_agent_threshold);
 			if (j >= 0) {
 				hit(&p[j], missiles, i);
 			} else {
 				propagate(&missiles->missiles[i].r,
-						  &missiles->missiles[i].L,
+						  missiles->missiles[i].u,
+						  &missiles->missiles[i].v,
 						  world->missile_acceleration,
 						  dt,
 						  world->friction);
@@ -678,7 +713,8 @@ void twsfwphysx_simulate(struct twsfwphysx_agents *agents,
 		for (int i = 0; i < n_agents; i++) {
 			buffer->p[i] = p[i];
 			propagate(&buffer->p[i].r,
-					  &buffer->p[i].L,
+					  buffer->p[i].u,
+					  &buffer->p[i].v,
 					  buffer->p[i].a,
 					  dt,
 					  world->friction);
@@ -689,8 +725,8 @@ void twsfwphysx_simulate(struct twsfwphysx_agents *agents,
 		for (int i = 0; i < n_agents; i++) {
 			for (int j = i + 1; j < n_agents; j++) {
 				const int both_alive = p[i].hp > 0 && p[j].hp > 0;
-				const int too_close = buffer->s1[k] > threshold ||
-									  buffer->s2[k] > threshold;
+				const int too_close = buffer->s1[k] > agent_agent_threshold ||
+									  buffer->s2[k] > agent_agent_threshold;
 				const int distance_decreases = buffer->s1[k] < buffer->s2[k];
 
 				if (both_alive && too_close && distance_decreases) {
@@ -709,6 +745,21 @@ void twsfwphysx_simulate(struct twsfwphysx_agents *agents,
 	}
 
 	agents->agents = p;
+
+	free(bffr.p);
+	free(bffr.s1);
+	free(bffr.s2);
+}
+
+void twsfwphysx_rotate_agent(struct twsfwphysx_agent *agent, float angle)
+{
+	const float sin_alpha = sinf(angle);
+	const float cos_alpha = cosf(angle);
+
+	const struct twsfwphysx_vec w = cross(agent->u, agent->r);
+	agent->u.x = cos_alpha * agent->u.x + sin_alpha * w.x;
+	agent->u.y = cos_alpha * agent->u.y + sin_alpha * w.y;
+	agent->u.z = cos_alpha * agent->u.z + sin_alpha * w.z;
 }
 
 #endif

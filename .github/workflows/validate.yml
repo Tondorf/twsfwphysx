@@ -26,7 +26,7 @@ jobs:
 
     runs-on: ubuntu-latest
 
-    env: { CC: clang, CXX: clang++ }
+    env: { CC: clang }
 
     steps:
       - uses: actions/checkout@v4
@@ -48,26 +48,6 @@ jobs:
           halt_on_error=1"
           UBSAN_OPTIONS: "print_stacktrace=1:\
           halt_on_error=1"
-        run: ctest --output-on-failure --no-tests=error
-
-  fuzzing:
-    needs: [ sanitize ]
-
-    runs-on: ubuntu-latest
-
-    env: { CC: clang, CXX: clang++ }
-
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Configure
-        run: cmake --preset=ci-fuzzing
-
-      - name: Build
-        run: cmake --build build/fuzzing
-
-      - name: Test
-        working-directory: build/fuzzing
         run: ctest --output-on-failure --no-tests=error
 
   test:

@@ -93,22 +93,6 @@ Please note that both the build and test commands accept a `-j` flag to specify 
 ideally be specified to the number of threads your CPU has. You may also want to add that to your preset using the
 `jobs` property, see the [presets documentation][1] for more details.
 
-### Fuzzing
-
-If you have `clang++` installed on your system, you can also run fuzz tests by enabling `BUILD_FUZZING`. This will add
-an extra test case that uses [libFuzzer](https://llvm.org/docs/LibFuzzer.html) to fuzz the simulation routine for 10s.
-To run it longer, search for the `test/twsfwphysx_fuzz_test` executable in your build directory and run it with custom
-arguments from the command line:
-
-```sh
-./test/twsfwphysx_fuzz_tests 
-INFO: Running with entropic power schedule (0xFF, 100).
-INFO: Seed: 310889544
-INFO: Loaded 1 modules   (110 inline 8-bit counters): 110 [0x5956a0, 0x59570e), 
-[...]
-^C==11169== libFuzzer: run interrupted; exiting
-```
-
 ### Documentation
 
 If [Doxygen][3] is available on your system and `BUILD_DOCS` is enabled, an HTML version of the documentation is build

@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.21)
 
-project(twsfwphysxTests LANGUAGES C CXX)
+project(twsfwphysxTests LANGUAGES C)
 
 include(../cmake/folders.cmake)
 
@@ -11,41 +11,50 @@ if (PROJECT_IS_TOP_LEVEL)
     enable_testing()
 endif ()
 
-# ---- Unit Tests ----
+# ---- Assert Test ----
+
+add_executable(assert_test source/assert_test.c)
+target_compile_features(assert_test PRIVATE c_std_11)
+add_test(NAME assert_test COMMAND assert_test)
+
+# ---- Version Test ----
 
 add_executable(
-        twsfwphysx_unit_tests
+        twsfwphysx_version_test
         source/twsfwphysx_impl.c
-        source/twsfwphysx_unit_tests.cpp
+        source/twsfwphysx_version_test.c
 )
-
 target_compile_definitions(
-        twsfwphysx_unit_tests
+        twsfwphysx_version_test
         PRIVATE
         TWSFWPHYSX_VERSION="${twsfwphysx_VERSION}"
 )
+target_link_libraries(twsfwphysx_version_test PRIVATE twsfwphysx::twsfwphysx)
+target_compile_features(twsfwphysx_version_test PRIVATE c_std_11)
+add_test(NAME twsfwphysx_version_test COMMAND twsfwphysx_version_test)
 
-target_link_libraries(twsfwphysx_unit_tests PRIVATE twsfwphysx::twsfwphysx)
-target_compile_features(twsfwphysx_unit_tests PRIVATE cxx_std_20)
+# ---- Unit Tests ----
 
-add_test(NAME twsfwphysx_unit_tests COMMAND twsfwphysx_unit_tests)
-
-# ---- Fuzz Tests ----
-
-option(BUILD_FUZZING "Build fuzzing tests using libFuzzer" OFF)
-if (BUILD_FUZZING)
-    add_executable(
-            twsfwphysx_fuzz_tests
+function(add_unit_test test_name source_file)
+    add_executable(${test_name}
             source/twsfwphysx_impl.c
-            source/twsfwphysx_fuzz_target.cpp
+            source/utils.c
+            source/${source_file}
     )
+    target_include_directories(${test_name} PRIVATE source)
 
-    target_link_libraries(twsfwphysx_fuzz_tests PRIVATE twsfwphysx::twsfwphysx -fsanitize=fuzzer,address)
-    target_compile_features(twsfwphysx_fuzz_tests PRIVATE cxx_std_20)
-    target_compile_options(twsfwphysx_fuzz_tests PRIVATE -fsanitize=fuzzer,address)
+    target_link_libraries(${test_name} PRIVATE twsfwphysx::twsfwphysx)
 
-    add_test(NAME twsfwphysx_fuzz_tests COMMAND twsfwphysx_fuzz_tests -max_total_time=10)
-endif ()
+    target_compile_features(${test_name} PRIVATE c_std_11)
+
+    add_test(NAME ${test_name} COMMAND ${test_name})
+endfunction()
+
+add_unit_test(agent_rotate_tests agent_rotate_tests.c)
+add_unit_test(propagation_tests propagation_tests.c)
+add_unit_test(no_agents_tests no_agents_tests.c)
+add_unit_test(missile_hit_tests missile_hit_tests.c)
+add_unit_test(collision_tests collision_tests.c)
 
 # ---- End-of-file commands ----
 
