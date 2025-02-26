@@ -7,8 +7,7 @@
 
 void test_collision1(const int create_buffer)
 {
-	const struct twsfwphysx_world world = { .friction = 1.F,
-											.restitution = 1.F,
+	const struct twsfwphysx_world world = { .restitution = 1.F,
 											.agent_radius = .1F,
 											.missile_acceleration = 1.F };
 
@@ -49,8 +48,7 @@ void test_collision1(const int create_buffer)
 
 void test_collision2(const int create_buffer)
 {
-	const struct twsfwphysx_world world = { .friction = 1.F,
-											.restitution = 1.F,
+	const struct twsfwphysx_world world = { .restitution = 1.F,
 											.agent_radius = .1F,
 											.missile_acceleration = 1.F };
 
@@ -91,13 +89,11 @@ void test_collision2(const int create_buffer)
 
 void test_restitution(void)
 {
-	const struct twsfwphysx_world world1 = { .friction = 1.F,
-											 .restitution = 1.F,
+	const struct twsfwphysx_world world1 = { .restitution = 1.F,
 											 .agent_radius = .1F,
 											 .missile_acceleration = 1.F };
 
-	const struct twsfwphysx_world world2 = { .friction = 1.F,
-											 .restitution = .5F,
+	const struct twsfwphysx_world world2 = { .restitution = .5F,
 											 .agent_radius = .1F,
 											 .missile_acceleration = 1.F };
 

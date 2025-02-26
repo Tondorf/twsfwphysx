@@ -8,8 +8,7 @@
 
 void test_no_agents_no_missiles(const int create_buffer)
 {
-	const struct twsfwphysx_world world = { .friction = 1.F,
-											.restitution = 1.F,
+	const struct twsfwphysx_world world = { .restitution = 1.F,
 											.agent_radius = .1F,
 											.missile_acceleration = 1.F };
 	struct twsfwphysx_agents agents = twsfwphysx_create_agents(0);
@@ -29,8 +28,7 @@ void test_no_agents_no_missiles(const int create_buffer)
 
 void test_no_agents_two_missiles(const int create_buffer)
 {
-	const struct twsfwphysx_world world = { .friction = 1.F,
-											.restitution = 1.F,
+	const struct twsfwphysx_world world = { .restitution = 1.F,
 											.agent_radius = .1F,
 											.missile_acceleration = 1.F };
 	struct twsfwphysx_agents agents = twsfwphysx_create_agents(0);

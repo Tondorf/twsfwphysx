@@ -27,11 +27,33 @@
  *
  * The twsfwphysx physics engine simulates the movements and interactions of
  * agents and missiles, constrained on the surface of a unit sphere.
- * Movements are subjected to a finite friction (see
- * \ref twsfwphysx_world.friction) that scales linearly with velocity. Missiles
- * use a constant acceleration for propulsion yielding a constant terminal
- * velocity after a short acceleration phase whereas agents can change the
- * magnitude of propulsion between subsequent calls to \ref twsfwphysx_simulate.
+ * Movements are subjected to a finite friction that scales linearly with
+ * velocity. Missiles use a constant acceleration for propulsion yielding a
+ * constant terminal velocity after a short acceleration phase whereas agents
+ * can change the magnitude of propulsion between subsequent calls to
+ * \ref twsfwphysx_simulate.
+ *
+ * WOLOG, we set the numerical values of both the friction coefficient and the
+ * characteristic time to one. This choice effectively makes the numerical
+ * values of the propulsion acceleration and the terminal velocity equal.
+ * With this simplification, the equation of the instantaneous velocity update
+ * from time \f$t\f$ to \f$t+1\f$ becomes:
+ *
+ * \f[
+ *   v_{t+1} = v_\infty - (v_\infty - v_t) \, \mathrm{e}^{-t / [\mathrm{s}]},
+ * \f]
+ *
+ * where \f$v_\infty\f$ is the terminal velocity (here, referred to as
+ * \ref twsfwphysx_agent::a and \ref twsfwphysx_world::missile_acceleration).
+ * Agents and missiles move along great-circles; given the rotation axis (see,
+ * e.g., \ref twsfwphysx_agent.u), the position on this circle is parametrized
+ * with an angle \f$\varphi_t\f$. Its update equation reads:
+ * \f[
+ *   \varphi_{t+1} = \varphi_0 + v_\infty t - (v_\infty - v_t) \left( \mathrm{e}^{-t / [\mathrm{s}]} - 1 \right).
+ * \f]
+ *
+ * Note the limits for both equations! If \f$t > 3\,\mathrm{s}\f$, agents and missiles
+ * travel almost linearly with 95% - 100% terminal velocity.
  *
  * Agents have a circular cross-section with finite radius. If the
  * cross-sections of two adjacent agents overlap, they collide elastically.
@@ -97,6 +119,11 @@ struct twsfwphysx_vec {
  * momentum vector of the agent: `L = u * v`. `u` and `r` are perpendicular,
  * thus their cross product is the normalized velocity vector.
  *
+ * Since the friction coefficient is set to `1s`, the (numerical) value of the
+ * acceleration, `a`, now equals the (numerical value of the) terminal velocity.
+ * Here, we still refer to it as `a` to avoid confusion with the instantaneous
+ * velocity, `v`.
+ *
  * **Example**
  * \code{.c}
  * struct twsfwphysx_vec3 r = {0.F, 0.F, 1.F};  // North Pole
@@ -121,9 +148,9 @@ struct twsfwphysx_agent {
 
 	struct twsfwphysx_vec u; ///< Rotation axis.
 
-	float v; ///< Velocity magnitude
+	float v; ///< Magnitude of instantaneous velocity
 
-	float a; ///< Acceleration used for propulsion.
+	float a; ///< Acceleration used for propulsion (terminal velocity)
 
 	int32_t hp; ///< Health points
 };
@@ -207,15 +234,13 @@ struct twsfwphysx_missiles {
  * effect.
  */
 struct twsfwphysx_world {
-	float friction;
-	///< Coefficient of friction. (`0`: no friction, `>0` finite friction)
-
 	float restitution;
 	///< Coefficient of restitution. (See comment above.)
 
 	float agent_radius; ///< Radius of cross-section of agents
 
-	float missile_acceleration; ///< Acceleration used for propulsion missiles
+	float missile_acceleration;
+	///< Acceleration used for missiles propuslion (terminal velocity)
 };
 
 /**
@@ -471,36 +496,13 @@ propagate(struct twsfwphysx_vec *r,
 		  const struct twsfwphysx_vec u,
 		  float *v,
 		  const float a, // NOLINT(bugprone-easily-swappable-parameters)
-		  const float dt, // NOLINT(bugprone-easily-swappable-parameters)
-		  const float mu) // NOLINT(bugprone-easily-swappable-parameters)
+		  const float dt) // NOLINT(bugprone-easily-swappable-parameters)
 {
-	const float x = mu * dt;
-	float f;
-	float g;
-
-	if (fabsf(x) < 1e-5F) {
-		// clang-format off
-        f = -1.F / 24.F + x / 120.F;
-        f =  1.F /  6.F + x * f;
-        f = -1.F /  2.F + x * f;
-        f =         1.F + x * f;
-
-        g = -1.F / 120.F + x / 720.F;
-        g =  1.F /  24.F + x * g;
-        g = -1.F /   6.F + x * g;
-        g =  1.F /   2.F + x * g;
-        g = dt * g;
-		// clang-format on
-	} else {
-		f = -expm1f(-x) / x;
-		g = mu > 1e-5F ? (1.F - f) / mu : dt * (1.F - f) / x;
-	}
-
-	const float theta = (*v * f + a * g) * dt;
+	const float theta = (a * dt) - ((*v - a) * expm1f(-dt));
 	const float sin_theta = sinf(theta);
 	const float cos_theta = cosf(theta);
 
-	*v = *v * expf(-x) + a * dt * f;
+	*v = a - ((a - *v) * expf(-dt));
 
 	const struct twsfwphysx_vec w = cross(u, *r);
 	r->x = cos_theta * r->x + sin_theta * w.x;
@@ -704,8 +706,7 @@ void twsfwphysx_simulate(struct twsfwphysx_agents *agents,
 						  missiles->missiles[i].u,
 						  &missiles->missiles[i].v,
 						  world->missile_acceleration,
-						  dt,
-						  world->friction);
+						  dt);
 			}
 		}
 
@@ -716,8 +717,7 @@ void twsfwphysx_simulate(struct twsfwphysx_agents *agents,
 					  buffer->p[i].u,
 					  &buffer->p[i].v,
 					  buffer->p[i].a,
-					  dt,
-					  world->friction);
+					  dt);
 		}
 		fill_distance_buffer(buffer->p, buffer->s2, n_agents);
 
