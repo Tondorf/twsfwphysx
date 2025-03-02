@@ -1,4 +1,5 @@
 #include <assert.h>
+#include <math.h>
 #include <stdlib.h>
 
 #include "utils.h"
@@ -30,7 +31,7 @@ void test_missile_hit_single_agent(const int create_buffer)
 
 	twsfwphysx_simulate(&agents, &missiles, &world, 2.F, 100, buffer);
 	assert(missiles.size == 0);
-	assert(agents.agents[0].hp == 4);
+	assert(fabsf(agents.agents[0].hp - 4.F) < 1e-6F);
 
 	twsfwphysx_delete_missile_batch(&missiles);
 	twsfwphysx_delete_agents(&agents);
@@ -75,13 +76,13 @@ void test_missile_hit_two_agents(const int create_buffer)
 	twsfwphysx_simulate(&agents, &missiles, &world, 2.F, 100, buffer);
 	assert(missiles.size == 1);
 	assert(missiles.missiles[0].payload == 42);
-	assert(agents.agents[0].hp == 5);
-	assert(agents.agents[1].hp == 4);
+	assert(fabsf(agents.agents[0].hp - 5.F) < 1e-6F);
+	assert(fabsf(agents.agents[1].hp - 4.F) < 1e-6F);
 
 	twsfwphysx_simulate(&agents, &missiles, &world, 2.F, 100, buffer);
 	assert(missiles.size == 0);
-	assert(agents.agents[0].hp == 2);
-	assert(agents.agents[1].hp == 4);
+	assert(fabsf(agents.agents[0].hp - 2) < 1e-6F);
+	assert(fabsf(agents.agents[1].hp - 4) < 1e-6F);
 
 	twsfwphysx_delete_missile_batch(&missiles);
 	twsfwphysx_delete_agents(&agents);

@@ -131,7 +131,7 @@ struct twsfwphysx_vec {
  *
  * float v = 2.F;
  * float a = 10.F;
- * int32_t hp = 3;
+ * float hp = 3.F;
  *
  * // A new agent, rotating around the x-axis, currently moving with `v=2` at
  * // the North Pole, has 3 HPs and propels with `a=10.F`.
@@ -152,7 +152,7 @@ struct twsfwphysx_agent {
 
 	float a; ///< Acceleration used for propulsion (terminal velocity)
 
-	int32_t hp; ///< Health points
+	float hp; ///< Health points
 };
 
 /**
@@ -176,7 +176,7 @@ struct twsfwphysx_agent {
  * for (int i = 0; i < crowd.size; i++) {
  *     struct twsfwphysx_agent *agent = &crowd.agents[i];
  *     if (i % 2 == 0) {   // kill every second agent
- *	       agent.hp = -1;  // to motivate the others
+ *	       agent.hp = -1.F;  // to motivate the others
  *     }
  * }
  * \endcode
@@ -402,7 +402,7 @@ void twsfwphysx_rotate_agent(struct twsfwphysx_agent *agent, float angle);
 
 const char *twsfwphysx_version(void)
 {
-	return "0.4.0";
+	return "0.5.0";
 }
 
 struct twsfwphysx_agents twsfwphysx_create_agents(const int32_t size)
@@ -581,9 +581,9 @@ static void hit(struct twsfwphysx_agent *agent,
 {
 	const struct twsfwphysx_missile missile = missiles->missiles[i];
 	const float cos_theta = dot(agent->u, missile.u);
-	const long damage = lroundf(2.F + cos_theta);
+	const float damage = 2.F + cos_theta;
 
-	agent->hp = (int32_t)(agent->hp - damage);
+	agent->hp -= damage;
 
 	missiles->size -= 1;
 	if (i < missiles->size) {
@@ -598,7 +598,7 @@ static int32_t nearest_hit(const struct twsfwphysx_agents *agents,
 	int32_t i_max = -1;
 	float s_max = -2.F; // -1 <= dot(.) <= +1
 	for (int32_t i = 0; i < agents->size; i++) {
-		if (agents->agents[i].hp > 0) {
+		if (agents->agents[i].hp > 0.F) {
 			const float s = dot(agents->agents[i].r, missile.r);
 			if (s > threshold && s > s_max) {
 				i_max = i;
@@ -728,7 +728,7 @@ void twsfwphysx_simulate(struct twsfwphysx_agents *agents,
 		int32_t k = 0;
 		for (int i = 0; i < n_agents; i++) {
 			for (int j = i + 1; j < n_agents; j++) {
-				const int both_alive = p[i].hp > 0 && p[j].hp > 0;
+				const int both_alive = p[i].hp > 0.F && p[j].hp > 0.F;
 				const int too_close = buffer->s1[k] > agent_agent_threshold ||
 									  buffer->s2[k] > agent_agent_threshold;
 				const int distance_decreases = buffer->s1[k] < buffer->s2[k];

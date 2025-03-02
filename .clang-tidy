@@ -12,7 +12,7 @@ Checks: "-*,\
   readability-*,\
   -readability-identifier-length,\
   -readability-magic-numbers"
-WarningsAsErrors: ''
+WarningsAsErrors: '*'
 CheckOptions:
   - key: 'bugprone-argument-comment.StrictMode'
     value: 'true'
