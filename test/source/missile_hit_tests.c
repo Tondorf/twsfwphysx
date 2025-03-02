@@ -20,7 +20,8 @@ void test_missile_hit_single_agent(const int create_buffer)
 
 	const struct twsfwphysx_missile m = { make_vec(0.F, 1.F, 0.F),
 										  make_vec(1.F, 0.F, 0.F),
-										  1.F };
+										  1.F,
+										  42 };
 	struct twsfwphysx_missiles missiles = twsfwphysx_new_missile_batch();
 	twsfwphysx_add_missile(&missiles, m);
 
@@ -58,10 +59,12 @@ void test_missile_hit_two_agents(const int create_buffer)
 
 	const struct twsfwphysx_missile m1 = { make_vec(-1.F, 0.F, 0.F),
 										   make_vec(0.F, 0.F, 1.F),
-										   1.F };
+										   1.F,
+										   42 };
 	const struct twsfwphysx_missile m2 = { make_vec(0.F, 1.F, 0.F),
 										   make_vec(1.F, 0.F, 0.F),
-										   1.F };
+										   1.F,
+										   1337 };
 	struct twsfwphysx_missiles missiles = twsfwphysx_new_missile_batch();
 	twsfwphysx_add_missile(&missiles, m1);
 	twsfwphysx_add_missile(&missiles, m2);
@@ -71,6 +74,7 @@ void test_missile_hit_two_agents(const int create_buffer)
 
 	twsfwphysx_simulate(&agents, &missiles, &world, 2.F, 100, buffer);
 	assert(missiles.size == 1);
+	assert(missiles.missiles[0].payload == 42);
 	assert(agents.agents[0].hp == 5);
 	assert(agents.agents[1].hp == 4);
 

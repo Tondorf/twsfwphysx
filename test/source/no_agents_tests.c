@@ -37,10 +37,12 @@ void test_no_agents_two_missiles(const int create_buffer)
 
 	const struct twsfwphysx_missile m1 = { make_vec(1.F, 0.F, 0.F),
 										   make_vec(0.F, 0.F, 1.F),
-										   1.F };
+										   1.F,
+										   42 };
 	const struct twsfwphysx_missile m2 = { make_vec(-1.F, 0.F, 0.F),
 										   make_vec(0.F, 0.F, -1.F),
-										   1.F };
+										   1.F,
+										   1337 };
 
 	const float t = 10.F;
 	const int32_t n_steps[] = { 1, 2, 100 };

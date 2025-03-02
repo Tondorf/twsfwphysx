@@ -190,11 +190,14 @@ struct twsfwphysx_agents {
  * @brief Represents a missile with position and angular momentum.
  *
  * See \ref twsfwphysx_agent for explanations for `r`, `u` and `v`.
+ * \ref payload is persistent and can be used to, e.g., associate missiles with
+ * agent slots.
  */
 struct twsfwphysx_missile {
 	struct twsfwphysx_vec r; ///< Position
 	struct twsfwphysx_vec u; ///< Rotation axis
 	float v; ///< Velocity magnitude
+	int32_t payload; ///< Payload
 };
 
 /**
@@ -366,7 +369,8 @@ void twsfwphysx_delete_simulation_buffer(
  * end of the simulation run.
  *
  * When missiles detonate, they are removed from `missiles` and the list of
- * remaining missiles is reordered.
+ * remaining missiles is reordered. Note that \ref twsfwphysx_missile.payload
+ * still stays persistent and thus can help to identify missiles.
  *
  * @param agents Agents
  * @param missiles Missiles
@@ -398,7 +402,7 @@ void twsfwphysx_rotate_agent(struct twsfwphysx_agent *agent, float angle);
 
 const char *twsfwphysx_version(void)
 {
-	return "0.2.0";
+	return "0.4.0";
 }
 
 struct twsfwphysx_agents twsfwphysx_create_agents(const int32_t size)
