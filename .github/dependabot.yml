@@ -1,0 +1,8 @@
+version: 2
+updates:
+- package-ecosystem: pip
+  directory: "/python-binding"
+  schedule:
+    interval: daily
+    timezone: CET
+  open-pull-requests-limit: 10

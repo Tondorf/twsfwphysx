@@ -1,0 +1,52 @@
+name: Build documentation of Python binding
+
+on:
+  # only run on PRs, not on pushes to main
+  # (this is handled by deploy_docs.yml)
+  pull_request:
+
+  workflow_call:
+    inputs:
+      artifact_name:
+        required: false
+        type: string
+
+jobs:
+  build-docs:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          fetch-tags: true
+          submodules: true
+
+      - name: Install system requirements
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y pandoc
+
+      - name: Setup Python environment
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install doc requirements
+        working-directory: python-binding
+        run: pip install -e .[dev]
+
+      - name: Build docs
+        working-directory: python-binding/docs
+        run: |
+          export SPHINXOPTS="-W"  # treat warnings as errors
+          make html
+
+      - name: Upload HTML files
+        uses: actions/upload-artifact@v4
+        if: ${{ inputs.artifact_name }}
+        with:
+          name: ${{ inputs.artifact_name }}
+          path: python-binding/docs/_build/html
+          if-no-files-found: error

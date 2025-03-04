@@ -1,0 +1,2 @@
+include twsfwphysx/binding.pyx
+include ../include/twsfwphysx/twsfwphysx.h
