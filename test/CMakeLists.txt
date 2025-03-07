@@ -51,6 +51,7 @@ function(add_unit_test test_name source_file)
 endfunction()
 
 add_unit_test(agent_rotate_tests agent_rotate_tests.c)
+add_unit_test(launch_missile_tests launch_missile_tests.c)
 add_unit_test(propagation_tests propagation_tests.c)
 add_unit_test(no_agents_tests no_agents_tests.c)
 add_unit_test(missile_hit_tests missile_hit_tests.c)

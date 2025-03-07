@@ -192,6 +192,9 @@ struct twsfwphysx_agents {
  * See \ref twsfwphysx_agent for explanations for `r`, `u` and `v`.
  * \ref payload is persistent and can be used to, e.g., associate missiles with
  * agent slots.
+ *
+ * Use \ref twsfwphysx_launch_missile to create new missiles next to agents and
+ * \ref twsfwphysx_add_missile to add them to an existing missile batch.
  */
 struct twsfwphysx_missile {
 	struct twsfwphysx_vec r; ///< Position
@@ -311,7 +314,7 @@ struct twsfwphysx_missiles twsfwphysx_new_missile_batch(void);
  * Deletes a batch of missiles that was previously created with
  * \ref twsfwphysx_new_missile_batch.
  *
- * @param missiles
+ * @param missiles The missile batch
  */
 void twsfwphysx_delete_missile_batch(struct twsfwphysx_missiles *missiles);
 
@@ -326,6 +329,22 @@ void twsfwphysx_delete_missile_batch(struct twsfwphysx_missiles *missiles);
  */
 void twsfwphysx_add_missile(struct twsfwphysx_missiles *missiles,
 							struct twsfwphysx_missile missile);
+
+/**
+ * @brief Creates a missile next to the agent
+ *
+ * Creates a new missile next to the agent. The angular momentum vector of the
+ * missile is set to the same value as the one from the agent and the distance
+ * between both is slightly larger than \ref twsfwphysx_world.agent_radius.
+ * Use \ref twsfwphysx_add_missile to add this missile to a missile batch.
+ *
+ * @param agent Agent that launches the missile
+ * @param world World invariants
+ * @return The new missile
+ */
+struct twsfwphysx_missile
+twsfwphysx_launch_missile(const struct twsfwphysx_agent *agent,
+						  const struct twsfwphysx_world *world);
 
 /**
  * @brief Creates a new simulation buffer.
@@ -496,6 +515,18 @@ static struct twsfwphysx_vec cross(const struct twsfwphysx_vec v,
 }
 
 static void
+rotate(struct twsfwphysx_vec *r, struct twsfwphysx_vec u, float angle)
+{
+	const float sin_angle = sinf(angle);
+	const float cos_angle = cosf(angle);
+
+	const struct twsfwphysx_vec w = cross(u, *r);
+	r->x = cos_angle * r->x + sin_angle * w.x;
+	r->y = cos_angle * r->y + sin_angle * w.y;
+	r->z = cos_angle * r->z + sin_angle * w.z;
+}
+
+static void
 propagate(struct twsfwphysx_vec *r,
 		  const struct twsfwphysx_vec u,
 		  float *v,
@@ -503,15 +534,9 @@ propagate(struct twsfwphysx_vec *r,
 		  const float dt) // NOLINT(bugprone-easily-swappable-parameters)
 {
 	const float theta = (a * dt) - ((*v - a) * expm1f(-dt));
-	const float sin_theta = sinf(theta);
-	const float cos_theta = cosf(theta);
+	rotate(r, u, theta);
 
 	*v = a - ((a - *v) * expf(-dt));
-
-	const struct twsfwphysx_vec w = cross(u, *r);
-	r->x = cos_theta * r->x + sin_theta * w.x;
-	r->y = cos_theta * r->y + sin_theta * w.y;
-	r->z = cos_theta * r->z + sin_theta * w.z;
 }
 
 static void collide(struct twsfwphysx_agent *p1,
@@ -757,13 +782,19 @@ void twsfwphysx_simulate(struct twsfwphysx_agents *agents,
 
 void twsfwphysx_rotate_agent(struct twsfwphysx_agent *agent, float angle)
 {
-	const float sin_alpha = sinf(angle);
-	const float cos_alpha = cosf(angle);
+	rotate(&agent->r, agent->u, angle);
+}
 
-	const struct twsfwphysx_vec w = cross(agent->u, agent->r);
-	agent->u.x = cos_alpha * agent->u.x + sin_alpha * w.x;
-	agent->u.y = cos_alpha * agent->u.y + sin_alpha * w.y;
-	agent->u.z = cos_alpha * agent->u.z + sin_alpha * w.z;
+struct twsfwphysx_missile
+twsfwphysx_launch_missile(const struct twsfwphysx_agent *agent,
+						  const struct twsfwphysx_world *world)
+{
+	struct twsfwphysx_missile missile = { agent->r, agent->u, agent->v, -1 };
+
+	const float distance = world->agent_radius + world->agent_radius * 1e-4F;
+	rotate(&missile.r, missile.u, distance);
+
+	return missile;
 }
 
 #endif
