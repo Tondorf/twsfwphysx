@@ -1,5 +1,12 @@
 # Building with CMake
 
+**TL;DR**: This is a header-only library and you don't need CMake. Include
+[`include/twsfwphysx/twsfwphysx.h`](include/twsfwphysx/twsfwphysx.h) where needed and define `TWSFWPHYSX_IMPLEMENTATION`
+for one of them.
+
+However, if you plan to embed twsfwphysx in other CMake projects or prefer to have a clean installation, read the
+description below!
+
 ## Build
 
 This project doesn't require any special command-line flags to build to keep things simple.
@@ -34,8 +41,9 @@ Here is the command for installing the release mode artifacts with a single-conf
 Makefiles one:
 
 ```sh
-cmake --install build
+cmake --install build --prefix /my/install/prefix
 ```
+As usual, if you prefer to install the library into the default path, leave out the `--prefix` part.
 
 Here is the command for installing the release mode artifacts with a multi-configuration generator, like the Visual
 Studio ones:
@@ -62,6 +70,16 @@ target_link_libraries(
         twsfwphysx::twsfwphysx
 )
 ```
+
+Note, however, that this will neither create, nor link an implementation file for you! That is, you still have to define
+`TWSFWPHYSX_IMPLEMENTATION` for one of your files that includes `twsfwphysx/twsfwphysx.h`. One common way is to create
+a separate file for this purpose, e.g., `twsfwphysx_impl.c`:
+```C
+#define TWSFWPHYSX_IMPLEMENTATION
+#include "twsfwphysx/twsfwphysx.h" // NOLINT(misc-include-cleaner)
+```
+and add this to your source files. For example, we do this for our unit tests, see:
+[`test/CMakeLists.txt`](test/CMakeLists.txt).
 
 ### Note to packagers
 

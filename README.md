@@ -7,7 +7,7 @@
 This is the twsfwphysx project, a physics engine
 for [twsfw (the 'w' stands for WASM)](https://github.com/Tondorf/twsfw).
 
-# Documentation
+## 📚 Documentation
 
 Find the documentation of the API [here](https://tondorf.github.io/twsfwphysx/).
 
@@ -22,9 +22,22 @@ provide any implementation.
 
 More advanced build instructions are given in [BUILDING](BUILDING.md).
 
-# Contributing
+## 🐍 Python Binding
+
+Do you prefer Python? Checkout our official [Python binding of twsfwphysx](python-binding)! This is a thin ([Cython][1])
+wrapper around the C-API. Read [its documentation][2] to learn more.
+
+## 👷 Contributing
 
 If you plan to contribute to the library, you might find the instructions under [BUILDING](BUILDING.md) helpful.
-Make sure to read our [`CODE_OF_CONDUCT.md`](CODE_OF_CONDUCT.md) document and find our advanced instructions in [
-`HACKING.md`](HACKING.md).
+Make sure to read our [CODE_OF_CONDUCT](CODE_OF_CONDUCT.md) document and find our advanced instructions in [HACKING](HACKING.md).
 document.
+
+Please make sure to always check the [formatting](.clang-format) of your contribution, either by running [clang-format][3] manually, or
+by using our `format-check` and `format-fix` build targets!
+
+[1]: https://cython.org/
+
+[2]: https://tondorf.github.io/twsfwphysx/python-binding/
+
+[3]: https://clang.llvm.org/docs/ClangFormat.html
