@@ -437,7 +437,7 @@ void twsfwphysx_turn_agent(struct twsfwphysx_agent *agent, float angle);
 
 const char *twsfwphysx_version(void)
 {
-	return "0.5.0";
+	return "0.6.0";
 }
 
 struct twsfwphysx_agents twsfwphysx_create_agents(const int32_t size)
