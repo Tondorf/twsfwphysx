@@ -67,7 +67,7 @@ cdef extern from "twsfwphysx/twsfwphysx.h":
                              int32_t n_steps,
                              void *buffer)
 
-    void twsfwphysx_rotate_agent(twsfwphysx_agent *agent, float angle)
+    void twsfwphysx_turn_agent(twsfwphysx_agent *agent, float angle)
 
 
 def get_twsfwphysx_version():
@@ -250,15 +250,15 @@ cdef class Engine:
 
         twsfwphysx_add_missile(&self._missiles, missile)
 
-    def rotate_agent(self, *, agent_idx: int, angle: float, degrees: bool=True):
-        """rotate agent."""
+    def turn_agent(self, *, agent_idx: int, angle: float, degrees: bool=True):
+        """turn agent."""
 
         self._check_agent_idx(agent_idx)
 
         if degrees:
             angle /= 180. * pi
 
-        twsfwphysx_rotate_agent(&self._agents.agents[agent_idx], angle)
+        twsfwphysx_turn_agent(&self._agents.agents[agent_idx], angle)
     
     def _get_agents_size(self):
         return self._agents.size

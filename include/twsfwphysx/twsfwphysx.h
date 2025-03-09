@@ -40,7 +40,7 @@
  * from time \f$t\f$ to \f$t+1\f$ becomes:
  *
  * \f[
- *   v_{t+1} = v_\infty - (v_\infty - v_t) \, \mathrm{e}^{-t / [\mathrm{s}]},
+ *   v_{t+1} = v_\infty - (v_\infty - v_t) \, \mathrm{e}^{-t \,/\, (1\,\mathrm{s})},
  * \f]
  *
  * where \f$v_\infty\f$ is the terminal velocity (here, referred to as
@@ -49,11 +49,24 @@
  * e.g., \ref twsfwphysx_agent.u), the position on this circle is parametrized
  * with an angle \f$\varphi_t\f$. Its update equation reads:
  * \f[
- *   \varphi_{t+1} = \varphi_0 + v_\infty t - (v_\infty - v_t) \left( \mathrm{e}^{-t / [\mathrm{s}]} - 1 \right).
+ *   \varphi_{t+1} = \varphi_0 + v_\infty t - (v_\infty - v_t) \left( \mathrm{e}^{-t \,/\, (1\,\mathrm{s})} - 1 \right).
  * \f]
  *
  * Note the limits for both equations! If \f$t > 3\,\mathrm{s}\f$, agents and missiles
  * travel almost linearly with 95% - 100% terminal velocity.
+ *
+ * Agents and missiles are parametrized via their position on the sphere,
+ * \f$\vec{r} = (x, y, z)^\top\f$, and their angular momentum vector,
+ * \f$\vec{L} = \vec{r} \times \vec{v} = v \vec{u}\f$ where \f$\vec{r}\f$ and
+ * \f$\vec{u}\f$ are unit vectors; see \ref twsfwphysx_agent (and
+ * \ref twsfwphysx_missile) for details.
+ * This parametrization makes it very easy to either rotate an object around
+ * \f$\vec{u}\f$ (movement along a great-circle) or around \f$\vec{r}\f$
+ * (turning), e.g., turning an agent by \f$\vartheta\f$ changes \f$\vec{u}\f$
+ * according to
+ * \f[
+ *   \vec{u} \leftarrow \vec{u} \cos \vartheta \, + (\vec{r} \times \vec{u}) \sin \vartheta \,.
+ * \f]
  *
  * Agents have a circular cross-section with finite radius. If the
  * cross-sections of two adjacent agents overlap, they collide elastically.
@@ -73,8 +86,8 @@
  * follow the links to learn how to get the required arguments.
  *
  * Besides \ref twsfwphysx_simulate, there are two helper functions:
- * \ref twsfwphysx_rotate_agent and \ref twsfwphysx_version.
- * The former helps to rotate (the angular momentum vector of) agents by a
+ * \ref twsfwphysx_turn_agent and \ref twsfwphysx_version.
+ * The former helps to turn (the angular momentum vector of) agents by a
  * given angle. The latter returns the version of the API. Expect breaking
  * changes between **all** `0.*.*` releases and an __almost__ stable ABI for
  * between versions within the same major release `>= 1`.
@@ -406,16 +419,16 @@ void twsfwphysx_simulate(struct twsfwphysx_agents *agents,
 						 struct twsfwphysx_simulation_buffer *buffer);
 
 /**
-	 * @brief Changes orientation of agent.
-	 *
-	 * This helper function rotates the orientation of an agent by the given
-	 * angle. Setting `alpha = 0` (or to multiples of two pi) does not change
-     * the orientation.
-	 *
-	 * @param agent Agent
-	 * @param angle Rotation angle (in radians).
-	 */
-void twsfwphysx_rotate_agent(struct twsfwphysx_agent *agent, float angle);
+ * @brief Changes orientation of agent.
+ *
+ * This helper function rotates the orientation of an agent by the given
+ * angle. Setting `alpha = 0` (or to multiples of two pi) does not change
+ * the orientation.
+ *
+ * @param agent Agent
+ * @param angle Rotation angle (in radians).
+ */
+void twsfwphysx_turn_agent(struct twsfwphysx_agent *agent, float angle);
 
 #ifdef TWSFWPHYSX_IMPLEMENTATION
 
@@ -780,9 +793,9 @@ void twsfwphysx_simulate(struct twsfwphysx_agents *agents,
 	free(bffr.s2);
 }
 
-void twsfwphysx_rotate_agent(struct twsfwphysx_agent *agent, float angle)
+void twsfwphysx_turn_agent(struct twsfwphysx_agent *agent, float angle)
 {
-	rotate(&agent->r, agent->u, angle);
+	rotate(&agent->u, agent->r, angle);
 }
 
 struct twsfwphysx_missile

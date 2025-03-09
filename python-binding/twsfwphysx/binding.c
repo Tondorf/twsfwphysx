@@ -2322,6 +2322,7 @@ static const char __pyx_k_reduce_ex[] = "__reduce_ex__";
 static const char __pyx_k_set_agent[] = "_set_agent";
 static const char __pyx_k_IndexError[] = "IndexError";
 static const char __pyx_k_Missiles_2[] = "Missiles.";
+static const char __pyx_k_turn_agent[] = "turn_agent";
 static const char __pyx_k_annotations[] = "__annotations__";
 static const char __pyx_k_dataclasses[] = "dataclasses";
 static const char __pyx_k_get_missile[] = "_get_missile";
@@ -2331,7 +2332,6 @@ static const char __pyx_k_Agents___len[] = "Agents.__len__";
 static const char __pyx_k_Optional_int[] = "Optional[int]";
 static const char __pyx_k_agent_radius[] = "agent_radius";
 static const char __pyx_k_is_coroutine[] = "_is_coroutine";
-static const char __pyx_k_rotate_agent[] = "rotate_agent";
 static const char __pyx_k_stringsource[] = "<stringsource>";
 static const char __pyx_k_Agents___init[] = "Agents.__init__";
 static const char __pyx_k_Invalid_index[] = "Invalid index '";
@@ -2349,6 +2349,7 @@ static const char __pyx_k_Agents___getitem[] = "Agents.__getitem__";
 static const char __pyx_k_Agents___setitem[] = "Agents.__setitem__";
 static const char __pyx_k_Engine__get_agent[] = "Engine._get_agent";
 static const char __pyx_k_Engine__set_agent[] = "Engine._set_agent";
+static const char __pyx_k_Engine_turn_agent[] = "Engine.turn_agent";
 static const char __pyx_k_get_missiles_size[] = "_get_missiles_size";
 static const char __pyx_k_Missiles___getitem[] = "Missiles.__getitem__";
 static const char __pyx_k_Missiles___setitem[] = "Missiles.__setitem__";
@@ -2356,7 +2357,6 @@ static const char __pyx_k_asyncio_coroutines[] = "asyncio.coroutines";
 static const char __pyx_k_cline_in_traceback[] = "cline_in_traceback";
 static const char __pyx_k_Engine__get_missile[] = "Engine._get_missile";
 static const char __pyx_k_Engine__set_missile[] = "Engine._set_missile";
-static const char __pyx_k_Engine_rotate_agent[] = "Engine.rotate_agent";
 static const char __pyx_k_missile_acceleration[] = "missile_acceleration";
 static const char __pyx_k_Engine_launch_missile[] = "Engine.launch_missile";
 static const char __pyx_k_Engine___reduce_cython[] = "Engine.__reduce_cython__";
@@ -2384,7 +2384,7 @@ static void __pyx_pf_7binding_6Engine_2__del__(struct __pyx_obj_7binding_Engine 
 static PyObject *__pyx_pf_7binding_6Engine_4_check_agent_idx(struct __pyx_obj_7binding_Engine *__pyx_v_self, PyObject *__pyx_v_idx); /* proto */
 static PyObject *__pyx_pf_7binding_6Engine_6simulate(struct __pyx_obj_7binding_Engine *__pyx_v_self, double __pyx_v_t, PyObject *__pyx_v_n_steps); /* proto */
 static PyObject *__pyx_pf_7binding_6Engine_8launch_missile(struct __pyx_obj_7binding_Engine *__pyx_v_self, PyObject *__pyx_v_agent_idx, PyObject *__pyx_v_v, PyObject *__pyx_v_payload); /* proto */
-static PyObject *__pyx_pf_7binding_6Engine_10rotate_agent(struct __pyx_obj_7binding_Engine *__pyx_v_self, PyObject *__pyx_v_agent_idx, double __pyx_v_angle, PyObject *__pyx_v_degrees); /* proto */
+static PyObject *__pyx_pf_7binding_6Engine_10turn_agent(struct __pyx_obj_7binding_Engine *__pyx_v_self, PyObject *__pyx_v_agent_idx, double __pyx_v_angle, PyObject *__pyx_v_degrees); /* proto */
 static PyObject *__pyx_pf_7binding_6Engine_12_get_agents_size(struct __pyx_obj_7binding_Engine *__pyx_v_self); /* proto */
 static PyObject *__pyx_pf_7binding_6Engine_14_get_agent(struct __pyx_obj_7binding_Engine *__pyx_v_self, PyObject *__pyx_v_index); /* proto */
 static PyObject *__pyx_pf_7binding_6Engine_16_set_agent(struct __pyx_obj_7binding_Engine *__pyx_v_self, PyObject *__pyx_v_index, PyObject *__pyx_v_agent); /* proto */
@@ -2449,8 +2449,8 @@ typedef struct {
   PyObject *__pyx_n_s_Engine__set_agent;
   PyObject *__pyx_n_s_Engine__set_missile;
   PyObject *__pyx_n_s_Engine_launch_missile;
-  PyObject *__pyx_n_s_Engine_rotate_agent;
   PyObject *__pyx_n_s_Engine_simulate;
+  PyObject *__pyx_n_s_Engine_turn_agent;
   PyObject *__pyx_n_s_IndexError;
   PyObject *__pyx_kp_u_Invalid_index;
   PyObject *__pyx_n_s_Missile;
@@ -2533,7 +2533,6 @@ typedef struct {
   PyObject *__pyx_n_s_reduce_cython;
   PyObject *__pyx_n_s_reduce_ex;
   PyObject *__pyx_n_s_restitution;
-  PyObject *__pyx_n_s_rotate_agent;
   PyObject *__pyx_n_s_self;
   PyObject *__pyx_kp_s_self__agents_self__missiles_self;
   PyObject *__pyx_n_s_set_agent;
@@ -2549,6 +2548,7 @@ typedef struct {
   PyObject *__pyx_n_s_test;
   PyObject *__pyx_kp_u_total_number_of_agents;
   PyObject *__pyx_kp_u_total_number_of_missiles;
+  PyObject *__pyx_n_s_turn_agent;
   PyObject *__pyx_kp_s_twsfwphysx_binding_pyx;
   PyObject *__pyx_n_s_u;
   PyObject *__pyx_n_s_v;
@@ -2659,8 +2659,8 @@ static int __pyx_m_clear(PyObject *m) {
   Py_CLEAR(clear_module_state->__pyx_n_s_Engine__set_agent);
   Py_CLEAR(clear_module_state->__pyx_n_s_Engine__set_missile);
   Py_CLEAR(clear_module_state->__pyx_n_s_Engine_launch_missile);
-  Py_CLEAR(clear_module_state->__pyx_n_s_Engine_rotate_agent);
   Py_CLEAR(clear_module_state->__pyx_n_s_Engine_simulate);
+  Py_CLEAR(clear_module_state->__pyx_n_s_Engine_turn_agent);
   Py_CLEAR(clear_module_state->__pyx_n_s_IndexError);
   Py_CLEAR(clear_module_state->__pyx_kp_u_Invalid_index);
   Py_CLEAR(clear_module_state->__pyx_n_s_Missile);
@@ -2743,7 +2743,6 @@ static int __pyx_m_clear(PyObject *m) {
   Py_CLEAR(clear_module_state->__pyx_n_s_reduce_cython);
   Py_CLEAR(clear_module_state->__pyx_n_s_reduce_ex);
   Py_CLEAR(clear_module_state->__pyx_n_s_restitution);
-  Py_CLEAR(clear_module_state->__pyx_n_s_rotate_agent);
   Py_CLEAR(clear_module_state->__pyx_n_s_self);
   Py_CLEAR(clear_module_state->__pyx_kp_s_self__agents_self__missiles_self);
   Py_CLEAR(clear_module_state->__pyx_n_s_set_agent);
@@ -2759,6 +2758,7 @@ static int __pyx_m_clear(PyObject *m) {
   Py_CLEAR(clear_module_state->__pyx_n_s_test);
   Py_CLEAR(clear_module_state->__pyx_kp_u_total_number_of_agents);
   Py_CLEAR(clear_module_state->__pyx_kp_u_total_number_of_missiles);
+  Py_CLEAR(clear_module_state->__pyx_n_s_turn_agent);
   Py_CLEAR(clear_module_state->__pyx_kp_s_twsfwphysx_binding_pyx);
   Py_CLEAR(clear_module_state->__pyx_n_s_u);
   Py_CLEAR(clear_module_state->__pyx_n_s_v);
@@ -2847,8 +2847,8 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
   Py_VISIT(traverse_module_state->__pyx_n_s_Engine__set_agent);
   Py_VISIT(traverse_module_state->__pyx_n_s_Engine__set_missile);
   Py_VISIT(traverse_module_state->__pyx_n_s_Engine_launch_missile);
-  Py_VISIT(traverse_module_state->__pyx_n_s_Engine_rotate_agent);
   Py_VISIT(traverse_module_state->__pyx_n_s_Engine_simulate);
+  Py_VISIT(traverse_module_state->__pyx_n_s_Engine_turn_agent);
   Py_VISIT(traverse_module_state->__pyx_n_s_IndexError);
   Py_VISIT(traverse_module_state->__pyx_kp_u_Invalid_index);
   Py_VISIT(traverse_module_state->__pyx_n_s_Missile);
@@ -2931,7 +2931,6 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
   Py_VISIT(traverse_module_state->__pyx_n_s_reduce_cython);
   Py_VISIT(traverse_module_state->__pyx_n_s_reduce_ex);
   Py_VISIT(traverse_module_state->__pyx_n_s_restitution);
-  Py_VISIT(traverse_module_state->__pyx_n_s_rotate_agent);
   Py_VISIT(traverse_module_state->__pyx_n_s_self);
   Py_VISIT(traverse_module_state->__pyx_kp_s_self__agents_self__missiles_self);
   Py_VISIT(traverse_module_state->__pyx_n_s_set_agent);
@@ -2947,6 +2946,7 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
   Py_VISIT(traverse_module_state->__pyx_n_s_test);
   Py_VISIT(traverse_module_state->__pyx_kp_u_total_number_of_agents);
   Py_VISIT(traverse_module_state->__pyx_kp_u_total_number_of_missiles);
+  Py_VISIT(traverse_module_state->__pyx_n_s_turn_agent);
   Py_VISIT(traverse_module_state->__pyx_kp_s_twsfwphysx_binding_pyx);
   Py_VISIT(traverse_module_state->__pyx_n_s_u);
   Py_VISIT(traverse_module_state->__pyx_n_s_v);
@@ -3047,8 +3047,8 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
 #define __pyx_n_s_Engine__set_agent __pyx_mstate_global->__pyx_n_s_Engine__set_agent
 #define __pyx_n_s_Engine__set_missile __pyx_mstate_global->__pyx_n_s_Engine__set_missile
 #define __pyx_n_s_Engine_launch_missile __pyx_mstate_global->__pyx_n_s_Engine_launch_missile
-#define __pyx_n_s_Engine_rotate_agent __pyx_mstate_global->__pyx_n_s_Engine_rotate_agent
 #define __pyx_n_s_Engine_simulate __pyx_mstate_global->__pyx_n_s_Engine_simulate
+#define __pyx_n_s_Engine_turn_agent __pyx_mstate_global->__pyx_n_s_Engine_turn_agent
 #define __pyx_n_s_IndexError __pyx_mstate_global->__pyx_n_s_IndexError
 #define __pyx_kp_u_Invalid_index __pyx_mstate_global->__pyx_kp_u_Invalid_index
 #define __pyx_n_s_Missile __pyx_mstate_global->__pyx_n_s_Missile
@@ -3131,7 +3131,6 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
 #define __pyx_n_s_reduce_cython __pyx_mstate_global->__pyx_n_s_reduce_cython
 #define __pyx_n_s_reduce_ex __pyx_mstate_global->__pyx_n_s_reduce_ex
 #define __pyx_n_s_restitution __pyx_mstate_global->__pyx_n_s_restitution
-#define __pyx_n_s_rotate_agent __pyx_mstate_global->__pyx_n_s_rotate_agent
 #define __pyx_n_s_self __pyx_mstate_global->__pyx_n_s_self
 #define __pyx_kp_s_self__agents_self__missiles_self __pyx_mstate_global->__pyx_kp_s_self__agents_self__missiles_self
 #define __pyx_n_s_set_agent __pyx_mstate_global->__pyx_n_s_set_agent
@@ -3147,6 +3146,7 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
 #define __pyx_n_s_test __pyx_mstate_global->__pyx_n_s_test
 #define __pyx_kp_u_total_number_of_agents __pyx_mstate_global->__pyx_kp_u_total_number_of_agents
 #define __pyx_kp_u_total_number_of_missiles __pyx_mstate_global->__pyx_kp_u_total_number_of_missiles
+#define __pyx_n_s_turn_agent __pyx_mstate_global->__pyx_n_s_turn_agent
 #define __pyx_kp_s_twsfwphysx_binding_pyx __pyx_mstate_global->__pyx_kp_s_twsfwphysx_binding_pyx
 #define __pyx_n_s_u __pyx_mstate_global->__pyx_n_s_u
 #define __pyx_n_s_v __pyx_mstate_global->__pyx_n_s_v
@@ -6434,7 +6434,7 @@ static PyObject *__pyx_pf_7binding_6Engine_8launch_missile(struct __pyx_obj_7bin
  * 
  *         twsfwphysx_add_missile(&self._missiles, missile)             # <<<<<<<<<<<<<<
  * 
- *     def rotate_agent(self, *, agent_idx: int, angle: float, degrees: bool=True):
+ *     def turn_agent(self, *, agent_idx: int, angle: float, degrees: bool=True):
  */
   twsfwphysx_add_missile((&__pyx_v_self->_missiles), __pyx_v_missile);
 
@@ -6465,22 +6465,22 @@ static PyObject *__pyx_pf_7binding_6Engine_8launch_missile(struct __pyx_obj_7bin
 /* "binding.pyx":253
  *         twsfwphysx_add_missile(&self._missiles, missile)
  * 
- *     def rotate_agent(self, *, agent_idx: int, angle: float, degrees: bool=True):             # <<<<<<<<<<<<<<
- *         """rotate agent."""
+ *     def turn_agent(self, *, agent_idx: int, angle: float, degrees: bool=True):             # <<<<<<<<<<<<<<
+ *         """turn agent."""
  * 
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_7binding_6Engine_11rotate_agent(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_7binding_6Engine_11turn_agent(PyObject *__pyx_v_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
-PyDoc_STRVAR(__pyx_doc_7binding_6Engine_10rotate_agent, "rotate agent.");
-static PyMethodDef __pyx_mdef_7binding_6Engine_11rotate_agent = {"rotate_agent", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_7binding_6Engine_11rotate_agent, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_7binding_6Engine_10rotate_agent};
-static PyObject *__pyx_pw_7binding_6Engine_11rotate_agent(PyObject *__pyx_v_self, 
+PyDoc_STRVAR(__pyx_doc_7binding_6Engine_10turn_agent, "turn agent.");
+static PyMethodDef __pyx_mdef_7binding_6Engine_11turn_agent = {"turn_agent", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_7binding_6Engine_11turn_agent, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_7binding_6Engine_10turn_agent};
+static PyObject *__pyx_pw_7binding_6Engine_11turn_agent(PyObject *__pyx_v_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -6500,7 +6500,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   int __pyx_clineno = 0;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("rotate_agent (wrapper)", 0);
+  __Pyx_RefNannySetupContext("turn_agent (wrapper)", 0);
   #if !CYTHON_METH_FASTCALL
   #if CYTHON_ASSUME_SAFE_MACROS
   __pyx_nargs = PyTuple_GET_SIZE(__pyx_args);
@@ -6525,7 +6525,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
       }
       else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 253, __pyx_L3_error)
       else {
-        __Pyx_RaiseKeywordRequired("rotate_agent", __pyx_n_s_agent_idx); __PYX_ERR(0, 253, __pyx_L3_error)
+        __Pyx_RaiseKeywordRequired("turn_agent", __pyx_n_s_agent_idx); __PYX_ERR(0, 253, __pyx_L3_error)
       }
       if (likely((values[1] = __Pyx_GetKwValue_FASTCALL(__pyx_kwds, __pyx_kwvalues, __pyx_n_s_angle)) != 0)) {
         (void)__Pyx_Arg_NewRef_FASTCALL(values[1]);
@@ -6533,7 +6533,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
       }
       else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 253, __pyx_L3_error)
       else {
-        __Pyx_RaiseKeywordRequired("rotate_agent", __pyx_n_s_angle); __PYX_ERR(0, 253, __pyx_L3_error)
+        __Pyx_RaiseKeywordRequired("turn_agent", __pyx_n_s_angle); __PYX_ERR(0, 253, __pyx_L3_error)
       }
       if (kw_args == 1) {
         const Py_ssize_t index = 2;
@@ -6542,12 +6542,12 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
         else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 253, __pyx_L3_error)
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, 0, "rotate_agent") < 0)) __PYX_ERR(0, 253, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, 0, "turn_agent") < 0)) __PYX_ERR(0, 253, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs != 0)) {
       goto __pyx_L5_argtuple_error;
     } else {
-      __Pyx_RaiseKeywordRequired("rotate_agent", __pyx_n_s_agent_idx); __PYX_ERR(0, 253, __pyx_L3_error)
+      __Pyx_RaiseKeywordRequired("turn_agent", __pyx_n_s_agent_idx); __PYX_ERR(0, 253, __pyx_L3_error)
     }
     __pyx_v_agent_idx = ((PyObject*)values[0]);
     __pyx_v_angle = __pyx_PyFloat_AsDouble(values[1]); if (unlikely((__pyx_v_angle == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 253, __pyx_L3_error)
@@ -6555,7 +6555,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("rotate_agent", 1, 0, 0, __pyx_nargs); __PYX_ERR(0, 253, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("turn_agent", 1, 0, 0, __pyx_nargs); __PYX_ERR(0, 253, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -6565,12 +6565,12 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
       __Pyx_Arg_XDECREF_FASTCALL(values[__pyx_temp]);
     }
   }
-  __Pyx_AddTraceback("binding.Engine.rotate_agent", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("binding.Engine.turn_agent", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
   if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_agent_idx), (&PyInt_Type), 0, "agent_idx", 1))) __PYX_ERR(0, 253, __pyx_L1_error)
-  __pyx_r = __pyx_pf_7binding_6Engine_10rotate_agent(((struct __pyx_obj_7binding_Engine *)__pyx_v_self), __pyx_v_agent_idx, __pyx_v_angle, __pyx_v_degrees);
+  __pyx_r = __pyx_pf_7binding_6Engine_10turn_agent(((struct __pyx_obj_7binding_Engine *)__pyx_v_self), __pyx_v_agent_idx, __pyx_v_angle, __pyx_v_degrees);
 
   /* function exit code */
   goto __pyx_L0;
@@ -6587,7 +6587,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_7binding_6Engine_10rotate_agent(struct __pyx_obj_7binding_Engine *__pyx_v_self, PyObject *__pyx_v_agent_idx, double __pyx_v_angle, PyObject *__pyx_v_degrees) {
+static PyObject *__pyx_pf_7binding_6Engine_10turn_agent(struct __pyx_obj_7binding_Engine *__pyx_v_self, PyObject *__pyx_v_agent_idx, double __pyx_v_angle, PyObject *__pyx_v_degrees) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -6600,10 +6600,10 @@ static PyObject *__pyx_pf_7binding_6Engine_10rotate_agent(struct __pyx_obj_7bind
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
-  __Pyx_RefNannySetupContext("rotate_agent", 1);
+  __Pyx_RefNannySetupContext("turn_agent", 1);
 
   /* "binding.pyx":256
- *         """rotate agent."""
+ *         """turn agent."""
  * 
  *         self._check_agent_idx(agent_idx)             # <<<<<<<<<<<<<<
  * 
@@ -6650,7 +6650,7 @@ static PyObject *__pyx_pf_7binding_6Engine_10rotate_agent(struct __pyx_obj_7bind
  *         if degrees:
  *             angle /= 180. * pi             # <<<<<<<<<<<<<<
  * 
- *         twsfwphysx_rotate_agent(&self._agents.agents[agent_idx], angle)
+ *         twsfwphysx_turn_agent(&self._agents.agents[agent_idx], angle)
  */
     __pyx_t_1 = PyFloat_FromDouble(__pyx_v_angle); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 259, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
@@ -6679,18 +6679,18 @@ static PyObject *__pyx_pf_7binding_6Engine_10rotate_agent(struct __pyx_obj_7bind
   /* "binding.pyx":261
  *             angle /= 180. * pi
  * 
- *         twsfwphysx_rotate_agent(&self._agents.agents[agent_idx], angle)             # <<<<<<<<<<<<<<
+ *         twsfwphysx_turn_agent(&self._agents.agents[agent_idx], angle)             # <<<<<<<<<<<<<<
  * 
  *     def _get_agents_size(self):
  */
   __pyx_t_7 = __Pyx_PyIndex_AsSsize_t(__pyx_v_agent_idx); if (unlikely((__pyx_t_7 == (Py_ssize_t)-1) && PyErr_Occurred())) __PYX_ERR(0, 261, __pyx_L1_error)
-  twsfwphysx_rotate_agent((&(__pyx_v_self->_agents.agents[__pyx_t_7])), __pyx_v_angle);
+  twsfwphysx_turn_agent((&(__pyx_v_self->_agents.agents[__pyx_t_7])), __pyx_v_angle);
 
   /* "binding.pyx":253
  *         twsfwphysx_add_missile(&self._missiles, missile)
  * 
- *     def rotate_agent(self, *, agent_idx: int, angle: float, degrees: bool=True):             # <<<<<<<<<<<<<<
- *         """rotate agent."""
+ *     def turn_agent(self, *, agent_idx: int, angle: float, degrees: bool=True):             # <<<<<<<<<<<<<<
+ *         """turn agent."""
  * 
  */
 
@@ -6701,7 +6701,7 @@ static PyObject *__pyx_pf_7binding_6Engine_10rotate_agent(struct __pyx_obj_7bind
   __Pyx_XDECREF(__pyx_t_1);
   __Pyx_XDECREF(__pyx_t_2);
   __Pyx_XDECREF(__pyx_t_3);
-  __Pyx_AddTraceback("binding.Engine.rotate_agent", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("binding.Engine.turn_agent", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -6710,7 +6710,7 @@ static PyObject *__pyx_pf_7binding_6Engine_10rotate_agent(struct __pyx_obj_7bind
 }
 
 /* "binding.pyx":263
- *         twsfwphysx_rotate_agent(&self._agents.agents[agent_idx], angle)
+ *         twsfwphysx_turn_agent(&self._agents.agents[agent_idx], angle)
  * 
  *     def _get_agents_size(self):             # <<<<<<<<<<<<<<
  *         return self._agents.size
@@ -6782,7 +6782,7 @@ static PyObject *__pyx_pf_7binding_6Engine_12_get_agents_size(struct __pyx_obj_7
   goto __pyx_L0;
 
   /* "binding.pyx":263
- *         twsfwphysx_rotate_agent(&self._agents.agents[agent_idx], angle)
+ *         twsfwphysx_turn_agent(&self._agents.agents[agent_idx], angle)
  * 
  *     def _get_agents_size(self):             # <<<<<<<<<<<<<<
  *         return self._agents.size
@@ -8508,7 +8508,7 @@ static PyMethodDef __pyx_methods_7binding_Engine[] = {
   {"_check_agent_idx", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_7binding_6Engine_5_check_agent_idx, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0},
   {"simulate", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_7binding_6Engine_7simulate, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_7binding_6Engine_6simulate},
   {"launch_missile", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_7binding_6Engine_9launch_missile, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_7binding_6Engine_8launch_missile},
-  {"rotate_agent", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_7binding_6Engine_11rotate_agent, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_7binding_6Engine_10rotate_agent},
+  {"turn_agent", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_7binding_6Engine_11turn_agent, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_7binding_6Engine_10turn_agent},
   {"_get_agents_size", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_7binding_6Engine_13_get_agents_size, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0},
   {"_get_agent", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_7binding_6Engine_15_get_agent, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0},
   {"_set_agent", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_7binding_6Engine_17_set_agent, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0},
@@ -8668,8 +8668,8 @@ static int __Pyx_CreateStringTabAndInitStrings(void) {
     {&__pyx_n_s_Engine__set_agent, __pyx_k_Engine__set_agent, sizeof(__pyx_k_Engine__set_agent), 0, 0, 1, 1},
     {&__pyx_n_s_Engine__set_missile, __pyx_k_Engine__set_missile, sizeof(__pyx_k_Engine__set_missile), 0, 0, 1, 1},
     {&__pyx_n_s_Engine_launch_missile, __pyx_k_Engine_launch_missile, sizeof(__pyx_k_Engine_launch_missile), 0, 0, 1, 1},
-    {&__pyx_n_s_Engine_rotate_agent, __pyx_k_Engine_rotate_agent, sizeof(__pyx_k_Engine_rotate_agent), 0, 0, 1, 1},
     {&__pyx_n_s_Engine_simulate, __pyx_k_Engine_simulate, sizeof(__pyx_k_Engine_simulate), 0, 0, 1, 1},
+    {&__pyx_n_s_Engine_turn_agent, __pyx_k_Engine_turn_agent, sizeof(__pyx_k_Engine_turn_agent), 0, 0, 1, 1},
     {&__pyx_n_s_IndexError, __pyx_k_IndexError, sizeof(__pyx_k_IndexError), 0, 0, 1, 1},
     {&__pyx_kp_u_Invalid_index, __pyx_k_Invalid_index, sizeof(__pyx_k_Invalid_index), 0, 1, 0, 0},
     {&__pyx_n_s_Missile, __pyx_k_Missile, sizeof(__pyx_k_Missile), 0, 0, 1, 1},
@@ -8752,7 +8752,6 @@ static int __Pyx_CreateStringTabAndInitStrings(void) {
     {&__pyx_n_s_reduce_cython, __pyx_k_reduce_cython, sizeof(__pyx_k_reduce_cython), 0, 0, 1, 1},
     {&__pyx_n_s_reduce_ex, __pyx_k_reduce_ex, sizeof(__pyx_k_reduce_ex), 0, 0, 1, 1},
     {&__pyx_n_s_restitution, __pyx_k_restitution, sizeof(__pyx_k_restitution), 0, 0, 1, 1},
-    {&__pyx_n_s_rotate_agent, __pyx_k_rotate_agent, sizeof(__pyx_k_rotate_agent), 0, 0, 1, 1},
     {&__pyx_n_s_self, __pyx_k_self, sizeof(__pyx_k_self), 0, 0, 1, 1},
     {&__pyx_kp_s_self__agents_self__missiles_self, __pyx_k_self__agents_self__missiles_self, sizeof(__pyx_k_self__agents_self__missiles_self), 0, 0, 1, 0},
     {&__pyx_n_s_set_agent, __pyx_k_set_agent, sizeof(__pyx_k_set_agent), 0, 0, 1, 1},
@@ -8768,6 +8767,7 @@ static int __Pyx_CreateStringTabAndInitStrings(void) {
     {&__pyx_n_s_test, __pyx_k_test, sizeof(__pyx_k_test), 0, 0, 1, 1},
     {&__pyx_kp_u_total_number_of_agents, __pyx_k_total_number_of_agents, sizeof(__pyx_k_total_number_of_agents), 0, 1, 0, 0},
     {&__pyx_kp_u_total_number_of_missiles, __pyx_k_total_number_of_missiles, sizeof(__pyx_k_total_number_of_missiles), 0, 1, 0, 0},
+    {&__pyx_n_s_turn_agent, __pyx_k_turn_agent, sizeof(__pyx_k_turn_agent), 0, 0, 1, 1},
     {&__pyx_kp_s_twsfwphysx_binding_pyx, __pyx_k_twsfwphysx_binding_pyx, sizeof(__pyx_k_twsfwphysx_binding_pyx), 0, 0, 1, 0},
     {&__pyx_n_s_u, __pyx_k_u, sizeof(__pyx_k_u), 0, 0, 1, 1},
     {&__pyx_n_s_v, __pyx_k_v, sizeof(__pyx_k_v), 0, 0, 1, 1},
@@ -8933,17 +8933,17 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   /* "binding.pyx":253
  *         twsfwphysx_add_missile(&self._missiles, missile)
  * 
- *     def rotate_agent(self, *, agent_idx: int, angle: float, degrees: bool=True):             # <<<<<<<<<<<<<<
- *         """rotate agent."""
+ *     def turn_agent(self, *, agent_idx: int, angle: float, degrees: bool=True):             # <<<<<<<<<<<<<<
+ *         """turn agent."""
  * 
  */
   __pyx_tuple__24 = PyTuple_Pack(4, __pyx_n_s_self, __pyx_n_s_agent_idx, __pyx_n_s_angle, __pyx_n_s_degrees); if (unlikely(!__pyx_tuple__24)) __PYX_ERR(0, 253, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__24);
   __Pyx_GIVEREF(__pyx_tuple__24);
-  __pyx_codeobj__25 = (PyObject*)__Pyx_PyCode_New(1, 0, 3, 4, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__24, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_twsfwphysx_binding_pyx, __pyx_n_s_rotate_agent, 253, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__25)) __PYX_ERR(0, 253, __pyx_L1_error)
+  __pyx_codeobj__25 = (PyObject*)__Pyx_PyCode_New(1, 0, 3, 4, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__24, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_twsfwphysx_binding_pyx, __pyx_n_s_turn_agent, 253, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__25)) __PYX_ERR(0, 253, __pyx_L1_error)
 
   /* "binding.pyx":263
- *         twsfwphysx_rotate_agent(&self._agents.agents[agent_idx], angle)
+ *         twsfwphysx_turn_agent(&self._agents.agents[agent_idx], angle)
  * 
  *     def _get_agents_size(self):             # <<<<<<<<<<<<<<
  *         return self._agents.size
@@ -10011,8 +10011,8 @@ if (!__Pyx_RefNanny) {
   /* "binding.pyx":253
  *         twsfwphysx_add_missile(&self._missiles, missile)
  * 
- *     def rotate_agent(self, *, agent_idx: int, angle: float, degrees: bool=True):             # <<<<<<<<<<<<<<
- *         """rotate agent."""
+ *     def turn_agent(self, *, agent_idx: int, angle: float, degrees: bool=True):             # <<<<<<<<<<<<<<
+ *         """turn agent."""
  * 
  */
   __pyx_t_4 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 253, __pyx_L1_error)
@@ -10023,18 +10023,18 @@ if (!__Pyx_RefNanny) {
   if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_agent_idx, __pyx_n_s_int) < 0) __PYX_ERR(0, 253, __pyx_L1_error)
   if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_angle, __pyx_n_s_float) < 0) __PYX_ERR(0, 253, __pyx_L1_error)
   if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_degrees, __pyx_n_s_bool) < 0) __PYX_ERR(0, 253, __pyx_L1_error)
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_7binding_6Engine_11rotate_agent, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_Engine_rotate_agent, NULL, __pyx_n_s_binding, __pyx_d, ((PyObject *)__pyx_codeobj__25)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 253, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_7binding_6Engine_11turn_agent, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_Engine_turn_agent, NULL, __pyx_n_s_binding, __pyx_d, ((PyObject *)__pyx_codeobj__25)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 253, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_CyFunction_SetDefaultsKwDict(__pyx_t_2, __pyx_t_4);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_2, __pyx_t_3);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_7binding_Engine, __pyx_n_s_rotate_agent, __pyx_t_2) < 0) __PYX_ERR(0, 253, __pyx_L1_error)
+  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_7binding_Engine, __pyx_n_s_turn_agent, __pyx_t_2) < 0) __PYX_ERR(0, 253, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   PyType_Modified(__pyx_ptype_7binding_Engine);
 
   /* "binding.pyx":263
- *         twsfwphysx_rotate_agent(&self._agents.agents[agent_idx], angle)
+ *         twsfwphysx_turn_agent(&self._agents.agents[agent_idx], angle)
  * 
  *     def _get_agents_size(self):             # <<<<<<<<<<<<<<
  *         return self._agents.size

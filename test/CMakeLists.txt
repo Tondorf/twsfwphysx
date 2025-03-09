@@ -50,7 +50,7 @@ function(add_unit_test test_name source_file)
     add_test(NAME ${test_name} COMMAND ${test_name})
 endfunction()
 
-add_unit_test(agent_rotate_tests agent_rotate_tests.c)
+add_unit_test(agent_turn_tests agent_turn_tests.c)
 add_unit_test(launch_missile_tests launch_missile_tests.c)
 add_unit_test(propagation_tests propagation_tests.c)
 add_unit_test(no_agents_tests no_agents_tests.c)
