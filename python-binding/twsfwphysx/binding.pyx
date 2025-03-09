@@ -27,6 +27,7 @@ cdef extern from "twsfwphysx/twsfwphysx.h":
         twsfwphysx_vec r
         twsfwphysx_vec u
         float v
+        int32_t payload
 
     cdef struct twsfwphysx_missiles:
         twsfwphysx_missile *missiles
@@ -118,6 +119,7 @@ class Missile:
     r: Vec
     u: Vec
     v: float
+    payload: int
 
 
 class Agents:
@@ -316,7 +318,7 @@ cdef class Engine:
             missile.v = v
 
         if payload is None:
-            payload = agent_idx
+            missile.payload = agent_idx
 
         twsfwphysx_add_missile(&self._missiles, missile)
 
@@ -377,7 +379,7 @@ cdef class Engine:
         r = Vec(m.r.x, m.r.y, m.r.z)
         u = Vec(m.u.x, m.u.y, m.u.z)
 
-        return Missile(r, u, m.v)
+        return Missile(r, u, m.v, m.payload)
 
     def _set_missile(self, index: int, missile: Missile):
         cdef twsfwphysx_missile* m = &self._missiles.missiles[index]

@@ -32,8 +32,12 @@ def test_engine():
     engine.launch_missile(agent_idx=1, v=world.missile_acceleration)
 
     assert len(engine.missiles) == 2
+
     assert engine.missiles[0].v == pytest.approx(engine.agents[0].v)
     assert engine.missiles[1].v == pytest.approx(world.missile_acceleration)
+
+    assert engine.missiles[0].payload == 0
+    assert engine.missiles[1].payload == 1
 
     for agent, missile in zip(engine.agents, engine.missiles, strict=True):
         assert missile.u == pytest.approx(engine.agents[0].u)
@@ -43,6 +47,7 @@ def test_engine():
 
     engine.simulate(t=2, n_steps=2_000)
     assert len(engine.missiles) == 1
+    assert engine.missiles[0].payload == 1
     assert engine.agents[0].hp == pytest.approx(5)
     assert engine.agents[1].hp == pytest.approx(2)
 
