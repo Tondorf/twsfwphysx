@@ -1,4 +1,4 @@
-import typing
+import collections
 
 from dataclasses import dataclass
 from math import pi
@@ -79,7 +79,12 @@ def get_twsfwphysx_version() -> str:
 
 @dataclass(frozen=True)
 class World:
-    """World."""
+    """World invariants.
+
+    The world invariants. See
+    `the documentation of the C-API <https://tondorf.github.io/twsfwphysx/>_
+    for more details.
+    """
 
     restitution: float
     agent_radius: float
@@ -88,7 +93,7 @@ class World:
 
 @dataclass(frozen=True)
 class Vec:
-    """Vec."""
+    """Representation of a 3D vector"""
 
     x: float
     y: float
@@ -97,7 +102,7 @@ class Vec:
 
 @dataclass(frozen=True)
 class Agent:
-    """Agent."""
+    """Agent attributes."""
 
     r: Vec
     u: Vec
@@ -108,7 +113,7 @@ class Agent:
 
 @dataclass(frozen=True)
 class Missile:
-    """Missile."""
+    """Missile attributes."""
 
     r: Vec
     u: Vec
@@ -116,7 +121,15 @@ class Missile:
 
 
 class Agents:
-    """Agents."""
+    """View of agents.
+
+    Use this view to iterate over a batch of :class:`Agent <twsfwphysx.Agent>.
+    In order to change their attributes, replace agents at specific indices
+    with a new instance of :class:`Agent <twsfwphysx.Agent>`.
+
+    Do not try to create new instances of :class:`Agents <twsfwphysx.Agents>`
+    manually but rather use :class:`Engine.agents <twsfwphysx.Engine.agents>`.
+    """
 
     def __init__(self, engine):
         self._engine = engine
@@ -144,7 +157,18 @@ class Agents:
 
 
 class Missiles:
-    """Missiles."""
+    """View of missiles.
+
+    Use this view to iterate over a batch of
+    :class:`Missile <twsfwphysx.Missile>. In order to change their
+    attributes, replace agents at specific indices with a new instance of
+    :class:`Missile <twsfwphysx.Missile>`.
+
+    Do not try to create new instances of
+    :class:`Missiles <twsfwphysx.Missiles>` manually but rather use
+    :class:`Engine.missiles <twsfwphysx.Engine.missiles>`.
+    """
+
     def __init__(self, engine):
         self._engine = engine
 
@@ -171,14 +195,34 @@ class Missiles:
 
 
 cdef class Engine:
-    """Engine."""
+    """Wrapper around the twsfwphysx Engine.
+
+    This class is a wrapper around the twsfwphysx Engine. It holds a list of
+    agents, missiles, and world invariants and passes those to the twsfwphysx
+    simlatiom function once
+    :class:`Engine.simulate <twsfwphysx.Engine.simulate>` is called.
+
+    The number of agents cannot be changed after a new Engine was created. In
+    order to change the number of missiles, use the function
+    :class:`Engine.launch_missile <twsfwphysx.Engine.launch_missile>`.
+    
+    Use :class:`Engine.turn_agent <twsfwphysx.Engine.turn_agent>` to turn an
+    agent and the variables :class:`Engine.agents <twsfwphysx.Engine.agents>`
+    and :class:`Engine.missiles <twsfwphysx.Engine.missiles>` to get a view of
+    the attributes of all agents and missiles, respectively.
+
+    :param world: The world invariants.
+    :type world: World
+    :param agents: Agents with their initial attributes. Note that the number of agents cannot be changed once an Engine is created.
+    :type agents: collections.abc.Iterable[Agent]
+    """
 
     cdef twsfwphysx_world _world
     cdef twsfwphysx_agents _agents
     cdef twsfwphysx_missiles _missiles
     cdef void *_simulation_buffer
 
-    def __init__(self, world: World, agents: typing.Iterable[Agent]):
+    def __init__(self, world: World, agents: collections.abs.Iterable[Agent]):
         self._world = twsfwphysx_world(
             world.restitution,
             world.agent_radius,
@@ -220,7 +264,20 @@ cdef class Engine:
             )
 
     def simulate(self, *, t: float, n_steps: int):
-        """simulate."""
+        """Simulates the propagation and interactions of agents and missiles.
+
+        Simulates the propagation and interactions of agents and missiles for
+        `t` seconds (simulation time; hopefully much faster in real-time)
+        using `n_steps` internal steps. The later increase the overall
+        computation time but also increases the accuracy of the collision
+        detection among agents but also between agents and missiles.
+        As a rule of thumb, the propagation distance of agents and missiles
+        during one simulation steps should be smaller than
+        :class:`World.agent_radius <twsfwphysx.World.agent_radius>`.
+
+        :param t: Simulation time in seconds. (Not real time!)
+        :param n_steps: Number of internal simulation steps.
+        """
 
         twsfwphysx_simulate(
             &self._agents,
@@ -337,7 +394,9 @@ cdef class Engine:
 
     @property
     def agents(self) -> Agents:
-        """All agents.
+        """View of all agents.
+
+        Use this view to iterate over agents or to change their attributes.
 
         :return: Agents.
         :rtype: Agents
@@ -347,7 +406,9 @@ cdef class Engine:
 
     @property
     def missiles(self) -> Missiles:
-        """All missiles.
+        """View of all missiles.
+
+        Use this view to iterate over missiles or to change their attributes.
 
         :return: Missiles.
         :rtype: Missiles

@@ -33,9 +33,9 @@ setup(
     install_requires=[],
     extras_require={
         "dev": [
-            "pre-commit",
-            "pytest",
             "GitPython",
+            "pytest",
+            "ruff",
             "sphinx",
             "sphinx-rtd-theme",
             "sphinx-autodoc-typehints",

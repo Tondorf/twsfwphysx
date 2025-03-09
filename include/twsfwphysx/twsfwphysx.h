@@ -389,6 +389,9 @@ void twsfwphysx_delete_simulation_buffer(
  * For each step, collisions between agents with positive HPs are handled and
  * missiles are detonated, if needed. Increasing `n_steps` will improve the
  * collision/detonation detection but also increase the overall execution time.
+ * As a rule of thumb, the propagation distance of agents and missiles during
+ * one simulation steps should be smaller than
+ * \ref twsfwphysx_world.agent_radius.
  *
  * During simulation, a temporary buffer is needed to store intermediary
  * results. If a \ref twsfwphysx_simulation_buffer is provided via `buffer`,

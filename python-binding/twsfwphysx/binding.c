@@ -1507,11 +1507,11 @@ static const char *__pyx_f[] = {
 /*--- Type declarations ---*/
 struct __pyx_obj_7binding_Engine;
 
-/* "binding.pyx":173
+/* "binding.pyx":196
  * 
  * 
  * cdef class Engine:             # <<<<<<<<<<<<<<
- *     """Engine."""
+ *     """Wrapper around the twsfwphysx Engine.
  * 
  */
 struct __pyx_obj_7binding_Engine {
@@ -2291,8 +2291,7 @@ static const char __pyx_k_self[] = "self";
 static const char __pyx_k_spec[] = "__spec__";
 static const char __pyx_k_test[] = "__test__";
 static const char __pyx_k_Agent[] = "Agent";
-static const char __pyx_k_Vec_2[] = "Vec.";
-static const char __pyx_k_World[] = "World.";
+static const char __pyx_k_World[] = "World";
 static const char __pyx_k_agent[] = "agent";
 static const char __pyx_k_angle[] = "angle";
 static const char __pyx_k_float[] = "float";
@@ -2309,10 +2308,7 @@ static const char __pyx_k_import[] = "__import__";
 static const char __pyx_k_module[] = "__module__";
 static const char __pyx_k_reduce[] = "__reduce__";
 static const char __pyx_k_return[] = "return";
-static const char __pyx_k_typing[] = "typing";
-static const char __pyx_k_Agent_2[] = "Agent.";
 static const char __pyx_k_Missile[] = "Missile";
-static const char __pyx_k_World_2[] = "World";
 static const char __pyx_k_binding[] = "binding";
 static const char __pyx_k_degrees[] = "degrees";
 static const char __pyx_k_disable[] = "disable";
@@ -2323,7 +2319,6 @@ static const char __pyx_k_payload[] = "payload";
 static const char __pyx_k_prepare[] = "__prepare__";
 static const char __pyx_k_setitem[] = "__setitem__";
 static const char __pyx_k_version[] = "version";
-static const char __pyx_k_Agents_2[] = "Agents.";
 static const char __pyx_k_Missiles[] = "Missiles";
 static const char __pyx_k_engine_2[] = "_engine";
 static const char __pyx_k_getstate[] = "__getstate__";
@@ -2331,7 +2326,6 @@ static const char __pyx_k_qualname[] = "__qualname__";
 static const char __pyx_k_set_name[] = "__set_name__";
 static const char __pyx_k_setstate[] = "__setstate__";
 static const char __pyx_k_simulate[] = "simulate";
-static const char __pyx_k_Missile_2[] = "Missile.";
 static const char __pyx_k_TypeError[] = "TypeError";
 static const char __pyx_k_agent_idx[] = "agent_idx";
 static const char __pyx_k_dataclass[] = "dataclass";
@@ -2343,9 +2337,9 @@ static const char __pyx_k_pyx_state[] = "__pyx_state";
 static const char __pyx_k_reduce_ex[] = "__reduce_ex__";
 static const char __pyx_k_set_agent[] = "_set_agent";
 static const char __pyx_k_IndexError[] = "IndexError";
-static const char __pyx_k_Missiles_2[] = "Missiles.";
 static const char __pyx_k_turn_agent[] = "turn_agent";
 static const char __pyx_k_annotations[] = "__annotations__";
+static const char __pyx_k_collections[] = "collections";
 static const char __pyx_k_dataclasses[] = "dataclasses";
 static const char __pyx_k_get_missile[] = "_get_missile";
 static const char __pyx_k_restitution[] = "restitution";
@@ -2368,12 +2362,14 @@ static const char __pyx_k_Missiles___init[] = "Missiles.__init__";
 static const char __pyx_k_check_agent_idx[] = "_check_agent_idx";
 static const char __pyx_k_get_agents_size[] = "_get_agents_size";
 static const char __pyx_k_setstate_cython[] = "__setstate_cython__";
+static const char __pyx_k_Agent_attributes[] = "Agent attributes.";
 static const char __pyx_k_Agents___getitem[] = "Agents.__getitem__";
 static const char __pyx_k_Agents___setitem[] = "Agents.__setitem__";
 static const char __pyx_k_Engine__get_agent[] = "Engine._get_agent";
 static const char __pyx_k_Engine__set_agent[] = "Engine._set_agent";
 static const char __pyx_k_Engine_turn_agent[] = "Engine.turn_agent";
 static const char __pyx_k_get_missiles_size[] = "_get_missiles_size";
+static const char __pyx_k_Missile_attributes[] = "Missile attributes.";
 static const char __pyx_k_Missiles___getitem[] = "Missiles.__getitem__";
 static const char __pyx_k_Missiles___setitem[] = "Missiles.__setitem__";
 static const char __pyx_k_asyncio_coroutines[] = "asyncio.coroutines";
@@ -2391,6 +2387,10 @@ static const char __pyx_k_Engine__get_agents_size[] = "Engine._get_agents_size";
 static const char __pyx_k_Engine___setstate_cython[] = "Engine.__setstate_cython__";
 static const char __pyx_k_total_number_of_missiles[] = "' (total number of missiles: ";
 static const char __pyx_k_Engine__get_missiles_size[] = "Engine._get_missiles_size";
+static const char __pyx_k_Representation_of_a_3D_vector[] = "Representation of a 3D vector";
+static const char __pyx_k_View_of_agents_Use_this_view_to[] = "View of agents.\n\n    Use this view to iterate over :class:`Agent <twsfwphysx.Agent>s. In order\n    to change their attributes, replace agents at specific indices with a new\n    instance of :class:`Agent <twsfwphysx.Agent>`.\n\n    Do not try to create new instances of :class:`Agents <twsfwphysx.Agents>`\n    manually but rather use :class:`Engine.agents <twsfwphysx.Engine.agents>`.\n    ";
+static const char __pyx_k_View_of_missiles_Use_this_view_t[] = "View of missiles.\n\n    Use this view to iterate over :class:`Missile <twsfwphysx.Missile>s. In\n    order to change their attributes, replace agents at specific indices\n    with a new instance of :class:`Missile <twsfwphysx.Missile>`.\n\n    Do not try to create new instances of\n    :class:`Missiles <twsfwphysx.Missiles>` manually but rather use\n    :class:`Engine.missiles <twsfwphysx.Engine.missiles>`.\n    ";
+static const char __pyx_k_World_invariants_The_world_invar[] = "World invariants.\n\n    The world invariants. See\n    `the documentation of the C-API <https://tondorf.github.io/twsfwphysx/>_\n    for more details.\n    ";
 static const char __pyx_k_self__agents_self__missiles_self[] = "self._agents,self._missiles,self._simulation_buffer cannot be converted to a Python object for pickling";
 /* #### Code section: decls ### */
 static PyObject *__pyx_pf_7binding_get_twsfwphysx_version(CYTHON_UNUSED PyObject *__pyx_self); /* proto */
@@ -2454,9 +2454,8 @@ typedef struct {
   PyTypeObject *__pyx_ptype_7binding_Engine;
   PyObject *__pyx_kp_u_;
   PyObject *__pyx_n_s_Agent;
-  PyObject *__pyx_kp_s_Agent_2;
+  PyObject *__pyx_kp_s_Agent_attributes;
   PyObject *__pyx_n_s_Agents;
-  PyObject *__pyx_kp_s_Agents_2;
   PyObject *__pyx_n_s_Agents___getitem;
   PyObject *__pyx_n_s_Agents___init;
   PyObject *__pyx_n_s_Agents___len;
@@ -2477,20 +2476,21 @@ typedef struct {
   PyObject *__pyx_n_s_IndexError;
   PyObject *__pyx_kp_u_Invalid_index;
   PyObject *__pyx_n_s_Missile;
-  PyObject *__pyx_kp_s_Missile_2;
+  PyObject *__pyx_kp_s_Missile_attributes;
   PyObject *__pyx_n_s_Missiles;
-  PyObject *__pyx_kp_s_Missiles_2;
   PyObject *__pyx_n_s_Missiles___getitem;
   PyObject *__pyx_n_s_Missiles___init;
   PyObject *__pyx_n_s_Missiles___len;
   PyObject *__pyx_n_s_Missiles___setitem;
   PyObject *__pyx_kp_s_Optional_float;
   PyObject *__pyx_kp_s_Optional_int;
+  PyObject *__pyx_kp_s_Representation_of_a_3D_vector;
   PyObject *__pyx_n_s_TypeError;
   PyObject *__pyx_n_s_Vec;
-  PyObject *__pyx_kp_s_Vec_2;
-  PyObject *__pyx_kp_s_World;
-  PyObject *__pyx_n_s_World_2;
+  PyObject *__pyx_kp_s_View_of_agents_Use_this_view_to;
+  PyObject *__pyx_kp_s_View_of_missiles_Use_this_view_t;
+  PyObject *__pyx_n_s_World;
+  PyObject *__pyx_kp_s_World_invariants_The_world_invar;
   PyObject *__pyx_n_s__2;
   PyObject *__pyx_kp_u__3;
   PyObject *__pyx_n_s__40;
@@ -2506,6 +2506,7 @@ typedef struct {
   PyObject *__pyx_n_s_bool;
   PyObject *__pyx_n_s_check_agent_idx;
   PyObject *__pyx_n_s_cline_in_traceback;
+  PyObject *__pyx_n_s_collections;
   PyObject *__pyx_n_s_dataclass;
   PyObject *__pyx_n_s_dataclasses;
   PyObject *__pyx_n_s_degrees;
@@ -2578,7 +2579,6 @@ typedef struct {
   PyObject *__pyx_kp_u_total_number_of_missiles;
   PyObject *__pyx_n_s_turn_agent;
   PyObject *__pyx_kp_s_twsfwphysx_binding_pyx;
-  PyObject *__pyx_n_s_typing;
   PyObject *__pyx_n_s_u;
   PyObject *__pyx_n_s_v;
   PyObject *__pyx_n_s_version;
@@ -2671,9 +2671,8 @@ static int __pyx_m_clear(PyObject *m) {
   Py_CLEAR(clear_module_state->__pyx_type_7binding_Engine);
   Py_CLEAR(clear_module_state->__pyx_kp_u_);
   Py_CLEAR(clear_module_state->__pyx_n_s_Agent);
-  Py_CLEAR(clear_module_state->__pyx_kp_s_Agent_2);
+  Py_CLEAR(clear_module_state->__pyx_kp_s_Agent_attributes);
   Py_CLEAR(clear_module_state->__pyx_n_s_Agents);
-  Py_CLEAR(clear_module_state->__pyx_kp_s_Agents_2);
   Py_CLEAR(clear_module_state->__pyx_n_s_Agents___getitem);
   Py_CLEAR(clear_module_state->__pyx_n_s_Agents___init);
   Py_CLEAR(clear_module_state->__pyx_n_s_Agents___len);
@@ -2694,20 +2693,21 @@ static int __pyx_m_clear(PyObject *m) {
   Py_CLEAR(clear_module_state->__pyx_n_s_IndexError);
   Py_CLEAR(clear_module_state->__pyx_kp_u_Invalid_index);
   Py_CLEAR(clear_module_state->__pyx_n_s_Missile);
-  Py_CLEAR(clear_module_state->__pyx_kp_s_Missile_2);
+  Py_CLEAR(clear_module_state->__pyx_kp_s_Missile_attributes);
   Py_CLEAR(clear_module_state->__pyx_n_s_Missiles);
-  Py_CLEAR(clear_module_state->__pyx_kp_s_Missiles_2);
   Py_CLEAR(clear_module_state->__pyx_n_s_Missiles___getitem);
   Py_CLEAR(clear_module_state->__pyx_n_s_Missiles___init);
   Py_CLEAR(clear_module_state->__pyx_n_s_Missiles___len);
   Py_CLEAR(clear_module_state->__pyx_n_s_Missiles___setitem);
   Py_CLEAR(clear_module_state->__pyx_kp_s_Optional_float);
   Py_CLEAR(clear_module_state->__pyx_kp_s_Optional_int);
+  Py_CLEAR(clear_module_state->__pyx_kp_s_Representation_of_a_3D_vector);
   Py_CLEAR(clear_module_state->__pyx_n_s_TypeError);
   Py_CLEAR(clear_module_state->__pyx_n_s_Vec);
-  Py_CLEAR(clear_module_state->__pyx_kp_s_Vec_2);
-  Py_CLEAR(clear_module_state->__pyx_kp_s_World);
-  Py_CLEAR(clear_module_state->__pyx_n_s_World_2);
+  Py_CLEAR(clear_module_state->__pyx_kp_s_View_of_agents_Use_this_view_to);
+  Py_CLEAR(clear_module_state->__pyx_kp_s_View_of_missiles_Use_this_view_t);
+  Py_CLEAR(clear_module_state->__pyx_n_s_World);
+  Py_CLEAR(clear_module_state->__pyx_kp_s_World_invariants_The_world_invar);
   Py_CLEAR(clear_module_state->__pyx_n_s__2);
   Py_CLEAR(clear_module_state->__pyx_kp_u__3);
   Py_CLEAR(clear_module_state->__pyx_n_s__40);
@@ -2723,6 +2723,7 @@ static int __pyx_m_clear(PyObject *m) {
   Py_CLEAR(clear_module_state->__pyx_n_s_bool);
   Py_CLEAR(clear_module_state->__pyx_n_s_check_agent_idx);
   Py_CLEAR(clear_module_state->__pyx_n_s_cline_in_traceback);
+  Py_CLEAR(clear_module_state->__pyx_n_s_collections);
   Py_CLEAR(clear_module_state->__pyx_n_s_dataclass);
   Py_CLEAR(clear_module_state->__pyx_n_s_dataclasses);
   Py_CLEAR(clear_module_state->__pyx_n_s_degrees);
@@ -2795,7 +2796,6 @@ static int __pyx_m_clear(PyObject *m) {
   Py_CLEAR(clear_module_state->__pyx_kp_u_total_number_of_missiles);
   Py_CLEAR(clear_module_state->__pyx_n_s_turn_agent);
   Py_CLEAR(clear_module_state->__pyx_kp_s_twsfwphysx_binding_pyx);
-  Py_CLEAR(clear_module_state->__pyx_n_s_typing);
   Py_CLEAR(clear_module_state->__pyx_n_s_u);
   Py_CLEAR(clear_module_state->__pyx_n_s_v);
   Py_CLEAR(clear_module_state->__pyx_n_s_version);
@@ -2866,9 +2866,8 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
   Py_VISIT(traverse_module_state->__pyx_type_7binding_Engine);
   Py_VISIT(traverse_module_state->__pyx_kp_u_);
   Py_VISIT(traverse_module_state->__pyx_n_s_Agent);
-  Py_VISIT(traverse_module_state->__pyx_kp_s_Agent_2);
+  Py_VISIT(traverse_module_state->__pyx_kp_s_Agent_attributes);
   Py_VISIT(traverse_module_state->__pyx_n_s_Agents);
-  Py_VISIT(traverse_module_state->__pyx_kp_s_Agents_2);
   Py_VISIT(traverse_module_state->__pyx_n_s_Agents___getitem);
   Py_VISIT(traverse_module_state->__pyx_n_s_Agents___init);
   Py_VISIT(traverse_module_state->__pyx_n_s_Agents___len);
@@ -2889,20 +2888,21 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
   Py_VISIT(traverse_module_state->__pyx_n_s_IndexError);
   Py_VISIT(traverse_module_state->__pyx_kp_u_Invalid_index);
   Py_VISIT(traverse_module_state->__pyx_n_s_Missile);
-  Py_VISIT(traverse_module_state->__pyx_kp_s_Missile_2);
+  Py_VISIT(traverse_module_state->__pyx_kp_s_Missile_attributes);
   Py_VISIT(traverse_module_state->__pyx_n_s_Missiles);
-  Py_VISIT(traverse_module_state->__pyx_kp_s_Missiles_2);
   Py_VISIT(traverse_module_state->__pyx_n_s_Missiles___getitem);
   Py_VISIT(traverse_module_state->__pyx_n_s_Missiles___init);
   Py_VISIT(traverse_module_state->__pyx_n_s_Missiles___len);
   Py_VISIT(traverse_module_state->__pyx_n_s_Missiles___setitem);
   Py_VISIT(traverse_module_state->__pyx_kp_s_Optional_float);
   Py_VISIT(traverse_module_state->__pyx_kp_s_Optional_int);
+  Py_VISIT(traverse_module_state->__pyx_kp_s_Representation_of_a_3D_vector);
   Py_VISIT(traverse_module_state->__pyx_n_s_TypeError);
   Py_VISIT(traverse_module_state->__pyx_n_s_Vec);
-  Py_VISIT(traverse_module_state->__pyx_kp_s_Vec_2);
-  Py_VISIT(traverse_module_state->__pyx_kp_s_World);
-  Py_VISIT(traverse_module_state->__pyx_n_s_World_2);
+  Py_VISIT(traverse_module_state->__pyx_kp_s_View_of_agents_Use_this_view_to);
+  Py_VISIT(traverse_module_state->__pyx_kp_s_View_of_missiles_Use_this_view_t);
+  Py_VISIT(traverse_module_state->__pyx_n_s_World);
+  Py_VISIT(traverse_module_state->__pyx_kp_s_World_invariants_The_world_invar);
   Py_VISIT(traverse_module_state->__pyx_n_s__2);
   Py_VISIT(traverse_module_state->__pyx_kp_u__3);
   Py_VISIT(traverse_module_state->__pyx_n_s__40);
@@ -2918,6 +2918,7 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
   Py_VISIT(traverse_module_state->__pyx_n_s_bool);
   Py_VISIT(traverse_module_state->__pyx_n_s_check_agent_idx);
   Py_VISIT(traverse_module_state->__pyx_n_s_cline_in_traceback);
+  Py_VISIT(traverse_module_state->__pyx_n_s_collections);
   Py_VISIT(traverse_module_state->__pyx_n_s_dataclass);
   Py_VISIT(traverse_module_state->__pyx_n_s_dataclasses);
   Py_VISIT(traverse_module_state->__pyx_n_s_degrees);
@@ -2990,7 +2991,6 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
   Py_VISIT(traverse_module_state->__pyx_kp_u_total_number_of_missiles);
   Py_VISIT(traverse_module_state->__pyx_n_s_turn_agent);
   Py_VISIT(traverse_module_state->__pyx_kp_s_twsfwphysx_binding_pyx);
-  Py_VISIT(traverse_module_state->__pyx_n_s_typing);
   Py_VISIT(traverse_module_state->__pyx_n_s_u);
   Py_VISIT(traverse_module_state->__pyx_n_s_v);
   Py_VISIT(traverse_module_state->__pyx_n_s_version);
@@ -3073,9 +3073,8 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
 #define __pyx_ptype_7binding_Engine __pyx_mstate_global->__pyx_ptype_7binding_Engine
 #define __pyx_kp_u_ __pyx_mstate_global->__pyx_kp_u_
 #define __pyx_n_s_Agent __pyx_mstate_global->__pyx_n_s_Agent
-#define __pyx_kp_s_Agent_2 __pyx_mstate_global->__pyx_kp_s_Agent_2
+#define __pyx_kp_s_Agent_attributes __pyx_mstate_global->__pyx_kp_s_Agent_attributes
 #define __pyx_n_s_Agents __pyx_mstate_global->__pyx_n_s_Agents
-#define __pyx_kp_s_Agents_2 __pyx_mstate_global->__pyx_kp_s_Agents_2
 #define __pyx_n_s_Agents___getitem __pyx_mstate_global->__pyx_n_s_Agents___getitem
 #define __pyx_n_s_Agents___init __pyx_mstate_global->__pyx_n_s_Agents___init
 #define __pyx_n_s_Agents___len __pyx_mstate_global->__pyx_n_s_Agents___len
@@ -3096,20 +3095,21 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
 #define __pyx_n_s_IndexError __pyx_mstate_global->__pyx_n_s_IndexError
 #define __pyx_kp_u_Invalid_index __pyx_mstate_global->__pyx_kp_u_Invalid_index
 #define __pyx_n_s_Missile __pyx_mstate_global->__pyx_n_s_Missile
-#define __pyx_kp_s_Missile_2 __pyx_mstate_global->__pyx_kp_s_Missile_2
+#define __pyx_kp_s_Missile_attributes __pyx_mstate_global->__pyx_kp_s_Missile_attributes
 #define __pyx_n_s_Missiles __pyx_mstate_global->__pyx_n_s_Missiles
-#define __pyx_kp_s_Missiles_2 __pyx_mstate_global->__pyx_kp_s_Missiles_2
 #define __pyx_n_s_Missiles___getitem __pyx_mstate_global->__pyx_n_s_Missiles___getitem
 #define __pyx_n_s_Missiles___init __pyx_mstate_global->__pyx_n_s_Missiles___init
 #define __pyx_n_s_Missiles___len __pyx_mstate_global->__pyx_n_s_Missiles___len
 #define __pyx_n_s_Missiles___setitem __pyx_mstate_global->__pyx_n_s_Missiles___setitem
 #define __pyx_kp_s_Optional_float __pyx_mstate_global->__pyx_kp_s_Optional_float
 #define __pyx_kp_s_Optional_int __pyx_mstate_global->__pyx_kp_s_Optional_int
+#define __pyx_kp_s_Representation_of_a_3D_vector __pyx_mstate_global->__pyx_kp_s_Representation_of_a_3D_vector
 #define __pyx_n_s_TypeError __pyx_mstate_global->__pyx_n_s_TypeError
 #define __pyx_n_s_Vec __pyx_mstate_global->__pyx_n_s_Vec
-#define __pyx_kp_s_Vec_2 __pyx_mstate_global->__pyx_kp_s_Vec_2
-#define __pyx_kp_s_World __pyx_mstate_global->__pyx_kp_s_World
-#define __pyx_n_s_World_2 __pyx_mstate_global->__pyx_n_s_World_2
+#define __pyx_kp_s_View_of_agents_Use_this_view_to __pyx_mstate_global->__pyx_kp_s_View_of_agents_Use_this_view_to
+#define __pyx_kp_s_View_of_missiles_Use_this_view_t __pyx_mstate_global->__pyx_kp_s_View_of_missiles_Use_this_view_t
+#define __pyx_n_s_World __pyx_mstate_global->__pyx_n_s_World
+#define __pyx_kp_s_World_invariants_The_world_invar __pyx_mstate_global->__pyx_kp_s_World_invariants_The_world_invar
 #define __pyx_n_s__2 __pyx_mstate_global->__pyx_n_s__2
 #define __pyx_kp_u__3 __pyx_mstate_global->__pyx_kp_u__3
 #define __pyx_n_s__40 __pyx_mstate_global->__pyx_n_s__40
@@ -3125,6 +3125,7 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
 #define __pyx_n_s_bool __pyx_mstate_global->__pyx_n_s_bool
 #define __pyx_n_s_check_agent_idx __pyx_mstate_global->__pyx_n_s_check_agent_idx
 #define __pyx_n_s_cline_in_traceback __pyx_mstate_global->__pyx_n_s_cline_in_traceback
+#define __pyx_n_s_collections __pyx_mstate_global->__pyx_n_s_collections
 #define __pyx_n_s_dataclass __pyx_mstate_global->__pyx_n_s_dataclass
 #define __pyx_n_s_dataclasses __pyx_mstate_global->__pyx_n_s_dataclasses
 #define __pyx_n_s_degrees __pyx_mstate_global->__pyx_n_s_degrees
@@ -3197,7 +3198,6 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
 #define __pyx_kp_u_total_number_of_missiles __pyx_mstate_global->__pyx_kp_u_total_number_of_missiles
 #define __pyx_n_s_turn_agent __pyx_mstate_global->__pyx_n_s_turn_agent
 #define __pyx_kp_s_twsfwphysx_binding_pyx __pyx_mstate_global->__pyx_kp_s_twsfwphysx_binding_pyx
-#define __pyx_n_s_typing __pyx_mstate_global->__pyx_n_s_typing
 #define __pyx_n_s_u __pyx_mstate_global->__pyx_n_s_u
 #define __pyx_n_s_v __pyx_mstate_global->__pyx_n_s_v
 #define __pyx_n_s_version __pyx_mstate_global->__pyx_n_s_version
@@ -3325,8 +3325,8 @@ static PyObject *__pyx_pf_7binding_get_twsfwphysx_version(CYTHON_UNUSED PyObject
   return __pyx_r;
 }
 
-/* "binding.pyx":121
- *     """Agents."""
+/* "binding.pyx":134
+ *     """
  * 
  *     def __init__(self, engine):             # <<<<<<<<<<<<<<
  *         self._engine = engine
@@ -3389,7 +3389,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 121, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 134, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
         CYTHON_FALLTHROUGH;
         case  1:
@@ -3397,14 +3397,14 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[1]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 121, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 134, __pyx_L3_error)
         else {
-          __Pyx_RaiseArgtupleInvalid("__init__", 1, 2, 2, 1); __PYX_ERR(0, 121, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("__init__", 1, 2, 2, 1); __PYX_ERR(0, 134, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "__init__") < 0)) __PYX_ERR(0, 121, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "__init__") < 0)) __PYX_ERR(0, 134, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs != 2)) {
       goto __pyx_L5_argtuple_error;
@@ -3417,7 +3417,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("__init__", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 121, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("__init__", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 134, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -3452,17 +3452,17 @@ static PyObject *__pyx_pf_7binding_6Agents___init__(CYTHON_UNUSED PyObject *__py
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__init__", 1);
 
-  /* "binding.pyx":122
+  /* "binding.pyx":135
  * 
  *     def __init__(self, engine):
  *         self._engine = engine             # <<<<<<<<<<<<<<
  * 
  *     def __len__(self):
  */
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_engine_2, __pyx_v_engine) < 0) __PYX_ERR(0, 122, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_engine_2, __pyx_v_engine) < 0) __PYX_ERR(0, 135, __pyx_L1_error)
 
-  /* "binding.pyx":121
- *     """Agents."""
+  /* "binding.pyx":134
+ *     """
  * 
  *     def __init__(self, engine):             # <<<<<<<<<<<<<<
  *         self._engine = engine
@@ -3481,7 +3481,7 @@ static PyObject *__pyx_pf_7binding_6Agents___init__(CYTHON_UNUSED PyObject *__py
   return __pyx_r;
 }
 
-/* "binding.pyx":124
+/* "binding.pyx":137
  *         self._engine = engine
  * 
  *     def __len__(self):             # <<<<<<<<<<<<<<
@@ -3542,12 +3542,12 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 124, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 137, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "__len__") < 0)) __PYX_ERR(0, 124, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "__len__") < 0)) __PYX_ERR(0, 137, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs != 1)) {
       goto __pyx_L5_argtuple_error;
@@ -3558,7 +3558,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("__len__", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 124, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("__len__", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 137, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -3597,7 +3597,7 @@ static PyObject *__pyx_pf_7binding_6Agents_2__len__(CYTHON_UNUSED PyObject *__py
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__len__", 1);
 
-  /* "binding.pyx":125
+  /* "binding.pyx":138
  * 
  *     def __len__(self):
  *         return self._engine._get_agents_size()             # <<<<<<<<<<<<<<
@@ -3605,9 +3605,9 @@ static PyObject *__pyx_pf_7binding_6Agents_2__len__(CYTHON_UNUSED PyObject *__py
  *     def __getitem__(self, index: int):
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_engine_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 125, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_engine_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 138, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_get_agents_size); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 125, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_get_agents_size); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 138, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_2 = NULL;
@@ -3628,7 +3628,7 @@ static PyObject *__pyx_pf_7binding_6Agents_2__len__(CYTHON_UNUSED PyObject *__py
     PyObject *__pyx_callargs[2] = {__pyx_t_2, NULL};
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_4, 0+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 125, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 138, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   }
@@ -3636,7 +3636,7 @@ static PyObject *__pyx_pf_7binding_6Agents_2__len__(CYTHON_UNUSED PyObject *__py
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "binding.pyx":124
+  /* "binding.pyx":137
  *         self._engine = engine
  * 
  *     def __len__(self):             # <<<<<<<<<<<<<<
@@ -3657,7 +3657,7 @@ static PyObject *__pyx_pf_7binding_6Agents_2__len__(CYTHON_UNUSED PyObject *__py
   return __pyx_r;
 }
 
-/* "binding.pyx":127
+/* "binding.pyx":140
  *         return self._engine._get_agents_size()
  * 
  *     def __getitem__(self, index: int):             # <<<<<<<<<<<<<<
@@ -3721,7 +3721,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 127, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 140, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
         CYTHON_FALLTHROUGH;
         case  1:
@@ -3729,14 +3729,14 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[1]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 127, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 140, __pyx_L3_error)
         else {
-          __Pyx_RaiseArgtupleInvalid("__getitem__", 1, 2, 2, 1); __PYX_ERR(0, 127, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("__getitem__", 1, 2, 2, 1); __PYX_ERR(0, 140, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "__getitem__") < 0)) __PYX_ERR(0, 127, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "__getitem__") < 0)) __PYX_ERR(0, 140, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs != 2)) {
       goto __pyx_L5_argtuple_error;
@@ -3749,7 +3749,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("__getitem__", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 127, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("__getitem__", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 140, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -3763,7 +3763,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_index), (&PyInt_Type), 0, "index", 1))) __PYX_ERR(0, 127, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_index), (&PyInt_Type), 0, "index", 1))) __PYX_ERR(0, 140, __pyx_L1_error)
   __pyx_r = __pyx_pf_7binding_6Agents_4__getitem__(__pyx_self, __pyx_v_self, __pyx_v_index);
 
   /* function exit code */
@@ -3798,16 +3798,16 @@ static PyObject *__pyx_pf_7binding_6Agents_4__getitem__(CYTHON_UNUSED PyObject *
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__getitem__", 1);
 
-  /* "binding.pyx":128
+  /* "binding.pyx":141
  * 
  *     def __getitem__(self, index: int):
  *         n = self._engine._get_agents_size()             # <<<<<<<<<<<<<<
  *         if index < 0 or index >= n:
  *             raise IndexError(
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_engine_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 128, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_engine_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 141, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_get_agents_size); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 128, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_get_agents_size); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 141, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_2 = NULL;
@@ -3828,43 +3828,43 @@ static PyObject *__pyx_pf_7binding_6Agents_4__getitem__(CYTHON_UNUSED PyObject *
     PyObject *__pyx_callargs[2] = {__pyx_t_2, NULL};
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_4, 0+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 128, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 141, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   }
   __pyx_v_n = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "binding.pyx":129
+  /* "binding.pyx":142
  *     def __getitem__(self, index: int):
  *         n = self._engine._get_agents_size()
  *         if index < 0 or index >= n:             # <<<<<<<<<<<<<<
  *             raise IndexError(
  *                 f"Invalid index '{index}' (total number of agents: {n})"
  */
-  __pyx_t_1 = PyObject_RichCompare(__pyx_v_index, __pyx_int_0, Py_LT); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 129, __pyx_L1_error)
-  __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely((__pyx_t_6 < 0))) __PYX_ERR(0, 129, __pyx_L1_error)
+  __pyx_t_1 = PyObject_RichCompare(__pyx_v_index, __pyx_int_0, Py_LT); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 142, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely((__pyx_t_6 < 0))) __PYX_ERR(0, 142, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   if (!__pyx_t_6) {
   } else {
     __pyx_t_5 = __pyx_t_6;
     goto __pyx_L4_bool_binop_done;
   }
-  __pyx_t_1 = PyObject_RichCompare(__pyx_v_index, __pyx_v_n, Py_GE); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 129, __pyx_L1_error)
-  __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely((__pyx_t_6 < 0))) __PYX_ERR(0, 129, __pyx_L1_error)
+  __pyx_t_1 = PyObject_RichCompare(__pyx_v_index, __pyx_v_n, Py_GE); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 142, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely((__pyx_t_6 < 0))) __PYX_ERR(0, 142, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_t_5 = __pyx_t_6;
   __pyx_L4_bool_binop_done:;
   if (unlikely(__pyx_t_5)) {
 
-    /* "binding.pyx":131
+    /* "binding.pyx":144
  *         if index < 0 or index >= n:
  *             raise IndexError(
  *                 f"Invalid index '{index}' (total number of agents: {n})"             # <<<<<<<<<<<<<<
  *             )
  * 
  */
-    __pyx_t_1 = PyTuple_New(5); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 131, __pyx_L1_error)
+    __pyx_t_1 = PyTuple_New(5); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 144, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __pyx_t_7 = 0;
     __pyx_t_8 = 127;
@@ -3872,7 +3872,7 @@ static PyObject *__pyx_pf_7binding_6Agents_4__getitem__(CYTHON_UNUSED PyObject *
     __pyx_t_7 += 15;
     __Pyx_GIVEREF(__pyx_kp_u_Invalid_index);
     PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_kp_u_Invalid_index);
-    __pyx_t_3 = __Pyx_PyObject_FormatSimple(__pyx_v_index, __pyx_empty_unicode); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 131, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_FormatSimple(__pyx_v_index, __pyx_empty_unicode); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 144, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __pyx_t_8 = (__Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_3) > __pyx_t_8) ? __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_3) : __pyx_t_8;
     __pyx_t_7 += __Pyx_PyUnicode_GET_LENGTH(__pyx_t_3);
@@ -3883,7 +3883,7 @@ static PyObject *__pyx_pf_7binding_6Agents_4__getitem__(CYTHON_UNUSED PyObject *
     __pyx_t_7 += 27;
     __Pyx_GIVEREF(__pyx_kp_u_total_number_of_agents);
     PyTuple_SET_ITEM(__pyx_t_1, 2, __pyx_kp_u_total_number_of_agents);
-    __pyx_t_3 = __Pyx_PyObject_FormatSimple(__pyx_v_n, __pyx_empty_unicode); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 131, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_FormatSimple(__pyx_v_n, __pyx_empty_unicode); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 144, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __pyx_t_8 = (__Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_3) > __pyx_t_8) ? __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_3) : __pyx_t_8;
     __pyx_t_7 += __Pyx_PyUnicode_GET_LENGTH(__pyx_t_3);
@@ -3894,25 +3894,25 @@ static PyObject *__pyx_pf_7binding_6Agents_4__getitem__(CYTHON_UNUSED PyObject *
     __pyx_t_7 += 1;
     __Pyx_GIVEREF(__pyx_kp_u_);
     PyTuple_SET_ITEM(__pyx_t_1, 4, __pyx_kp_u_);
-    __pyx_t_3 = __Pyx_PyUnicode_Join(__pyx_t_1, 5, __pyx_t_7, __pyx_t_8); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 131, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyUnicode_Join(__pyx_t_1, 5, __pyx_t_7, __pyx_t_8); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 144, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-    /* "binding.pyx":130
+    /* "binding.pyx":143
  *         n = self._engine._get_agents_size()
  *         if index < 0 or index >= n:
  *             raise IndexError(             # <<<<<<<<<<<<<<
  *                 f"Invalid index '{index}' (total number of agents: {n})"
  *             )
  */
-    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_builtin_IndexError, __pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 130, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_builtin_IndexError, __pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 143, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_Raise(__pyx_t_1, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __PYX_ERR(0, 130, __pyx_L1_error)
+    __PYX_ERR(0, 143, __pyx_L1_error)
 
-    /* "binding.pyx":129
+    /* "binding.pyx":142
  *     def __getitem__(self, index: int):
  *         n = self._engine._get_agents_size()
  *         if index < 0 or index >= n:             # <<<<<<<<<<<<<<
@@ -3921,7 +3921,7 @@ static PyObject *__pyx_pf_7binding_6Agents_4__getitem__(CYTHON_UNUSED PyObject *
  */
   }
 
-  /* "binding.pyx":134
+  /* "binding.pyx":147
  *             )
  * 
  *         return self._engine._get_agent(index)             # <<<<<<<<<<<<<<
@@ -3929,9 +3929,9 @@ static PyObject *__pyx_pf_7binding_6Agents_4__getitem__(CYTHON_UNUSED PyObject *
  *     def __setitem__(self, index: int, agent: Agent):
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_engine_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 134, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_engine_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 147, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_get_agent); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 134, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_get_agent); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 147, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_t_3 = NULL;
@@ -3952,7 +3952,7 @@ static PyObject *__pyx_pf_7binding_6Agents_4__getitem__(CYTHON_UNUSED PyObject *
     PyObject *__pyx_callargs[2] = {__pyx_t_3, __pyx_v_index};
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 134, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 147, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   }
@@ -3960,7 +3960,7 @@ static PyObject *__pyx_pf_7binding_6Agents_4__getitem__(CYTHON_UNUSED PyObject *
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "binding.pyx":127
+  /* "binding.pyx":140
  *         return self._engine._get_agents_size()
  * 
  *     def __getitem__(self, index: int):             # <<<<<<<<<<<<<<
@@ -3982,7 +3982,7 @@ static PyObject *__pyx_pf_7binding_6Agents_4__getitem__(CYTHON_UNUSED PyObject *
   return __pyx_r;
 }
 
-/* "binding.pyx":136
+/* "binding.pyx":149
  *         return self._engine._get_agent(index)
  * 
  *     def __setitem__(self, index: int, agent: Agent):             # <<<<<<<<<<<<<<
@@ -4049,7 +4049,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 136, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 149, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
         CYTHON_FALLTHROUGH;
         case  1:
@@ -4057,9 +4057,9 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[1]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 136, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 149, __pyx_L3_error)
         else {
-          __Pyx_RaiseArgtupleInvalid("__setitem__", 1, 3, 3, 1); __PYX_ERR(0, 136, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("__setitem__", 1, 3, 3, 1); __PYX_ERR(0, 149, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  2:
@@ -4067,14 +4067,14 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[2]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 136, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 149, __pyx_L3_error)
         else {
-          __Pyx_RaiseArgtupleInvalid("__setitem__", 1, 3, 3, 2); __PYX_ERR(0, 136, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("__setitem__", 1, 3, 3, 2); __PYX_ERR(0, 149, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "__setitem__") < 0)) __PYX_ERR(0, 136, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "__setitem__") < 0)) __PYX_ERR(0, 149, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs != 3)) {
       goto __pyx_L5_argtuple_error;
@@ -4089,7 +4089,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("__setitem__", 1, 3, 3, __pyx_nargs); __PYX_ERR(0, 136, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("__setitem__", 1, 3, 3, __pyx_nargs); __PYX_ERR(0, 149, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -4103,7 +4103,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_index), (&PyInt_Type), 0, "index", 1))) __PYX_ERR(0, 136, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_index), (&PyInt_Type), 0, "index", 1))) __PYX_ERR(0, 149, __pyx_L1_error)
   __pyx_r = __pyx_pf_7binding_6Agents_6__setitem__(__pyx_self, __pyx_v_self, __pyx_v_index, __pyx_v_agent);
 
   /* function exit code */
@@ -4138,16 +4138,16 @@ static PyObject *__pyx_pf_7binding_6Agents_6__setitem__(CYTHON_UNUSED PyObject *
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__setitem__", 1);
 
-  /* "binding.pyx":137
+  /* "binding.pyx":150
  * 
  *     def __setitem__(self, index: int, agent: Agent):
  *         n = self._engine._get_agents_size()             # <<<<<<<<<<<<<<
  *         if index < 0 or index >= n:
  *             raise IndexError(
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_engine_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 137, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_engine_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 150, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_get_agents_size); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 137, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_get_agents_size); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 150, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_2 = NULL;
@@ -4168,43 +4168,43 @@ static PyObject *__pyx_pf_7binding_6Agents_6__setitem__(CYTHON_UNUSED PyObject *
     PyObject *__pyx_callargs[2] = {__pyx_t_2, NULL};
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_4, 0+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 137, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 150, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   }
   __pyx_v_n = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "binding.pyx":138
+  /* "binding.pyx":151
  *     def __setitem__(self, index: int, agent: Agent):
  *         n = self._engine._get_agents_size()
  *         if index < 0 or index >= n:             # <<<<<<<<<<<<<<
  *             raise IndexError(
  *                 f"Invalid index '{index}' (total number of agents: {n})"
  */
-  __pyx_t_1 = PyObject_RichCompare(__pyx_v_index, __pyx_int_0, Py_LT); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 138, __pyx_L1_error)
-  __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely((__pyx_t_6 < 0))) __PYX_ERR(0, 138, __pyx_L1_error)
+  __pyx_t_1 = PyObject_RichCompare(__pyx_v_index, __pyx_int_0, Py_LT); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 151, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely((__pyx_t_6 < 0))) __PYX_ERR(0, 151, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   if (!__pyx_t_6) {
   } else {
     __pyx_t_5 = __pyx_t_6;
     goto __pyx_L4_bool_binop_done;
   }
-  __pyx_t_1 = PyObject_RichCompare(__pyx_v_index, __pyx_v_n, Py_GE); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 138, __pyx_L1_error)
-  __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely((__pyx_t_6 < 0))) __PYX_ERR(0, 138, __pyx_L1_error)
+  __pyx_t_1 = PyObject_RichCompare(__pyx_v_index, __pyx_v_n, Py_GE); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 151, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely((__pyx_t_6 < 0))) __PYX_ERR(0, 151, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_t_5 = __pyx_t_6;
   __pyx_L4_bool_binop_done:;
   if (unlikely(__pyx_t_5)) {
 
-    /* "binding.pyx":140
+    /* "binding.pyx":153
  *         if index < 0 or index >= n:
  *             raise IndexError(
  *                 f"Invalid index '{index}' (total number of agents: {n})"             # <<<<<<<<<<<<<<
  *             )
  * 
  */
-    __pyx_t_1 = PyTuple_New(5); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 140, __pyx_L1_error)
+    __pyx_t_1 = PyTuple_New(5); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 153, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __pyx_t_7 = 0;
     __pyx_t_8 = 127;
@@ -4212,7 +4212,7 @@ static PyObject *__pyx_pf_7binding_6Agents_6__setitem__(CYTHON_UNUSED PyObject *
     __pyx_t_7 += 15;
     __Pyx_GIVEREF(__pyx_kp_u_Invalid_index);
     PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_kp_u_Invalid_index);
-    __pyx_t_3 = __Pyx_PyObject_FormatSimple(__pyx_v_index, __pyx_empty_unicode); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 140, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_FormatSimple(__pyx_v_index, __pyx_empty_unicode); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 153, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __pyx_t_8 = (__Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_3) > __pyx_t_8) ? __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_3) : __pyx_t_8;
     __pyx_t_7 += __Pyx_PyUnicode_GET_LENGTH(__pyx_t_3);
@@ -4223,7 +4223,7 @@ static PyObject *__pyx_pf_7binding_6Agents_6__setitem__(CYTHON_UNUSED PyObject *
     __pyx_t_7 += 27;
     __Pyx_GIVEREF(__pyx_kp_u_total_number_of_agents);
     PyTuple_SET_ITEM(__pyx_t_1, 2, __pyx_kp_u_total_number_of_agents);
-    __pyx_t_3 = __Pyx_PyObject_FormatSimple(__pyx_v_n, __pyx_empty_unicode); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 140, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_FormatSimple(__pyx_v_n, __pyx_empty_unicode); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 153, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __pyx_t_8 = (__Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_3) > __pyx_t_8) ? __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_3) : __pyx_t_8;
     __pyx_t_7 += __Pyx_PyUnicode_GET_LENGTH(__pyx_t_3);
@@ -4234,25 +4234,25 @@ static PyObject *__pyx_pf_7binding_6Agents_6__setitem__(CYTHON_UNUSED PyObject *
     __pyx_t_7 += 1;
     __Pyx_GIVEREF(__pyx_kp_u_);
     PyTuple_SET_ITEM(__pyx_t_1, 4, __pyx_kp_u_);
-    __pyx_t_3 = __Pyx_PyUnicode_Join(__pyx_t_1, 5, __pyx_t_7, __pyx_t_8); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 140, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyUnicode_Join(__pyx_t_1, 5, __pyx_t_7, __pyx_t_8); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 153, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-    /* "binding.pyx":139
+    /* "binding.pyx":152
  *         n = self._engine._get_agents_size()
  *         if index < 0 or index >= n:
  *             raise IndexError(             # <<<<<<<<<<<<<<
  *                 f"Invalid index '{index}' (total number of agents: {n})"
  *             )
  */
-    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_builtin_IndexError, __pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 139, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_builtin_IndexError, __pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 152, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_Raise(__pyx_t_1, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __PYX_ERR(0, 139, __pyx_L1_error)
+    __PYX_ERR(0, 152, __pyx_L1_error)
 
-    /* "binding.pyx":138
+    /* "binding.pyx":151
  *     def __setitem__(self, index: int, agent: Agent):
  *         n = self._engine._get_agents_size()
  *         if index < 0 or index >= n:             # <<<<<<<<<<<<<<
@@ -4261,7 +4261,7 @@ static PyObject *__pyx_pf_7binding_6Agents_6__setitem__(CYTHON_UNUSED PyObject *
  */
   }
 
-  /* "binding.pyx":143
+  /* "binding.pyx":156
  *             )
  * 
  *         return self._engine._set_agent(index, agent)             # <<<<<<<<<<<<<<
@@ -4269,9 +4269,9 @@ static PyObject *__pyx_pf_7binding_6Agents_6__setitem__(CYTHON_UNUSED PyObject *
  * 
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_engine_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 143, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_engine_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 156, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_set_agent); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 143, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_set_agent); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 156, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_t_3 = NULL;
@@ -4292,7 +4292,7 @@ static PyObject *__pyx_pf_7binding_6Agents_6__setitem__(CYTHON_UNUSED PyObject *
     PyObject *__pyx_callargs[3] = {__pyx_t_3, __pyx_v_index, __pyx_v_agent};
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+1-__pyx_t_4, 2+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 143, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 156, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   }
@@ -4300,7 +4300,7 @@ static PyObject *__pyx_pf_7binding_6Agents_6__setitem__(CYTHON_UNUSED PyObject *
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "binding.pyx":136
+  /* "binding.pyx":149
  *         return self._engine._get_agent(index)
  * 
  *     def __setitem__(self, index: int, agent: Agent):             # <<<<<<<<<<<<<<
@@ -4322,9 +4322,9 @@ static PyObject *__pyx_pf_7binding_6Agents_6__setitem__(CYTHON_UNUSED PyObject *
   return __pyx_r;
 }
 
-/* "binding.pyx":148
- * class Missiles:
- *     """Missiles."""
+/* "binding.pyx":171
+ *     """
+ * 
  *     def __init__(self, engine):             # <<<<<<<<<<<<<<
  *         self._engine = engine
  * 
@@ -4386,7 +4386,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 148, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 171, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
         CYTHON_FALLTHROUGH;
         case  1:
@@ -4394,14 +4394,14 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[1]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 148, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 171, __pyx_L3_error)
         else {
-          __Pyx_RaiseArgtupleInvalid("__init__", 1, 2, 2, 1); __PYX_ERR(0, 148, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("__init__", 1, 2, 2, 1); __PYX_ERR(0, 171, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "__init__") < 0)) __PYX_ERR(0, 148, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "__init__") < 0)) __PYX_ERR(0, 171, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs != 2)) {
       goto __pyx_L5_argtuple_error;
@@ -4414,7 +4414,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("__init__", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 148, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("__init__", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 171, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -4449,18 +4449,18 @@ static PyObject *__pyx_pf_7binding_8Missiles___init__(CYTHON_UNUSED PyObject *__
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__init__", 1);
 
-  /* "binding.pyx":149
- *     """Missiles."""
+  /* "binding.pyx":172
+ * 
  *     def __init__(self, engine):
  *         self._engine = engine             # <<<<<<<<<<<<<<
  * 
  *     def __len__(self):
  */
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_engine_2, __pyx_v_engine) < 0) __PYX_ERR(0, 149, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_engine_2, __pyx_v_engine) < 0) __PYX_ERR(0, 172, __pyx_L1_error)
 
-  /* "binding.pyx":148
- * class Missiles:
- *     """Missiles."""
+  /* "binding.pyx":171
+ *     """
+ * 
  *     def __init__(self, engine):             # <<<<<<<<<<<<<<
  *         self._engine = engine
  * 
@@ -4478,7 +4478,7 @@ static PyObject *__pyx_pf_7binding_8Missiles___init__(CYTHON_UNUSED PyObject *__
   return __pyx_r;
 }
 
-/* "binding.pyx":151
+/* "binding.pyx":174
  *         self._engine = engine
  * 
  *     def __len__(self):             # <<<<<<<<<<<<<<
@@ -4539,12 +4539,12 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 151, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 174, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "__len__") < 0)) __PYX_ERR(0, 151, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "__len__") < 0)) __PYX_ERR(0, 174, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs != 1)) {
       goto __pyx_L5_argtuple_error;
@@ -4555,7 +4555,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("__len__", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 151, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("__len__", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 174, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -4594,7 +4594,7 @@ static PyObject *__pyx_pf_7binding_8Missiles_2__len__(CYTHON_UNUSED PyObject *__
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__len__", 1);
 
-  /* "binding.pyx":152
+  /* "binding.pyx":175
  * 
  *     def __len__(self):
  *         return self._engine._get_missiles_size()             # <<<<<<<<<<<<<<
@@ -4602,9 +4602,9 @@ static PyObject *__pyx_pf_7binding_8Missiles_2__len__(CYTHON_UNUSED PyObject *__
  *     def __getitem__(self, index: int):
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_engine_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 152, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_engine_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 175, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_get_missiles_size); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 152, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_get_missiles_size); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 175, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_2 = NULL;
@@ -4625,7 +4625,7 @@ static PyObject *__pyx_pf_7binding_8Missiles_2__len__(CYTHON_UNUSED PyObject *__
     PyObject *__pyx_callargs[2] = {__pyx_t_2, NULL};
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_4, 0+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 152, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 175, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   }
@@ -4633,7 +4633,7 @@ static PyObject *__pyx_pf_7binding_8Missiles_2__len__(CYTHON_UNUSED PyObject *__
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "binding.pyx":151
+  /* "binding.pyx":174
  *         self._engine = engine
  * 
  *     def __len__(self):             # <<<<<<<<<<<<<<
@@ -4654,7 +4654,7 @@ static PyObject *__pyx_pf_7binding_8Missiles_2__len__(CYTHON_UNUSED PyObject *__
   return __pyx_r;
 }
 
-/* "binding.pyx":154
+/* "binding.pyx":177
  *         return self._engine._get_missiles_size()
  * 
  *     def __getitem__(self, index: int):             # <<<<<<<<<<<<<<
@@ -4718,7 +4718,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 154, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 177, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
         CYTHON_FALLTHROUGH;
         case  1:
@@ -4726,14 +4726,14 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[1]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 154, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 177, __pyx_L3_error)
         else {
-          __Pyx_RaiseArgtupleInvalid("__getitem__", 1, 2, 2, 1); __PYX_ERR(0, 154, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("__getitem__", 1, 2, 2, 1); __PYX_ERR(0, 177, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "__getitem__") < 0)) __PYX_ERR(0, 154, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "__getitem__") < 0)) __PYX_ERR(0, 177, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs != 2)) {
       goto __pyx_L5_argtuple_error;
@@ -4746,7 +4746,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("__getitem__", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 154, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("__getitem__", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 177, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -4760,7 +4760,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_index), (&PyInt_Type), 0, "index", 1))) __PYX_ERR(0, 154, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_index), (&PyInt_Type), 0, "index", 1))) __PYX_ERR(0, 177, __pyx_L1_error)
   __pyx_r = __pyx_pf_7binding_8Missiles_4__getitem__(__pyx_self, __pyx_v_self, __pyx_v_index);
 
   /* function exit code */
@@ -4795,16 +4795,16 @@ static PyObject *__pyx_pf_7binding_8Missiles_4__getitem__(CYTHON_UNUSED PyObject
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__getitem__", 1);
 
-  /* "binding.pyx":155
+  /* "binding.pyx":178
  * 
  *     def __getitem__(self, index: int):
  *         n = self._engine._get_missiles_size()             # <<<<<<<<<<<<<<
  *         if index < 0 or index >= n:
  *             raise IndexError(
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_engine_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 155, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_engine_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 178, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_get_missiles_size); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 155, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_get_missiles_size); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 178, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_2 = NULL;
@@ -4825,43 +4825,43 @@ static PyObject *__pyx_pf_7binding_8Missiles_4__getitem__(CYTHON_UNUSED PyObject
     PyObject *__pyx_callargs[2] = {__pyx_t_2, NULL};
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_4, 0+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 155, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 178, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   }
   __pyx_v_n = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "binding.pyx":156
+  /* "binding.pyx":179
  *     def __getitem__(self, index: int):
  *         n = self._engine._get_missiles_size()
  *         if index < 0 or index >= n:             # <<<<<<<<<<<<<<
  *             raise IndexError(
  *                 f"Invalid index '{index}' (total number of missiles: {n})"
  */
-  __pyx_t_1 = PyObject_RichCompare(__pyx_v_index, __pyx_int_0, Py_LT); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 156, __pyx_L1_error)
-  __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely((__pyx_t_6 < 0))) __PYX_ERR(0, 156, __pyx_L1_error)
+  __pyx_t_1 = PyObject_RichCompare(__pyx_v_index, __pyx_int_0, Py_LT); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 179, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely((__pyx_t_6 < 0))) __PYX_ERR(0, 179, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   if (!__pyx_t_6) {
   } else {
     __pyx_t_5 = __pyx_t_6;
     goto __pyx_L4_bool_binop_done;
   }
-  __pyx_t_1 = PyObject_RichCompare(__pyx_v_index, __pyx_v_n, Py_GE); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 156, __pyx_L1_error)
-  __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely((__pyx_t_6 < 0))) __PYX_ERR(0, 156, __pyx_L1_error)
+  __pyx_t_1 = PyObject_RichCompare(__pyx_v_index, __pyx_v_n, Py_GE); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 179, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely((__pyx_t_6 < 0))) __PYX_ERR(0, 179, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_t_5 = __pyx_t_6;
   __pyx_L4_bool_binop_done:;
   if (unlikely(__pyx_t_5)) {
 
-    /* "binding.pyx":158
+    /* "binding.pyx":181
  *         if index < 0 or index >= n:
  *             raise IndexError(
  *                 f"Invalid index '{index}' (total number of missiles: {n})"             # <<<<<<<<<<<<<<
  *             )
  * 
  */
-    __pyx_t_1 = PyTuple_New(5); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 158, __pyx_L1_error)
+    __pyx_t_1 = PyTuple_New(5); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 181, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __pyx_t_7 = 0;
     __pyx_t_8 = 127;
@@ -4869,7 +4869,7 @@ static PyObject *__pyx_pf_7binding_8Missiles_4__getitem__(CYTHON_UNUSED PyObject
     __pyx_t_7 += 15;
     __Pyx_GIVEREF(__pyx_kp_u_Invalid_index);
     PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_kp_u_Invalid_index);
-    __pyx_t_3 = __Pyx_PyObject_FormatSimple(__pyx_v_index, __pyx_empty_unicode); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 158, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_FormatSimple(__pyx_v_index, __pyx_empty_unicode); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 181, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __pyx_t_8 = (__Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_3) > __pyx_t_8) ? __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_3) : __pyx_t_8;
     __pyx_t_7 += __Pyx_PyUnicode_GET_LENGTH(__pyx_t_3);
@@ -4880,7 +4880,7 @@ static PyObject *__pyx_pf_7binding_8Missiles_4__getitem__(CYTHON_UNUSED PyObject
     __pyx_t_7 += 29;
     __Pyx_GIVEREF(__pyx_kp_u_total_number_of_missiles);
     PyTuple_SET_ITEM(__pyx_t_1, 2, __pyx_kp_u_total_number_of_missiles);
-    __pyx_t_3 = __Pyx_PyObject_FormatSimple(__pyx_v_n, __pyx_empty_unicode); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 158, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_FormatSimple(__pyx_v_n, __pyx_empty_unicode); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 181, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __pyx_t_8 = (__Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_3) > __pyx_t_8) ? __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_3) : __pyx_t_8;
     __pyx_t_7 += __Pyx_PyUnicode_GET_LENGTH(__pyx_t_3);
@@ -4891,25 +4891,25 @@ static PyObject *__pyx_pf_7binding_8Missiles_4__getitem__(CYTHON_UNUSED PyObject
     __pyx_t_7 += 1;
     __Pyx_GIVEREF(__pyx_kp_u_);
     PyTuple_SET_ITEM(__pyx_t_1, 4, __pyx_kp_u_);
-    __pyx_t_3 = __Pyx_PyUnicode_Join(__pyx_t_1, 5, __pyx_t_7, __pyx_t_8); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 158, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyUnicode_Join(__pyx_t_1, 5, __pyx_t_7, __pyx_t_8); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 181, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-    /* "binding.pyx":157
+    /* "binding.pyx":180
  *         n = self._engine._get_missiles_size()
  *         if index < 0 or index >= n:
  *             raise IndexError(             # <<<<<<<<<<<<<<
  *                 f"Invalid index '{index}' (total number of missiles: {n})"
  *             )
  */
-    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_builtin_IndexError, __pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 157, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_builtin_IndexError, __pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 180, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_Raise(__pyx_t_1, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __PYX_ERR(0, 157, __pyx_L1_error)
+    __PYX_ERR(0, 180, __pyx_L1_error)
 
-    /* "binding.pyx":156
+    /* "binding.pyx":179
  *     def __getitem__(self, index: int):
  *         n = self._engine._get_missiles_size()
  *         if index < 0 or index >= n:             # <<<<<<<<<<<<<<
@@ -4918,7 +4918,7 @@ static PyObject *__pyx_pf_7binding_8Missiles_4__getitem__(CYTHON_UNUSED PyObject
  */
   }
 
-  /* "binding.pyx":161
+  /* "binding.pyx":184
  *             )
  * 
  *         return self._engine._get_missile(index)             # <<<<<<<<<<<<<<
@@ -4926,9 +4926,9 @@ static PyObject *__pyx_pf_7binding_8Missiles_4__getitem__(CYTHON_UNUSED PyObject
  *     def __setitem__(self, index: int, missile: Missile):
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_engine_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 161, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_engine_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 184, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_get_missile); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 161, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_get_missile); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 184, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_t_3 = NULL;
@@ -4949,7 +4949,7 @@ static PyObject *__pyx_pf_7binding_8Missiles_4__getitem__(CYTHON_UNUSED PyObject
     PyObject *__pyx_callargs[2] = {__pyx_t_3, __pyx_v_index};
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 161, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 184, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   }
@@ -4957,7 +4957,7 @@ static PyObject *__pyx_pf_7binding_8Missiles_4__getitem__(CYTHON_UNUSED PyObject
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "binding.pyx":154
+  /* "binding.pyx":177
  *         return self._engine._get_missiles_size()
  * 
  *     def __getitem__(self, index: int):             # <<<<<<<<<<<<<<
@@ -4979,7 +4979,7 @@ static PyObject *__pyx_pf_7binding_8Missiles_4__getitem__(CYTHON_UNUSED PyObject
   return __pyx_r;
 }
 
-/* "binding.pyx":163
+/* "binding.pyx":186
  *         return self._engine._get_missile(index)
  * 
  *     def __setitem__(self, index: int, missile: Missile):             # <<<<<<<<<<<<<<
@@ -5046,7 +5046,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 163, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 186, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
         CYTHON_FALLTHROUGH;
         case  1:
@@ -5054,9 +5054,9 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[1]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 163, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 186, __pyx_L3_error)
         else {
-          __Pyx_RaiseArgtupleInvalid("__setitem__", 1, 3, 3, 1); __PYX_ERR(0, 163, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("__setitem__", 1, 3, 3, 1); __PYX_ERR(0, 186, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  2:
@@ -5064,14 +5064,14 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[2]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 163, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 186, __pyx_L3_error)
         else {
-          __Pyx_RaiseArgtupleInvalid("__setitem__", 1, 3, 3, 2); __PYX_ERR(0, 163, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("__setitem__", 1, 3, 3, 2); __PYX_ERR(0, 186, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "__setitem__") < 0)) __PYX_ERR(0, 163, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "__setitem__") < 0)) __PYX_ERR(0, 186, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs != 3)) {
       goto __pyx_L5_argtuple_error;
@@ -5086,7 +5086,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("__setitem__", 1, 3, 3, __pyx_nargs); __PYX_ERR(0, 163, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("__setitem__", 1, 3, 3, __pyx_nargs); __PYX_ERR(0, 186, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -5100,7 +5100,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_index), (&PyInt_Type), 0, "index", 1))) __PYX_ERR(0, 163, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_index), (&PyInt_Type), 0, "index", 1))) __PYX_ERR(0, 186, __pyx_L1_error)
   __pyx_r = __pyx_pf_7binding_8Missiles_6__setitem__(__pyx_self, __pyx_v_self, __pyx_v_index, __pyx_v_missile);
 
   /* function exit code */
@@ -5135,16 +5135,16 @@ static PyObject *__pyx_pf_7binding_8Missiles_6__setitem__(CYTHON_UNUSED PyObject
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__setitem__", 1);
 
-  /* "binding.pyx":164
+  /* "binding.pyx":187
  * 
  *     def __setitem__(self, index: int, missile: Missile):
  *         n = self._engine._get_missiles_size()             # <<<<<<<<<<<<<<
  *         if index < 0 or index >= n:
  *             raise IndexError(
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_engine_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 164, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_engine_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 187, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_get_missiles_size); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 164, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_get_missiles_size); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 187, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_2 = NULL;
@@ -5165,43 +5165,43 @@ static PyObject *__pyx_pf_7binding_8Missiles_6__setitem__(CYTHON_UNUSED PyObject
     PyObject *__pyx_callargs[2] = {__pyx_t_2, NULL};
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_4, 0+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 164, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 187, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   }
   __pyx_v_n = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "binding.pyx":165
+  /* "binding.pyx":188
  *     def __setitem__(self, index: int, missile: Missile):
  *         n = self._engine._get_missiles_size()
  *         if index < 0 or index >= n:             # <<<<<<<<<<<<<<
  *             raise IndexError(
  *                 f"Invalid index '{index}' (total number of missiles: {n})"
  */
-  __pyx_t_1 = PyObject_RichCompare(__pyx_v_index, __pyx_int_0, Py_LT); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 165, __pyx_L1_error)
-  __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely((__pyx_t_6 < 0))) __PYX_ERR(0, 165, __pyx_L1_error)
+  __pyx_t_1 = PyObject_RichCompare(__pyx_v_index, __pyx_int_0, Py_LT); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 188, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely((__pyx_t_6 < 0))) __PYX_ERR(0, 188, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   if (!__pyx_t_6) {
   } else {
     __pyx_t_5 = __pyx_t_6;
     goto __pyx_L4_bool_binop_done;
   }
-  __pyx_t_1 = PyObject_RichCompare(__pyx_v_index, __pyx_v_n, Py_GE); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 165, __pyx_L1_error)
-  __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely((__pyx_t_6 < 0))) __PYX_ERR(0, 165, __pyx_L1_error)
+  __pyx_t_1 = PyObject_RichCompare(__pyx_v_index, __pyx_v_n, Py_GE); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 188, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely((__pyx_t_6 < 0))) __PYX_ERR(0, 188, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_t_5 = __pyx_t_6;
   __pyx_L4_bool_binop_done:;
   if (unlikely(__pyx_t_5)) {
 
-    /* "binding.pyx":167
+    /* "binding.pyx":190
  *         if index < 0 or index >= n:
  *             raise IndexError(
  *                 f"Invalid index '{index}' (total number of missiles: {n})"             # <<<<<<<<<<<<<<
  *             )
  * 
  */
-    __pyx_t_1 = PyTuple_New(5); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 167, __pyx_L1_error)
+    __pyx_t_1 = PyTuple_New(5); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 190, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __pyx_t_7 = 0;
     __pyx_t_8 = 127;
@@ -5209,7 +5209,7 @@ static PyObject *__pyx_pf_7binding_8Missiles_6__setitem__(CYTHON_UNUSED PyObject
     __pyx_t_7 += 15;
     __Pyx_GIVEREF(__pyx_kp_u_Invalid_index);
     PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_kp_u_Invalid_index);
-    __pyx_t_3 = __Pyx_PyObject_FormatSimple(__pyx_v_index, __pyx_empty_unicode); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 167, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_FormatSimple(__pyx_v_index, __pyx_empty_unicode); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 190, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __pyx_t_8 = (__Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_3) > __pyx_t_8) ? __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_3) : __pyx_t_8;
     __pyx_t_7 += __Pyx_PyUnicode_GET_LENGTH(__pyx_t_3);
@@ -5220,7 +5220,7 @@ static PyObject *__pyx_pf_7binding_8Missiles_6__setitem__(CYTHON_UNUSED PyObject
     __pyx_t_7 += 29;
     __Pyx_GIVEREF(__pyx_kp_u_total_number_of_missiles);
     PyTuple_SET_ITEM(__pyx_t_1, 2, __pyx_kp_u_total_number_of_missiles);
-    __pyx_t_3 = __Pyx_PyObject_FormatSimple(__pyx_v_n, __pyx_empty_unicode); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 167, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_FormatSimple(__pyx_v_n, __pyx_empty_unicode); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 190, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __pyx_t_8 = (__Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_3) > __pyx_t_8) ? __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_3) : __pyx_t_8;
     __pyx_t_7 += __Pyx_PyUnicode_GET_LENGTH(__pyx_t_3);
@@ -5231,25 +5231,25 @@ static PyObject *__pyx_pf_7binding_8Missiles_6__setitem__(CYTHON_UNUSED PyObject
     __pyx_t_7 += 1;
     __Pyx_GIVEREF(__pyx_kp_u_);
     PyTuple_SET_ITEM(__pyx_t_1, 4, __pyx_kp_u_);
-    __pyx_t_3 = __Pyx_PyUnicode_Join(__pyx_t_1, 5, __pyx_t_7, __pyx_t_8); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 167, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyUnicode_Join(__pyx_t_1, 5, __pyx_t_7, __pyx_t_8); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 190, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-    /* "binding.pyx":166
+    /* "binding.pyx":189
  *         n = self._engine._get_missiles_size()
  *         if index < 0 or index >= n:
  *             raise IndexError(             # <<<<<<<<<<<<<<
  *                 f"Invalid index '{index}' (total number of missiles: {n})"
  *             )
  */
-    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_builtin_IndexError, __pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 166, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_builtin_IndexError, __pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 189, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_Raise(__pyx_t_1, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __PYX_ERR(0, 166, __pyx_L1_error)
+    __PYX_ERR(0, 189, __pyx_L1_error)
 
-    /* "binding.pyx":165
+    /* "binding.pyx":188
  *     def __setitem__(self, index: int, missile: Missile):
  *         n = self._engine._get_missiles_size()
  *         if index < 0 or index >= n:             # <<<<<<<<<<<<<<
@@ -5258,7 +5258,7 @@ static PyObject *__pyx_pf_7binding_8Missiles_6__setitem__(CYTHON_UNUSED PyObject
  */
   }
 
-  /* "binding.pyx":170
+  /* "binding.pyx":193
  *             )
  * 
  *         return self._engine._set_missile(index, missile)             # <<<<<<<<<<<<<<
@@ -5266,9 +5266,9 @@ static PyObject *__pyx_pf_7binding_8Missiles_6__setitem__(CYTHON_UNUSED PyObject
  * 
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_engine_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 170, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_engine_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 193, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_set_missile); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 170, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_set_missile); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 193, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_t_3 = NULL;
@@ -5289,7 +5289,7 @@ static PyObject *__pyx_pf_7binding_8Missiles_6__setitem__(CYTHON_UNUSED PyObject
     PyObject *__pyx_callargs[3] = {__pyx_t_3, __pyx_v_index, __pyx_v_missile};
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+1-__pyx_t_4, 2+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 170, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 193, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   }
@@ -5297,7 +5297,7 @@ static PyObject *__pyx_pf_7binding_8Missiles_6__setitem__(CYTHON_UNUSED PyObject
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "binding.pyx":163
+  /* "binding.pyx":186
  *         return self._engine._get_missile(index)
  * 
  *     def __setitem__(self, index: int, missile: Missile):             # <<<<<<<<<<<<<<
@@ -5319,10 +5319,10 @@ static PyObject *__pyx_pf_7binding_8Missiles_6__setitem__(CYTHON_UNUSED PyObject
   return __pyx_r;
 }
 
-/* "binding.pyx":181
+/* "binding.pyx":224
  *     cdef void *_simulation_buffer
  * 
- *     def __init__(self, world: World, agents: typing.Iterable[Agent]):             # <<<<<<<<<<<<<<
+ *     def __init__(self, world: World, agents: collections.abs.Iterable[Agent]):             # <<<<<<<<<<<<<<
  *         self._world = twsfwphysx_world(
  *             world.restitution,
  */
@@ -5366,7 +5366,7 @@ static int __pyx_pw_7binding_6Engine_1__init__(PyObject *__pyx_v_self, PyObject 
           (void)__Pyx_Arg_NewRef_VARARGS(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 181, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 224, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
         CYTHON_FALLTHROUGH;
         case  1:
@@ -5374,14 +5374,14 @@ static int __pyx_pw_7binding_6Engine_1__init__(PyObject *__pyx_v_self, PyObject 
           (void)__Pyx_Arg_NewRef_VARARGS(values[1]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 181, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 224, __pyx_L3_error)
         else {
-          __Pyx_RaiseArgtupleInvalid("__init__", 1, 2, 2, 1); __PYX_ERR(0, 181, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("__init__", 1, 2, 2, 1); __PYX_ERR(0, 224, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "__init__") < 0)) __PYX_ERR(0, 181, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "__init__") < 0)) __PYX_ERR(0, 224, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs != 2)) {
       goto __pyx_L5_argtuple_error;
@@ -5394,7 +5394,7 @@ static int __pyx_pw_7binding_6Engine_1__init__(PyObject *__pyx_v_self, PyObject 
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("__init__", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 181, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("__init__", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 224, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -5441,65 +5441,65 @@ static int __pyx_pf_7binding_6Engine___init__(struct __pyx_obj_7binding_Engine *
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__init__", 1);
 
-  /* "binding.pyx":183
- *     def __init__(self, world: World, agents: typing.Iterable[Agent]):
+  /* "binding.pyx":226
+ *     def __init__(self, world: World, agents: collections.abs.Iterable[Agent]):
  *         self._world = twsfwphysx_world(
  *             world.restitution,             # <<<<<<<<<<<<<<
  *             world.agent_radius,
  *             world.missile_acceleration
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_world, __pyx_n_s_restitution); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 183, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_world, __pyx_n_s_restitution); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 226, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_3 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 183, __pyx_L1_error)
+  __pyx_t_3 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_3 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 226, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_1.restitution = __pyx_t_3;
 
-  /* "binding.pyx":184
+  /* "binding.pyx":227
  *         self._world = twsfwphysx_world(
  *             world.restitution,
  *             world.agent_radius,             # <<<<<<<<<<<<<<
  *             world.missile_acceleration
  *         )
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_world, __pyx_n_s_agent_radius); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 184, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_world, __pyx_n_s_agent_radius); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 227, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_3 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 184, __pyx_L1_error)
+  __pyx_t_3 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_3 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 227, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_1.agent_radius = __pyx_t_3;
 
-  /* "binding.pyx":185
+  /* "binding.pyx":228
  *             world.restitution,
  *             world.agent_radius,
  *             world.missile_acceleration             # <<<<<<<<<<<<<<
  *         )
  * 
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_world, __pyx_n_s_missile_acceleration); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 185, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_world, __pyx_n_s_missile_acceleration); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 228, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_3 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 185, __pyx_L1_error)
+  __pyx_t_3 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_3 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 228, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_1.missile_acceleration = __pyx_t_3;
 
-  /* "binding.pyx":182
+  /* "binding.pyx":225
  * 
- *     def __init__(self, world: World, agents: typing.Iterable[Agent]):
+ *     def __init__(self, world: World, agents: collections.abs.Iterable[Agent]):
  *         self._world = twsfwphysx_world(             # <<<<<<<<<<<<<<
  *             world.restitution,
  *             world.agent_radius,
  */
   __pyx_v_self->_world = __pyx_t_1;
 
-  /* "binding.pyx":188
+  /* "binding.pyx":231
  *         )
  * 
  *         self._agents = twsfwphysx_create_agents(len(agents))             # <<<<<<<<<<<<<<
  *         cdef twsfwphysx_agent *a
  *         for i, agent in enumerate(agents):
  */
-  __pyx_t_4 = PyObject_Length(__pyx_v_agents); if (unlikely(__pyx_t_4 == ((Py_ssize_t)-1))) __PYX_ERR(0, 188, __pyx_L1_error)
+  __pyx_t_4 = PyObject_Length(__pyx_v_agents); if (unlikely(__pyx_t_4 == ((Py_ssize_t)-1))) __PYX_ERR(0, 231, __pyx_L1_error)
   __pyx_v_self->_agents = twsfwphysx_create_agents(__pyx_t_4);
 
-  /* "binding.pyx":190
+  /* "binding.pyx":233
  *         self._agents = twsfwphysx_create_agents(len(agents))
  *         cdef twsfwphysx_agent *a
  *         for i, agent in enumerate(agents):             # <<<<<<<<<<<<<<
@@ -5513,9 +5513,9 @@ static int __pyx_pf_7binding_6Engine___init__(struct __pyx_obj_7binding_Engine *
     __pyx_t_4 = 0;
     __pyx_t_6 = NULL;
   } else {
-    __pyx_t_4 = -1; __pyx_t_5 = PyObject_GetIter(__pyx_v_agents); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 190, __pyx_L1_error)
+    __pyx_t_4 = -1; __pyx_t_5 = PyObject_GetIter(__pyx_v_agents); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 233, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
-    __pyx_t_6 = __Pyx_PyObject_GetIterNextFunc(__pyx_t_5); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 190, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyObject_GetIterNextFunc(__pyx_t_5); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 233, __pyx_L1_error)
   }
   for (;;) {
     if (likely(!__pyx_t_6)) {
@@ -5523,28 +5523,28 @@ static int __pyx_pf_7binding_6Engine___init__(struct __pyx_obj_7binding_Engine *
         {
           Py_ssize_t __pyx_temp = __Pyx_PyList_GET_SIZE(__pyx_t_5);
           #if !CYTHON_ASSUME_SAFE_MACROS
-          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 190, __pyx_L1_error)
+          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 233, __pyx_L1_error)
           #endif
           if (__pyx_t_4 >= __pyx_temp) break;
         }
         #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-        __pyx_t_7 = PyList_GET_ITEM(__pyx_t_5, __pyx_t_4); __Pyx_INCREF(__pyx_t_7); __pyx_t_4++; if (unlikely((0 < 0))) __PYX_ERR(0, 190, __pyx_L1_error)
+        __pyx_t_7 = PyList_GET_ITEM(__pyx_t_5, __pyx_t_4); __Pyx_INCREF(__pyx_t_7); __pyx_t_4++; if (unlikely((0 < 0))) __PYX_ERR(0, 233, __pyx_L1_error)
         #else
-        __pyx_t_7 = __Pyx_PySequence_ITEM(__pyx_t_5, __pyx_t_4); __pyx_t_4++; if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 190, __pyx_L1_error)
+        __pyx_t_7 = __Pyx_PySequence_ITEM(__pyx_t_5, __pyx_t_4); __pyx_t_4++; if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 233, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_7);
         #endif
       } else {
         {
           Py_ssize_t __pyx_temp = __Pyx_PyTuple_GET_SIZE(__pyx_t_5);
           #if !CYTHON_ASSUME_SAFE_MACROS
-          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 190, __pyx_L1_error)
+          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 233, __pyx_L1_error)
           #endif
           if (__pyx_t_4 >= __pyx_temp) break;
         }
         #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-        __pyx_t_7 = PyTuple_GET_ITEM(__pyx_t_5, __pyx_t_4); __Pyx_INCREF(__pyx_t_7); __pyx_t_4++; if (unlikely((0 < 0))) __PYX_ERR(0, 190, __pyx_L1_error)
+        __pyx_t_7 = PyTuple_GET_ITEM(__pyx_t_5, __pyx_t_4); __Pyx_INCREF(__pyx_t_7); __pyx_t_4++; if (unlikely((0 < 0))) __PYX_ERR(0, 233, __pyx_L1_error)
         #else
-        __pyx_t_7 = __Pyx_PySequence_ITEM(__pyx_t_5, __pyx_t_4); __pyx_t_4++; if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 190, __pyx_L1_error)
+        __pyx_t_7 = __Pyx_PySequence_ITEM(__pyx_t_5, __pyx_t_4); __pyx_t_4++; if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 233, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_7);
         #endif
       }
@@ -5554,7 +5554,7 @@ static int __pyx_pf_7binding_6Engine___init__(struct __pyx_obj_7binding_Engine *
         PyObject* exc_type = PyErr_Occurred();
         if (exc_type) {
           if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-          else __PYX_ERR(0, 190, __pyx_L1_error)
+          else __PYX_ERR(0, 233, __pyx_L1_error)
         }
         break;
       }
@@ -5564,158 +5564,158 @@ static int __pyx_pf_7binding_6Engine___init__(struct __pyx_obj_7binding_Engine *
     __pyx_t_7 = 0;
     __Pyx_INCREF(__pyx_t_2);
     __Pyx_XDECREF_SET(__pyx_v_i, __pyx_t_2);
-    __pyx_t_7 = __Pyx_PyInt_AddObjC(__pyx_t_2, __pyx_int_1, 1, 0, 0); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 190, __pyx_L1_error)
+    __pyx_t_7 = __Pyx_PyInt_AddObjC(__pyx_t_2, __pyx_int_1, 1, 0, 0); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 233, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
     __Pyx_DECREF(__pyx_t_2);
     __pyx_t_2 = __pyx_t_7;
     __pyx_t_7 = 0;
 
-    /* "binding.pyx":191
+    /* "binding.pyx":234
  *         cdef twsfwphysx_agent *a
  *         for i, agent in enumerate(agents):
  *             a = &self._agents.agents[i]             # <<<<<<<<<<<<<<
  * 
  *             a.r.x = agent.r.x
  */
-    __pyx_t_8 = __Pyx_PyIndex_AsSsize_t(__pyx_v_i); if (unlikely((__pyx_t_8 == (Py_ssize_t)-1) && PyErr_Occurred())) __PYX_ERR(0, 191, __pyx_L1_error)
+    __pyx_t_8 = __Pyx_PyIndex_AsSsize_t(__pyx_v_i); if (unlikely((__pyx_t_8 == (Py_ssize_t)-1) && PyErr_Occurred())) __PYX_ERR(0, 234, __pyx_L1_error)
     __pyx_v_a = (&(__pyx_v_self->_agents.agents[__pyx_t_8]));
 
-    /* "binding.pyx":193
+    /* "binding.pyx":236
  *             a = &self._agents.agents[i]
  * 
  *             a.r.x = agent.r.x             # <<<<<<<<<<<<<<
  *             a.r.y = agent.r.y
  *             a.r.z = agent.r.z
  */
-    __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_agent, __pyx_n_s_r); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 193, __pyx_L1_error)
+    __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_agent, __pyx_n_s_r); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 236, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
-    __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_t_7, __pyx_n_s_x); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 193, __pyx_L1_error)
+    __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_t_7, __pyx_n_s_x); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 236, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_9);
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-    __pyx_t_3 = __pyx_PyFloat_AsFloat(__pyx_t_9); if (unlikely((__pyx_t_3 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 193, __pyx_L1_error)
+    __pyx_t_3 = __pyx_PyFloat_AsFloat(__pyx_t_9); if (unlikely((__pyx_t_3 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 236, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
     __pyx_v_a->r.x = __pyx_t_3;
 
-    /* "binding.pyx":194
+    /* "binding.pyx":237
  * 
  *             a.r.x = agent.r.x
  *             a.r.y = agent.r.y             # <<<<<<<<<<<<<<
  *             a.r.z = agent.r.z
  * 
  */
-    __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_v_agent, __pyx_n_s_r); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 194, __pyx_L1_error)
+    __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_v_agent, __pyx_n_s_r); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 237, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_9);
-    __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_9, __pyx_n_s_y); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 194, __pyx_L1_error)
+    __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_9, __pyx_n_s_y); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 237, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
     __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-    __pyx_t_3 = __pyx_PyFloat_AsFloat(__pyx_t_7); if (unlikely((__pyx_t_3 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 194, __pyx_L1_error)
+    __pyx_t_3 = __pyx_PyFloat_AsFloat(__pyx_t_7); if (unlikely((__pyx_t_3 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 237, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
     __pyx_v_a->r.y = __pyx_t_3;
 
-    /* "binding.pyx":195
+    /* "binding.pyx":238
  *             a.r.x = agent.r.x
  *             a.r.y = agent.r.y
  *             a.r.z = agent.r.z             # <<<<<<<<<<<<<<
  * 
  *             a.u.x = agent.u.x
  */
-    __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_agent, __pyx_n_s_r); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 195, __pyx_L1_error)
+    __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_agent, __pyx_n_s_r); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 238, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
-    __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_t_7, __pyx_n_s_z); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 195, __pyx_L1_error)
+    __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_t_7, __pyx_n_s_z); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 238, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_9);
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-    __pyx_t_3 = __pyx_PyFloat_AsFloat(__pyx_t_9); if (unlikely((__pyx_t_3 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 195, __pyx_L1_error)
+    __pyx_t_3 = __pyx_PyFloat_AsFloat(__pyx_t_9); if (unlikely((__pyx_t_3 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 238, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
     __pyx_v_a->r.z = __pyx_t_3;
 
-    /* "binding.pyx":197
+    /* "binding.pyx":240
  *             a.r.z = agent.r.z
  * 
  *             a.u.x = agent.u.x             # <<<<<<<<<<<<<<
  *             a.u.y = agent.u.y
  *             a.u.z = agent.u.z
  */
-    __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_v_agent, __pyx_n_s_u); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 197, __pyx_L1_error)
+    __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_v_agent, __pyx_n_s_u); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 240, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_9);
-    __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_9, __pyx_n_s_x); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 197, __pyx_L1_error)
+    __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_9, __pyx_n_s_x); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 240, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
     __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-    __pyx_t_3 = __pyx_PyFloat_AsFloat(__pyx_t_7); if (unlikely((__pyx_t_3 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 197, __pyx_L1_error)
+    __pyx_t_3 = __pyx_PyFloat_AsFloat(__pyx_t_7); if (unlikely((__pyx_t_3 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 240, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
     __pyx_v_a->u.x = __pyx_t_3;
 
-    /* "binding.pyx":198
+    /* "binding.pyx":241
  * 
  *             a.u.x = agent.u.x
  *             a.u.y = agent.u.y             # <<<<<<<<<<<<<<
  *             a.u.z = agent.u.z
  * 
  */
-    __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_agent, __pyx_n_s_u); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 198, __pyx_L1_error)
+    __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_agent, __pyx_n_s_u); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 241, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
-    __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_t_7, __pyx_n_s_y); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 198, __pyx_L1_error)
+    __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_t_7, __pyx_n_s_y); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 241, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_9);
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-    __pyx_t_3 = __pyx_PyFloat_AsFloat(__pyx_t_9); if (unlikely((__pyx_t_3 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 198, __pyx_L1_error)
+    __pyx_t_3 = __pyx_PyFloat_AsFloat(__pyx_t_9); if (unlikely((__pyx_t_3 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 241, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
     __pyx_v_a->u.y = __pyx_t_3;
 
-    /* "binding.pyx":199
+    /* "binding.pyx":242
  *             a.u.x = agent.u.x
  *             a.u.y = agent.u.y
  *             a.u.z = agent.u.z             # <<<<<<<<<<<<<<
  * 
  *             a.v = agent.v
  */
-    __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_v_agent, __pyx_n_s_u); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 199, __pyx_L1_error)
+    __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_v_agent, __pyx_n_s_u); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 242, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_9);
-    __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_9, __pyx_n_s_z); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 199, __pyx_L1_error)
+    __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_9, __pyx_n_s_z); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 242, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
     __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-    __pyx_t_3 = __pyx_PyFloat_AsFloat(__pyx_t_7); if (unlikely((__pyx_t_3 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 199, __pyx_L1_error)
+    __pyx_t_3 = __pyx_PyFloat_AsFloat(__pyx_t_7); if (unlikely((__pyx_t_3 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 242, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
     __pyx_v_a->u.z = __pyx_t_3;
 
-    /* "binding.pyx":201
+    /* "binding.pyx":244
  *             a.u.z = agent.u.z
  * 
  *             a.v = agent.v             # <<<<<<<<<<<<<<
  *             a.a = agent.a
  *             a.hp = agent.hp
  */
-    __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_agent, __pyx_n_s_v); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 201, __pyx_L1_error)
+    __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_agent, __pyx_n_s_v); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 244, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
-    __pyx_t_3 = __pyx_PyFloat_AsFloat(__pyx_t_7); if (unlikely((__pyx_t_3 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 201, __pyx_L1_error)
+    __pyx_t_3 = __pyx_PyFloat_AsFloat(__pyx_t_7); if (unlikely((__pyx_t_3 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 244, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
     __pyx_v_a->v = __pyx_t_3;
 
-    /* "binding.pyx":202
+    /* "binding.pyx":245
  * 
  *             a.v = agent.v
  *             a.a = agent.a             # <<<<<<<<<<<<<<
  *             a.hp = agent.hp
  * 
  */
-    __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_agent, __pyx_n_s_a); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 202, __pyx_L1_error)
+    __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_agent, __pyx_n_s_a); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 245, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
-    __pyx_t_3 = __pyx_PyFloat_AsFloat(__pyx_t_7); if (unlikely((__pyx_t_3 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 202, __pyx_L1_error)
+    __pyx_t_3 = __pyx_PyFloat_AsFloat(__pyx_t_7); if (unlikely((__pyx_t_3 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 245, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
     __pyx_v_a->a = __pyx_t_3;
 
-    /* "binding.pyx":203
+    /* "binding.pyx":246
  *             a.v = agent.v
  *             a.a = agent.a
  *             a.hp = agent.hp             # <<<<<<<<<<<<<<
  * 
  *         self._missiles = twsfwphysx_new_missile_batch()
  */
-    __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_agent, __pyx_n_s_hp); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 203, __pyx_L1_error)
+    __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_agent, __pyx_n_s_hp); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 246, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
-    __pyx_t_3 = __pyx_PyFloat_AsFloat(__pyx_t_7); if (unlikely((__pyx_t_3 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 203, __pyx_L1_error)
+    __pyx_t_3 = __pyx_PyFloat_AsFloat(__pyx_t_7); if (unlikely((__pyx_t_3 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 246, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
     __pyx_v_a->hp = __pyx_t_3;
 
-    /* "binding.pyx":190
+    /* "binding.pyx":233
  *         self._agents = twsfwphysx_create_agents(len(agents))
  *         cdef twsfwphysx_agent *a
  *         for i, agent in enumerate(agents):             # <<<<<<<<<<<<<<
@@ -5726,7 +5726,7 @@ static int __pyx_pf_7binding_6Engine___init__(struct __pyx_obj_7binding_Engine *
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "binding.pyx":205
+  /* "binding.pyx":248
  *             a.hp = agent.hp
  * 
  *         self._missiles = twsfwphysx_new_missile_batch()             # <<<<<<<<<<<<<<
@@ -5735,7 +5735,7 @@ static int __pyx_pf_7binding_6Engine___init__(struct __pyx_obj_7binding_Engine *
  */
   __pyx_v_self->_missiles = twsfwphysx_new_missile_batch();
 
-  /* "binding.pyx":207
+  /* "binding.pyx":250
  *         self._missiles = twsfwphysx_new_missile_batch()
  * 
  *         self._simulation_buffer = twsfwphysx_create_simulation_buffer()             # <<<<<<<<<<<<<<
@@ -5744,10 +5744,10 @@ static int __pyx_pf_7binding_6Engine___init__(struct __pyx_obj_7binding_Engine *
  */
   __pyx_v_self->_simulation_buffer = twsfwphysx_create_simulation_buffer();
 
-  /* "binding.pyx":181
+  /* "binding.pyx":224
  *     cdef void *_simulation_buffer
  * 
- *     def __init__(self, world: World, agents: typing.Iterable[Agent]):             # <<<<<<<<<<<<<<
+ *     def __init__(self, world: World, agents: collections.abs.Iterable[Agent]):             # <<<<<<<<<<<<<<
  *         self._world = twsfwphysx_world(
  *             world.restitution,
  */
@@ -5769,7 +5769,7 @@ static int __pyx_pf_7binding_6Engine___init__(struct __pyx_obj_7binding_Engine *
   return __pyx_r;
 }
 
-/* "binding.pyx":209
+/* "binding.pyx":252
  *         self._simulation_buffer = twsfwphysx_create_simulation_buffer()
  * 
  *     def __del__(self):             # <<<<<<<<<<<<<<
@@ -5793,7 +5793,7 @@ static void __pyx_pw_7binding_6Engine_3__del__(PyObject *__pyx_v_self) {
 static void __pyx_pf_7binding_6Engine_2__del__(struct __pyx_obj_7binding_Engine *__pyx_v_self) {
   int __pyx_t_1;
 
-  /* "binding.pyx":210
+  /* "binding.pyx":253
  * 
  *     def __del__(self):
  *         twsfwphysx_delete_agents(&self._agents)             # <<<<<<<<<<<<<<
@@ -5802,7 +5802,7 @@ static void __pyx_pf_7binding_6Engine_2__del__(struct __pyx_obj_7binding_Engine 
  */
   twsfwphysx_delete_agents((&__pyx_v_self->_agents));
 
-  /* "binding.pyx":211
+  /* "binding.pyx":254
  *     def __del__(self):
  *         twsfwphysx_delete_agents(&self._agents)
  *         twsfwphysx_delete_missile_batch(&self._missiles)             # <<<<<<<<<<<<<<
@@ -5811,7 +5811,7 @@ static void __pyx_pf_7binding_6Engine_2__del__(struct __pyx_obj_7binding_Engine 
  */
   twsfwphysx_delete_missile_batch((&__pyx_v_self->_missiles));
 
-  /* "binding.pyx":213
+  /* "binding.pyx":256
  *         twsfwphysx_delete_missile_batch(&self._missiles)
  * 
  *         if self._simulation_buffer:             # <<<<<<<<<<<<<<
@@ -5821,7 +5821,7 @@ static void __pyx_pf_7binding_6Engine_2__del__(struct __pyx_obj_7binding_Engine 
   __pyx_t_1 = (__pyx_v_self->_simulation_buffer != 0);
   if (__pyx_t_1) {
 
-    /* "binding.pyx":214
+    /* "binding.pyx":257
  * 
  *         if self._simulation_buffer:
  *             twsfwphysx_delete_simulation_buffer(self._simulation_buffer)             # <<<<<<<<<<<<<<
@@ -5830,7 +5830,7 @@ static void __pyx_pf_7binding_6Engine_2__del__(struct __pyx_obj_7binding_Engine 
  */
     twsfwphysx_delete_simulation_buffer(__pyx_v_self->_simulation_buffer);
 
-    /* "binding.pyx":213
+    /* "binding.pyx":256
  *         twsfwphysx_delete_missile_batch(&self._missiles)
  * 
  *         if self._simulation_buffer:             # <<<<<<<<<<<<<<
@@ -5839,7 +5839,7 @@ static void __pyx_pf_7binding_6Engine_2__del__(struct __pyx_obj_7binding_Engine 
  */
   }
 
-  /* "binding.pyx":209
+  /* "binding.pyx":252
  *         self._simulation_buffer = twsfwphysx_create_simulation_buffer()
  * 
  *     def __del__(self):             # <<<<<<<<<<<<<<
@@ -5850,7 +5850,7 @@ static void __pyx_pf_7binding_6Engine_2__del__(struct __pyx_obj_7binding_Engine 
   /* function exit code */
 }
 
-/* "binding.pyx":216
+/* "binding.pyx":259
  *             twsfwphysx_delete_simulation_buffer(self._simulation_buffer)
  * 
  *     def _check_agent_idx(self, idx: int):             # <<<<<<<<<<<<<<
@@ -5911,12 +5911,12 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 216, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 259, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "_check_agent_idx") < 0)) __PYX_ERR(0, 216, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "_check_agent_idx") < 0)) __PYX_ERR(0, 259, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs != 1)) {
       goto __pyx_L5_argtuple_error;
@@ -5927,7 +5927,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("_check_agent_idx", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 216, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("_check_agent_idx", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 259, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -5941,7 +5941,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_idx), (&PyInt_Type), 0, "idx", 1))) __PYX_ERR(0, 216, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_idx), (&PyInt_Type), 0, "idx", 1))) __PYX_ERR(0, 259, __pyx_L1_error)
   __pyx_r = __pyx_pf_7binding_6Engine_4_check_agent_idx(((struct __pyx_obj_7binding_Engine *)__pyx_v_self), __pyx_v_idx);
 
   /* function exit code */
@@ -5974,39 +5974,39 @@ static PyObject *__pyx_pf_7binding_6Engine_4_check_agent_idx(struct __pyx_obj_7b
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("_check_agent_idx", 1);
 
-  /* "binding.pyx":217
+  /* "binding.pyx":260
  * 
  *     def _check_agent_idx(self, idx: int):
  *         if idx < 0 or idx >= self._agents.size:             # <<<<<<<<<<<<<<
  *             raise IndexError(
  *                 f"Invalid index '{idx}' (total number of agents: {self._agents.size})"
  */
-  __pyx_t_2 = PyObject_RichCompare(__pyx_v_idx, __pyx_int_0, Py_LT); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 217, __pyx_L1_error)
-  __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely((__pyx_t_3 < 0))) __PYX_ERR(0, 217, __pyx_L1_error)
+  __pyx_t_2 = PyObject_RichCompare(__pyx_v_idx, __pyx_int_0, Py_LT); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 260, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely((__pyx_t_3 < 0))) __PYX_ERR(0, 260, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   if (!__pyx_t_3) {
   } else {
     __pyx_t_1 = __pyx_t_3;
     goto __pyx_L4_bool_binop_done;
   }
-  __pyx_t_2 = __Pyx_PyInt_From_int32_t(__pyx_v_self->_agents.size); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 217, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyInt_From_int32_t(__pyx_v_self->_agents.size); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 260, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_4 = PyObject_RichCompare(__pyx_v_idx, __pyx_t_2, Py_GE); __Pyx_XGOTREF(__pyx_t_4); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 217, __pyx_L1_error)
+  __pyx_t_4 = PyObject_RichCompare(__pyx_v_idx, __pyx_t_2, Py_GE); __Pyx_XGOTREF(__pyx_t_4); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 260, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_t_4); if (unlikely((__pyx_t_3 < 0))) __PYX_ERR(0, 217, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_t_4); if (unlikely((__pyx_t_3 < 0))) __PYX_ERR(0, 260, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   __pyx_t_1 = __pyx_t_3;
   __pyx_L4_bool_binop_done:;
   if (unlikely(__pyx_t_1)) {
 
-    /* "binding.pyx":219
+    /* "binding.pyx":262
  *         if idx < 0 or idx >= self._agents.size:
  *             raise IndexError(
  *                 f"Invalid index '{idx}' (total number of agents: {self._agents.size})"             # <<<<<<<<<<<<<<
  *             )
  * 
  */
-    __pyx_t_4 = PyTuple_New(5); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 219, __pyx_L1_error)
+    __pyx_t_4 = PyTuple_New(5); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 262, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __pyx_t_5 = 0;
     __pyx_t_6 = 127;
@@ -6014,7 +6014,7 @@ static PyObject *__pyx_pf_7binding_6Engine_4_check_agent_idx(struct __pyx_obj_7b
     __pyx_t_5 += 15;
     __Pyx_GIVEREF(__pyx_kp_u_Invalid_index);
     PyTuple_SET_ITEM(__pyx_t_4, 0, __pyx_kp_u_Invalid_index);
-    __pyx_t_2 = __Pyx_PyObject_FormatSimple(__pyx_v_idx, __pyx_empty_unicode); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 219, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_FormatSimple(__pyx_v_idx, __pyx_empty_unicode); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 262, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __pyx_t_6 = (__Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_2) > __pyx_t_6) ? __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_2) : __pyx_t_6;
     __pyx_t_5 += __Pyx_PyUnicode_GET_LENGTH(__pyx_t_2);
@@ -6025,9 +6025,9 @@ static PyObject *__pyx_pf_7binding_6Engine_4_check_agent_idx(struct __pyx_obj_7b
     __pyx_t_5 += 27;
     __Pyx_GIVEREF(__pyx_kp_u_total_number_of_agents);
     PyTuple_SET_ITEM(__pyx_t_4, 2, __pyx_kp_u_total_number_of_agents);
-    __pyx_t_2 = __Pyx_PyInt_From_int32_t(__pyx_v_self->_agents.size); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 219, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyInt_From_int32_t(__pyx_v_self->_agents.size); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 262, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_7 = __Pyx_PyObject_FormatSimple(__pyx_t_2, __pyx_empty_unicode); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 219, __pyx_L1_error)
+    __pyx_t_7 = __Pyx_PyObject_FormatSimple(__pyx_t_2, __pyx_empty_unicode); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 262, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     __pyx_t_6 = (__Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_7) > __pyx_t_6) ? __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_7) : __pyx_t_6;
@@ -6039,25 +6039,25 @@ static PyObject *__pyx_pf_7binding_6Engine_4_check_agent_idx(struct __pyx_obj_7b
     __pyx_t_5 += 1;
     __Pyx_GIVEREF(__pyx_kp_u_);
     PyTuple_SET_ITEM(__pyx_t_4, 4, __pyx_kp_u_);
-    __pyx_t_7 = __Pyx_PyUnicode_Join(__pyx_t_4, 5, __pyx_t_5, __pyx_t_6); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 219, __pyx_L1_error)
+    __pyx_t_7 = __Pyx_PyUnicode_Join(__pyx_t_4, 5, __pyx_t_5, __pyx_t_6); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 262, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-    /* "binding.pyx":218
+    /* "binding.pyx":261
  *     def _check_agent_idx(self, idx: int):
  *         if idx < 0 or idx >= self._agents.size:
  *             raise IndexError(             # <<<<<<<<<<<<<<
  *                 f"Invalid index '{idx}' (total number of agents: {self._agents.size})"
  *             )
  */
-    __pyx_t_4 = __Pyx_PyObject_CallOneArg(__pyx_builtin_IndexError, __pyx_t_7); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 218, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyObject_CallOneArg(__pyx_builtin_IndexError, __pyx_t_7); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 261, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
     __Pyx_Raise(__pyx_t_4, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    __PYX_ERR(0, 218, __pyx_L1_error)
+    __PYX_ERR(0, 261, __pyx_L1_error)
 
-    /* "binding.pyx":217
+    /* "binding.pyx":260
  * 
  *     def _check_agent_idx(self, idx: int):
  *         if idx < 0 or idx >= self._agents.size:             # <<<<<<<<<<<<<<
@@ -6066,7 +6066,7 @@ static PyObject *__pyx_pf_7binding_6Engine_4_check_agent_idx(struct __pyx_obj_7b
  */
   }
 
-  /* "binding.pyx":216
+  /* "binding.pyx":259
  *             twsfwphysx_delete_simulation_buffer(self._simulation_buffer)
  * 
  *     def _check_agent_idx(self, idx: int):             # <<<<<<<<<<<<<<
@@ -6089,11 +6089,11 @@ static PyObject *__pyx_pf_7binding_6Engine_4_check_agent_idx(struct __pyx_obj_7b
   return __pyx_r;
 }
 
-/* "binding.pyx":222
+/* "binding.pyx":265
  *             )
  * 
  *     def simulate(self, *, t: float, n_steps: int):             # <<<<<<<<<<<<<<
- *         """simulate."""
+ *         """Simulates the propagation and interactions of agents and missiles.
  * 
  */
 
@@ -6105,7 +6105,7 @@ PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
-PyDoc_STRVAR(__pyx_doc_7binding_6Engine_6simulate, "simulate.");
+PyDoc_STRVAR(__pyx_doc_7binding_6Engine_6simulate, "Simulates the propagation and interactions of agents and missiles.\n\n        Simulates the propagation and interactions of agents and missiles for\n        `t` seconds (simulation time; hopefully much faster in real-time)\n        using `n_steps` internal steps. The later increase the overall\n        computation time but also increases the accuracy of the collision\n        detection among agents but also between agents and missiles.\n        As a rule of thumb, the propagation distance of agents and missiles\n        during one simulation steps should be smaller than\n        :class:`World.agent_radius <twsfwphysx.World.agent_radius>`.\n\n        :param t: Simulation time in seconds. (Not real time!)\n        :param n_steps: Number of internal simulation steps.\n        ");
 static PyMethodDef __pyx_mdef_7binding_6Engine_7simulate = {"simulate", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_7binding_6Engine_7simulate, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_7binding_6Engine_6simulate};
 static PyObject *__pyx_pw_7binding_6Engine_7simulate(PyObject *__pyx_v_self, 
 #if CYTHON_METH_FASTCALL
@@ -6148,32 +6148,32 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
         (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
         kw_args--;
       }
-      else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 222, __pyx_L3_error)
+      else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 265, __pyx_L3_error)
       else {
-        __Pyx_RaiseKeywordRequired("simulate", __pyx_n_s_t); __PYX_ERR(0, 222, __pyx_L3_error)
+        __Pyx_RaiseKeywordRequired("simulate", __pyx_n_s_t); __PYX_ERR(0, 265, __pyx_L3_error)
       }
       if (likely((values[1] = __Pyx_GetKwValue_FASTCALL(__pyx_kwds, __pyx_kwvalues, __pyx_n_s_n_steps)) != 0)) {
         (void)__Pyx_Arg_NewRef_FASTCALL(values[1]);
         kw_args--;
       }
-      else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 222, __pyx_L3_error)
+      else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 265, __pyx_L3_error)
       else {
-        __Pyx_RaiseKeywordRequired("simulate", __pyx_n_s_n_steps); __PYX_ERR(0, 222, __pyx_L3_error)
+        __Pyx_RaiseKeywordRequired("simulate", __pyx_n_s_n_steps); __PYX_ERR(0, 265, __pyx_L3_error)
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, 0, "simulate") < 0)) __PYX_ERR(0, 222, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, 0, "simulate") < 0)) __PYX_ERR(0, 265, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs != 0)) {
       goto __pyx_L5_argtuple_error;
     } else {
-      __Pyx_RaiseKeywordRequired("simulate", __pyx_n_s_t); __PYX_ERR(0, 222, __pyx_L3_error)
+      __Pyx_RaiseKeywordRequired("simulate", __pyx_n_s_t); __PYX_ERR(0, 265, __pyx_L3_error)
     }
-    __pyx_v_t = __pyx_PyFloat_AsDouble(values[0]); if (unlikely((__pyx_v_t == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 222, __pyx_L3_error)
+    __pyx_v_t = __pyx_PyFloat_AsDouble(values[0]); if (unlikely((__pyx_v_t == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 265, __pyx_L3_error)
     __pyx_v_n_steps = ((PyObject*)values[1]);
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("simulate", 1, 0, 0, __pyx_nargs); __PYX_ERR(0, 222, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("simulate", 1, 0, 0, __pyx_nargs); __PYX_ERR(0, 265, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -6187,7 +6187,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_n_steps), (&PyInt_Type), 0, "n_steps", 1))) __PYX_ERR(0, 222, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_n_steps), (&PyInt_Type), 0, "n_steps", 1))) __PYX_ERR(0, 265, __pyx_L1_error)
   __pyx_r = __pyx_pf_7binding_6Engine_6simulate(((struct __pyx_obj_7binding_Engine *)__pyx_v_self), __pyx_v_t, __pyx_v_n_steps);
 
   /* function exit code */
@@ -6214,17 +6214,17 @@ static PyObject *__pyx_pf_7binding_6Engine_6simulate(struct __pyx_obj_7binding_E
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("simulate", 1);
 
-  /* "binding.pyx":230
+  /* "binding.pyx":286
  *             &self._world,
  *             t,
  *             n_steps,             # <<<<<<<<<<<<<<
  *             self._simulation_buffer
  *         )
  */
-  __pyx_t_1 = __Pyx_PyInt_As_int32_t(__pyx_v_n_steps); if (unlikely((__pyx_t_1 == ((int32_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 230, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_As_int32_t(__pyx_v_n_steps); if (unlikely((__pyx_t_1 == ((int32_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 286, __pyx_L1_error)
 
-  /* "binding.pyx":225
- *         """simulate."""
+  /* "binding.pyx":281
+ *         """
  * 
  *         twsfwphysx_simulate(             # <<<<<<<<<<<<<<
  *             &self._agents,
@@ -6232,11 +6232,11 @@ static PyObject *__pyx_pf_7binding_6Engine_6simulate(struct __pyx_obj_7binding_E
  */
   twsfwphysx_simulate((&__pyx_v_self->_agents), (&__pyx_v_self->_missiles), (&__pyx_v_self->_world), __pyx_v_t, __pyx_t_1, __pyx_v_self->_simulation_buffer);
 
-  /* "binding.pyx":222
+  /* "binding.pyx":265
  *             )
  * 
  *     def simulate(self, *, t: float, n_steps: int):             # <<<<<<<<<<<<<<
- *         """simulate."""
+ *         """Simulates the propagation and interactions of agents and missiles.
  * 
  */
 
@@ -6252,7 +6252,7 @@ static PyObject *__pyx_pf_7binding_6Engine_6simulate(struct __pyx_obj_7binding_E
   return __pyx_r;
 }
 
-/* "binding.pyx":234
+/* "binding.pyx":290
  *         )
  * 
  *     def launch_missile(self,             # <<<<<<<<<<<<<<
@@ -6302,7 +6302,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   {
     PyObject **__pyx_pyargnames[] = {&__pyx_n_s_agent_idx,&__pyx_n_s_v,&__pyx_n_s_payload,0};
 
-    /* "binding.pyx":237
+    /* "binding.pyx":293
  *                        *,
  *                        agent_idx: int,
  *                        v: Optional[float]=None,             # <<<<<<<<<<<<<<
@@ -6311,7 +6311,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
  */
     values[1] = __Pyx_Arg_NewRef_FASTCALL(((PyObject *)Py_None));
 
-    /* "binding.pyx":238
+    /* "binding.pyx":294
  *                        agent_idx: int,
  *                        v: Optional[float]=None,
  *                        payload: Optional[int]=None):             # <<<<<<<<<<<<<<
@@ -6330,25 +6330,25 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
         (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
         kw_args--;
       }
-      else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 234, __pyx_L3_error)
+      else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 290, __pyx_L3_error)
       else {
-        __Pyx_RaiseKeywordRequired("launch_missile", __pyx_n_s_agent_idx); __PYX_ERR(0, 234, __pyx_L3_error)
+        __Pyx_RaiseKeywordRequired("launch_missile", __pyx_n_s_agent_idx); __PYX_ERR(0, 290, __pyx_L3_error)
       }
       if (kw_args > 0 && likely(kw_args <= 2)) {
         Py_ssize_t index;
         for (index = 1; index < 3 && kw_args > 0; index++) {
           PyObject* value = __Pyx_GetKwValue_FASTCALL(__pyx_kwds, __pyx_kwvalues, *__pyx_pyargnames[index]);
           if (value) { values[index] = __Pyx_Arg_NewRef_FASTCALL(value); kw_args--; }
-          else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 234, __pyx_L3_error)
+          else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 290, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, 0, "launch_missile") < 0)) __PYX_ERR(0, 234, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, 0, "launch_missile") < 0)) __PYX_ERR(0, 290, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs != 0)) {
       goto __pyx_L5_argtuple_error;
     } else {
-      __Pyx_RaiseKeywordRequired("launch_missile", __pyx_n_s_agent_idx); __PYX_ERR(0, 234, __pyx_L3_error)
+      __Pyx_RaiseKeywordRequired("launch_missile", __pyx_n_s_agent_idx); __PYX_ERR(0, 290, __pyx_L3_error)
     }
     __pyx_v_agent_idx = ((PyObject*)values[0]);
     __pyx_v_v = values[1];
@@ -6356,7 +6356,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("launch_missile", 1, 0, 0, __pyx_nargs); __PYX_ERR(0, 234, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("launch_missile", 1, 0, 0, __pyx_nargs); __PYX_ERR(0, 290, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -6370,10 +6370,10 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_agent_idx), (&PyInt_Type), 0, "agent_idx", 1))) __PYX_ERR(0, 236, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_agent_idx), (&PyInt_Type), 0, "agent_idx", 1))) __PYX_ERR(0, 292, __pyx_L1_error)
   __pyx_r = __pyx_pf_7binding_6Engine_8launch_missile(((struct __pyx_obj_7binding_Engine *)__pyx_v_self), __pyx_v_agent_idx, __pyx_v_v, __pyx_v_payload);
 
-  /* "binding.pyx":234
+  /* "binding.pyx":290
  *         )
  * 
  *     def launch_missile(self,             # <<<<<<<<<<<<<<
@@ -6414,14 +6414,14 @@ static PyObject *__pyx_pf_7binding_6Engine_8launch_missile(struct __pyx_obj_7bin
   __Pyx_RefNannySetupContext("launch_missile", 0);
   __Pyx_INCREF(__pyx_v_payload);
 
-  /* "binding.pyx":253
+  /* "binding.pyx":309
  *         """
  * 
  *         self._check_agent_idx(agent_idx)             # <<<<<<<<<<<<<<
  *         cdef twsfwphysx_agent agent = self._agents.agents[agent_idx]
  * 
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_check_agent_idx); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 253, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_check_agent_idx); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 309, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_3 = NULL;
   __pyx_t_4 = 0;
@@ -6441,23 +6441,23 @@ static PyObject *__pyx_pf_7binding_6Engine_8launch_missile(struct __pyx_obj_7bin
     PyObject *__pyx_callargs[2] = {__pyx_t_3, __pyx_v_agent_idx};
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 253, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 309, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "binding.pyx":254
+  /* "binding.pyx":310
  * 
  *         self._check_agent_idx(agent_idx)
  *         cdef twsfwphysx_agent agent = self._agents.agents[agent_idx]             # <<<<<<<<<<<<<<
  * 
  *         cdef twsfwphysx_missile missile = twsfwphysx_launch_missile(&agent, &self._world)
  */
-  __pyx_t_5 = __Pyx_PyIndex_AsSsize_t(__pyx_v_agent_idx); if (unlikely((__pyx_t_5 == (Py_ssize_t)-1) && PyErr_Occurred())) __PYX_ERR(0, 254, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyIndex_AsSsize_t(__pyx_v_agent_idx); if (unlikely((__pyx_t_5 == (Py_ssize_t)-1) && PyErr_Occurred())) __PYX_ERR(0, 310, __pyx_L1_error)
   __pyx_v_agent = (__pyx_v_self->_agents.agents[__pyx_t_5]);
 
-  /* "binding.pyx":256
+  /* "binding.pyx":312
  *         cdef twsfwphysx_agent agent = self._agents.agents[agent_idx]
  * 
  *         cdef twsfwphysx_missile missile = twsfwphysx_launch_missile(&agent, &self._world)             # <<<<<<<<<<<<<<
@@ -6466,7 +6466,7 @@ static PyObject *__pyx_pf_7binding_6Engine_8launch_missile(struct __pyx_obj_7bin
  */
   __pyx_v_missile = twsfwphysx_launch_missile((&__pyx_v_agent), (&__pyx_v_self->_world));
 
-  /* "binding.pyx":258
+  /* "binding.pyx":314
  *         cdef twsfwphysx_missile missile = twsfwphysx_launch_missile(&agent, &self._world)
  * 
  *         if v is not None:             # <<<<<<<<<<<<<<
@@ -6476,17 +6476,17 @@ static PyObject *__pyx_pf_7binding_6Engine_8launch_missile(struct __pyx_obj_7bin
   __pyx_t_6 = (__pyx_v_v != Py_None);
   if (__pyx_t_6) {
 
-    /* "binding.pyx":259
+    /* "binding.pyx":315
  * 
  *         if v is not None:
  *             missile.v = v             # <<<<<<<<<<<<<<
  * 
  *         if payload is None:
  */
-    __pyx_t_7 = __pyx_PyFloat_AsFloat(__pyx_v_v); if (unlikely((__pyx_t_7 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 259, __pyx_L1_error)
+    __pyx_t_7 = __pyx_PyFloat_AsFloat(__pyx_v_v); if (unlikely((__pyx_t_7 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 315, __pyx_L1_error)
     __pyx_v_missile.v = __pyx_t_7;
 
-    /* "binding.pyx":258
+    /* "binding.pyx":314
  *         cdef twsfwphysx_missile missile = twsfwphysx_launch_missile(&agent, &self._world)
  * 
  *         if v is not None:             # <<<<<<<<<<<<<<
@@ -6495,7 +6495,7 @@ static PyObject *__pyx_pf_7binding_6Engine_8launch_missile(struct __pyx_obj_7bin
  */
   }
 
-  /* "binding.pyx":261
+  /* "binding.pyx":317
  *             missile.v = v
  * 
  *         if payload is None:             # <<<<<<<<<<<<<<
@@ -6505,7 +6505,7 @@ static PyObject *__pyx_pf_7binding_6Engine_8launch_missile(struct __pyx_obj_7bin
   __pyx_t_6 = (__pyx_v_payload == Py_None);
   if (__pyx_t_6) {
 
-    /* "binding.pyx":262
+    /* "binding.pyx":318
  * 
  *         if payload is None:
  *             payload = agent_idx             # <<<<<<<<<<<<<<
@@ -6515,7 +6515,7 @@ static PyObject *__pyx_pf_7binding_6Engine_8launch_missile(struct __pyx_obj_7bin
     __Pyx_INCREF(__pyx_v_agent_idx);
     __Pyx_DECREF_SET(__pyx_v_payload, __pyx_v_agent_idx);
 
-    /* "binding.pyx":261
+    /* "binding.pyx":317
  *             missile.v = v
  * 
  *         if payload is None:             # <<<<<<<<<<<<<<
@@ -6524,7 +6524,7 @@ static PyObject *__pyx_pf_7binding_6Engine_8launch_missile(struct __pyx_obj_7bin
  */
   }
 
-  /* "binding.pyx":264
+  /* "binding.pyx":320
  *             payload = agent_idx
  * 
  *         twsfwphysx_add_missile(&self._missiles, missile)             # <<<<<<<<<<<<<<
@@ -6533,7 +6533,7 @@ static PyObject *__pyx_pf_7binding_6Engine_8launch_missile(struct __pyx_obj_7bin
  */
   twsfwphysx_add_missile((&__pyx_v_self->_missiles), __pyx_v_missile);
 
-  /* "binding.pyx":234
+  /* "binding.pyx":290
  *         )
  * 
  *     def launch_missile(self,             # <<<<<<<<<<<<<<
@@ -6557,7 +6557,7 @@ static PyObject *__pyx_pf_7binding_6Engine_8launch_missile(struct __pyx_obj_7bin
   return __pyx_r;
 }
 
-/* "binding.pyx":266
+/* "binding.pyx":322
  *         twsfwphysx_add_missile(&self._missiles, missile)
  * 
  *     def turn_agent(self, *, agent_idx: int, angle: float, degrees: bool=True):             # <<<<<<<<<<<<<<
@@ -6618,39 +6618,39 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
         (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
         kw_args--;
       }
-      else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 266, __pyx_L3_error)
+      else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 322, __pyx_L3_error)
       else {
-        __Pyx_RaiseKeywordRequired("turn_agent", __pyx_n_s_agent_idx); __PYX_ERR(0, 266, __pyx_L3_error)
+        __Pyx_RaiseKeywordRequired("turn_agent", __pyx_n_s_agent_idx); __PYX_ERR(0, 322, __pyx_L3_error)
       }
       if (likely((values[1] = __Pyx_GetKwValue_FASTCALL(__pyx_kwds, __pyx_kwvalues, __pyx_n_s_angle)) != 0)) {
         (void)__Pyx_Arg_NewRef_FASTCALL(values[1]);
         kw_args--;
       }
-      else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 266, __pyx_L3_error)
+      else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 322, __pyx_L3_error)
       else {
-        __Pyx_RaiseKeywordRequired("turn_agent", __pyx_n_s_angle); __PYX_ERR(0, 266, __pyx_L3_error)
+        __Pyx_RaiseKeywordRequired("turn_agent", __pyx_n_s_angle); __PYX_ERR(0, 322, __pyx_L3_error)
       }
       if (kw_args == 1) {
         const Py_ssize_t index = 2;
         PyObject* value = __Pyx_GetKwValue_FASTCALL(__pyx_kwds, __pyx_kwvalues, *__pyx_pyargnames[index]);
         if (value) { values[index] = __Pyx_Arg_NewRef_FASTCALL(value); kw_args--; }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 266, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 322, __pyx_L3_error)
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, 0, "turn_agent") < 0)) __PYX_ERR(0, 266, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, 0, "turn_agent") < 0)) __PYX_ERR(0, 322, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs != 0)) {
       goto __pyx_L5_argtuple_error;
     } else {
-      __Pyx_RaiseKeywordRequired("turn_agent", __pyx_n_s_agent_idx); __PYX_ERR(0, 266, __pyx_L3_error)
+      __Pyx_RaiseKeywordRequired("turn_agent", __pyx_n_s_agent_idx); __PYX_ERR(0, 322, __pyx_L3_error)
     }
     __pyx_v_agent_idx = ((PyObject*)values[0]);
-    __pyx_v_angle = __pyx_PyFloat_AsDouble(values[1]); if (unlikely((__pyx_v_angle == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 266, __pyx_L3_error)
+    __pyx_v_angle = __pyx_PyFloat_AsDouble(values[1]); if (unlikely((__pyx_v_angle == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 322, __pyx_L3_error)
     __pyx_v_degrees = values[2];
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("turn_agent", 1, 0, 0, __pyx_nargs); __PYX_ERR(0, 266, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("turn_agent", 1, 0, 0, __pyx_nargs); __PYX_ERR(0, 322, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -6664,7 +6664,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_agent_idx), (&PyInt_Type), 0, "agent_idx", 1))) __PYX_ERR(0, 266, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_agent_idx), (&PyInt_Type), 0, "agent_idx", 1))) __PYX_ERR(0, 322, __pyx_L1_error)
   __pyx_r = __pyx_pf_7binding_6Engine_10turn_agent(((struct __pyx_obj_7binding_Engine *)__pyx_v_self), __pyx_v_agent_idx, __pyx_v_angle, __pyx_v_degrees);
 
   /* function exit code */
@@ -6697,14 +6697,14 @@ static PyObject *__pyx_pf_7binding_6Engine_10turn_agent(struct __pyx_obj_7bindin
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("turn_agent", 1);
 
-  /* "binding.pyx":281
+  /* "binding.pyx":337
  *         """
  * 
  *         self._check_agent_idx(agent_idx)             # <<<<<<<<<<<<<<
  * 
  *         if degrees:
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_check_agent_idx); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 281, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_check_agent_idx); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 337, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_3 = NULL;
   __pyx_t_4 = 0;
@@ -6724,45 +6724,45 @@ static PyObject *__pyx_pf_7binding_6Engine_10turn_agent(struct __pyx_obj_7bindin
     PyObject *__pyx_callargs[2] = {__pyx_t_3, __pyx_v_agent_idx};
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 281, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 337, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "binding.pyx":283
+  /* "binding.pyx":339
  *         self._check_agent_idx(agent_idx)
  * 
  *         if degrees:             # <<<<<<<<<<<<<<
  *             angle /= 180. * pi
  * 
  */
-  __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_v_degrees); if (unlikely((__pyx_t_5 < 0))) __PYX_ERR(0, 283, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_v_degrees); if (unlikely((__pyx_t_5 < 0))) __PYX_ERR(0, 339, __pyx_L1_error)
   if (__pyx_t_5) {
 
-    /* "binding.pyx":284
+    /* "binding.pyx":340
  * 
  *         if degrees:
  *             angle /= 180. * pi             # <<<<<<<<<<<<<<
  * 
  *         twsfwphysx_turn_agent(&self._agents.agents[agent_idx], angle)
  */
-    __pyx_t_1 = PyFloat_FromDouble(__pyx_v_angle); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 284, __pyx_L1_error)
+    __pyx_t_1 = PyFloat_FromDouble(__pyx_v_angle); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 340, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_pi); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 284, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_pi); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 340, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_3 = PyNumber_Multiply(__pyx_float_180_, __pyx_t_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 284, __pyx_L1_error)
+    __pyx_t_3 = PyNumber_Multiply(__pyx_float_180_, __pyx_t_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 340, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __pyx_t_2 = __Pyx_PyNumber_InPlaceDivide(__pyx_t_1, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 284, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyNumber_InPlaceDivide(__pyx_t_1, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 340, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    __pyx_t_6 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_6 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 284, __pyx_L1_error)
+    __pyx_t_6 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_6 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 340, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     __pyx_v_angle = __pyx_t_6;
 
-    /* "binding.pyx":283
+    /* "binding.pyx":339
  *         self._check_agent_idx(agent_idx)
  * 
  *         if degrees:             # <<<<<<<<<<<<<<
@@ -6771,17 +6771,17 @@ static PyObject *__pyx_pf_7binding_6Engine_10turn_agent(struct __pyx_obj_7bindin
  */
   }
 
-  /* "binding.pyx":286
+  /* "binding.pyx":342
  *             angle /= 180. * pi
  * 
  *         twsfwphysx_turn_agent(&self._agents.agents[agent_idx], angle)             # <<<<<<<<<<<<<<
  * 
  *     def _get_agents_size(self):
  */
-  __pyx_t_7 = __Pyx_PyIndex_AsSsize_t(__pyx_v_agent_idx); if (unlikely((__pyx_t_7 == (Py_ssize_t)-1) && PyErr_Occurred())) __PYX_ERR(0, 286, __pyx_L1_error)
+  __pyx_t_7 = __Pyx_PyIndex_AsSsize_t(__pyx_v_agent_idx); if (unlikely((__pyx_t_7 == (Py_ssize_t)-1) && PyErr_Occurred())) __PYX_ERR(0, 342, __pyx_L1_error)
   twsfwphysx_turn_agent((&(__pyx_v_self->_agents.agents[__pyx_t_7])), __pyx_v_angle);
 
-  /* "binding.pyx":266
+  /* "binding.pyx":322
  *         twsfwphysx_add_missile(&self._missiles, missile)
  * 
  *     def turn_agent(self, *, agent_idx: int, angle: float, degrees: bool=True):             # <<<<<<<<<<<<<<
@@ -6804,7 +6804,7 @@ static PyObject *__pyx_pf_7binding_6Engine_10turn_agent(struct __pyx_obj_7bindin
   return __pyx_r;
 }
 
-/* "binding.pyx":288
+/* "binding.pyx":344
  *         twsfwphysx_turn_agent(&self._agents.agents[agent_idx], angle)
  * 
  *     def _get_agents_size(self):             # <<<<<<<<<<<<<<
@@ -6862,7 +6862,7 @@ static PyObject *__pyx_pf_7binding_6Engine_12_get_agents_size(struct __pyx_obj_7
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("_get_agents_size", 1);
 
-  /* "binding.pyx":289
+  /* "binding.pyx":345
  * 
  *     def _get_agents_size(self):
  *         return self._agents.size             # <<<<<<<<<<<<<<
@@ -6870,13 +6870,13 @@ static PyObject *__pyx_pf_7binding_6Engine_12_get_agents_size(struct __pyx_obj_7
  *     def _get_agent(self, index: int):
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyInt_From_int32_t(__pyx_v_self->_agents.size); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 289, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_From_int32_t(__pyx_v_self->_agents.size); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 345, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "binding.pyx":288
+  /* "binding.pyx":344
  *         twsfwphysx_turn_agent(&self._agents.agents[agent_idx], angle)
  * 
  *     def _get_agents_size(self):             # <<<<<<<<<<<<<<
@@ -6895,7 +6895,7 @@ static PyObject *__pyx_pf_7binding_6Engine_12_get_agents_size(struct __pyx_obj_7
   return __pyx_r;
 }
 
-/* "binding.pyx":291
+/* "binding.pyx":347
  *         return self._agents.size
  * 
  *     def _get_agent(self, index: int):             # <<<<<<<<<<<<<<
@@ -6956,12 +6956,12 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 291, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 347, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "_get_agent") < 0)) __PYX_ERR(0, 291, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "_get_agent") < 0)) __PYX_ERR(0, 347, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs != 1)) {
       goto __pyx_L5_argtuple_error;
@@ -6972,7 +6972,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("_get_agent", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 291, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("_get_agent", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 347, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -6986,7 +6986,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_index), (&PyInt_Type), 0, "index", 1))) __PYX_ERR(0, 291, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_index), (&PyInt_Type), 0, "index", 1))) __PYX_ERR(0, 347, __pyx_L1_error)
   __pyx_r = __pyx_pf_7binding_6Engine_14_get_agent(((struct __pyx_obj_7binding_Engine *)__pyx_v_self), __pyx_v_index);
 
   /* function exit code */
@@ -7023,30 +7023,30 @@ static PyObject *__pyx_pf_7binding_6Engine_14_get_agent(struct __pyx_obj_7bindin
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("_get_agent", 1);
 
-  /* "binding.pyx":292
+  /* "binding.pyx":348
  * 
  *     def _get_agent(self, index: int):
  *         cdef twsfwphysx_agent a = self._agents.agents[index]             # <<<<<<<<<<<<<<
  * 
  *         r = Vec(a.r.x, a.r.y, a.r.z)
  */
-  __pyx_t_1 = __Pyx_PyIndex_AsSsize_t(__pyx_v_index); if (unlikely((__pyx_t_1 == (Py_ssize_t)-1) && PyErr_Occurred())) __PYX_ERR(0, 292, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyIndex_AsSsize_t(__pyx_v_index); if (unlikely((__pyx_t_1 == (Py_ssize_t)-1) && PyErr_Occurred())) __PYX_ERR(0, 348, __pyx_L1_error)
   __pyx_v_a = (__pyx_v_self->_agents.agents[__pyx_t_1]);
 
-  /* "binding.pyx":294
+  /* "binding.pyx":350
  *         cdef twsfwphysx_agent a = self._agents.agents[index]
  * 
  *         r = Vec(a.r.x, a.r.y, a.r.z)             # <<<<<<<<<<<<<<
  *         u = Vec(a.u.x, a.u.y, a.u.z)
  * 
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_Vec); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 294, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_Vec); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 350, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_4 = PyFloat_FromDouble(__pyx_v_a.r.x); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 294, __pyx_L1_error)
+  __pyx_t_4 = PyFloat_FromDouble(__pyx_v_a.r.x); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 350, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_5 = PyFloat_FromDouble(__pyx_v_a.r.y); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 294, __pyx_L1_error)
+  __pyx_t_5 = PyFloat_FromDouble(__pyx_v_a.r.y); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 350, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_6 = PyFloat_FromDouble(__pyx_v_a.r.z); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 294, __pyx_L1_error)
+  __pyx_t_6 = PyFloat_FromDouble(__pyx_v_a.r.z); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 350, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __pyx_t_7 = NULL;
   __pyx_t_8 = 0;
@@ -7069,27 +7069,27 @@ static PyObject *__pyx_pf_7binding_6Engine_14_get_agent(struct __pyx_obj_7bindin
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 294, __pyx_L1_error)
+    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 350, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   }
   __pyx_v_r = __pyx_t_2;
   __pyx_t_2 = 0;
 
-  /* "binding.pyx":295
+  /* "binding.pyx":351
  * 
  *         r = Vec(a.r.x, a.r.y, a.r.z)
  *         u = Vec(a.u.x, a.u.y, a.u.z)             # <<<<<<<<<<<<<<
  * 
  *         return Agent(r, u, a.v, a.a, a.hp)
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_Vec); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 295, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_Vec); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 351, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_6 = PyFloat_FromDouble(__pyx_v_a.u.x); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 295, __pyx_L1_error)
+  __pyx_t_6 = PyFloat_FromDouble(__pyx_v_a.u.x); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 351, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
-  __pyx_t_5 = PyFloat_FromDouble(__pyx_v_a.u.y); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 295, __pyx_L1_error)
+  __pyx_t_5 = PyFloat_FromDouble(__pyx_v_a.u.y); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 351, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_4 = PyFloat_FromDouble(__pyx_v_a.u.z); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 295, __pyx_L1_error)
+  __pyx_t_4 = PyFloat_FromDouble(__pyx_v_a.u.z); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 351, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __pyx_t_7 = NULL;
   __pyx_t_8 = 0;
@@ -7112,14 +7112,14 @@ static PyObject *__pyx_pf_7binding_6Engine_14_get_agent(struct __pyx_obj_7bindin
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 295, __pyx_L1_error)
+    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 351, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   }
   __pyx_v_u = __pyx_t_2;
   __pyx_t_2 = 0;
 
-  /* "binding.pyx":297
+  /* "binding.pyx":353
  *         u = Vec(a.u.x, a.u.y, a.u.z)
  * 
  *         return Agent(r, u, a.v, a.a, a.hp)             # <<<<<<<<<<<<<<
@@ -7127,13 +7127,13 @@ static PyObject *__pyx_pf_7binding_6Engine_14_get_agent(struct __pyx_obj_7bindin
  *     def _set_agent(self, index: int, agent: Agent):
  */
   __Pyx_XDECREF(__pyx_r);
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_Agent); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 297, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_Agent); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 353, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_4 = PyFloat_FromDouble(__pyx_v_a.v); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 297, __pyx_L1_error)
+  __pyx_t_4 = PyFloat_FromDouble(__pyx_v_a.v); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 353, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_5 = PyFloat_FromDouble(__pyx_v_a.a); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 297, __pyx_L1_error)
+  __pyx_t_5 = PyFloat_FromDouble(__pyx_v_a.a); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 353, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_6 = PyFloat_FromDouble(__pyx_v_a.hp); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 297, __pyx_L1_error)
+  __pyx_t_6 = PyFloat_FromDouble(__pyx_v_a.hp); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 353, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __pyx_t_7 = NULL;
   __pyx_t_8 = 0;
@@ -7156,7 +7156,7 @@ static PyObject *__pyx_pf_7binding_6Engine_14_get_agent(struct __pyx_obj_7bindin
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 297, __pyx_L1_error)
+    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 353, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   }
@@ -7164,7 +7164,7 @@ static PyObject *__pyx_pf_7binding_6Engine_14_get_agent(struct __pyx_obj_7bindin
   __pyx_t_2 = 0;
   goto __pyx_L0;
 
-  /* "binding.pyx":291
+  /* "binding.pyx":347
  *         return self._agents.size
  * 
  *     def _get_agent(self, index: int):             # <<<<<<<<<<<<<<
@@ -7190,7 +7190,7 @@ static PyObject *__pyx_pf_7binding_6Engine_14_get_agent(struct __pyx_obj_7bindin
   return __pyx_r;
 }
 
-/* "binding.pyx":299
+/* "binding.pyx":355
  *         return Agent(r, u, a.v, a.a, a.hp)
  * 
  *     def _set_agent(self, index: int, agent: Agent):             # <<<<<<<<<<<<<<
@@ -7254,7 +7254,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 299, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 355, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
         CYTHON_FALLTHROUGH;
         case  1:
@@ -7262,14 +7262,14 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[1]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 299, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 355, __pyx_L3_error)
         else {
-          __Pyx_RaiseArgtupleInvalid("_set_agent", 1, 2, 2, 1); __PYX_ERR(0, 299, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("_set_agent", 1, 2, 2, 1); __PYX_ERR(0, 355, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "_set_agent") < 0)) __PYX_ERR(0, 299, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "_set_agent") < 0)) __PYX_ERR(0, 355, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs != 2)) {
       goto __pyx_L5_argtuple_error;
@@ -7282,7 +7282,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("_set_agent", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 299, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("_set_agent", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 355, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -7296,7 +7296,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_index), (&PyInt_Type), 0, "index", 1))) __PYX_ERR(0, 299, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_index), (&PyInt_Type), 0, "index", 1))) __PYX_ERR(0, 355, __pyx_L1_error)
   __pyx_r = __pyx_pf_7binding_6Engine_16_set_agent(((struct __pyx_obj_7binding_Engine *)__pyx_v_self), __pyx_v_index, __pyx_v_agent);
 
   /* function exit code */
@@ -7327,152 +7327,152 @@ static PyObject *__pyx_pf_7binding_6Engine_16_set_agent(struct __pyx_obj_7bindin
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("_set_agent", 1);
 
-  /* "binding.pyx":300
+  /* "binding.pyx":356
  * 
  *     def _set_agent(self, index: int, agent: Agent):
  *         cdef twsfwphysx_agent* a = &self._agents.agents[index]             # <<<<<<<<<<<<<<
  * 
  *         a.r.x = agent.r.x
  */
-  __pyx_t_1 = __Pyx_PyIndex_AsSsize_t(__pyx_v_index); if (unlikely((__pyx_t_1 == (Py_ssize_t)-1) && PyErr_Occurred())) __PYX_ERR(0, 300, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyIndex_AsSsize_t(__pyx_v_index); if (unlikely((__pyx_t_1 == (Py_ssize_t)-1) && PyErr_Occurred())) __PYX_ERR(0, 356, __pyx_L1_error)
   __pyx_v_a = (&(__pyx_v_self->_agents.agents[__pyx_t_1]));
 
-  /* "binding.pyx":302
+  /* "binding.pyx":358
  *         cdef twsfwphysx_agent* a = &self._agents.agents[index]
  * 
  *         a.r.x = agent.r.x             # <<<<<<<<<<<<<<
  *         a.r.y = agent.r.y
  *         a.r.z = agent.r.z
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_agent, __pyx_n_s_r); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 302, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_agent, __pyx_n_s_r); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 358, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_x); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 302, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_x); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 358, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_4 = __pyx_PyFloat_AsFloat(__pyx_t_3); if (unlikely((__pyx_t_4 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 302, __pyx_L1_error)
+  __pyx_t_4 = __pyx_PyFloat_AsFloat(__pyx_t_3); if (unlikely((__pyx_t_4 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 358, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_v_a->r.x = __pyx_t_4;
 
-  /* "binding.pyx":303
+  /* "binding.pyx":359
  * 
  *         a.r.x = agent.r.x
  *         a.r.y = agent.r.y             # <<<<<<<<<<<<<<
  *         a.r.z = agent.r.z
  * 
  */
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_agent, __pyx_n_s_r); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 303, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_agent, __pyx_n_s_r); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 359, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_y); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 303, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_y); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 359, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_4 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_4 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 303, __pyx_L1_error)
+  __pyx_t_4 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_4 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 359, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_v_a->r.y = __pyx_t_4;
 
-  /* "binding.pyx":304
+  /* "binding.pyx":360
  *         a.r.x = agent.r.x
  *         a.r.y = agent.r.y
  *         a.r.z = agent.r.z             # <<<<<<<<<<<<<<
  * 
  *         a.u.x = agent.u.x
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_agent, __pyx_n_s_r); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 304, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_agent, __pyx_n_s_r); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 360, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_z); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 304, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_z); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 360, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_4 = __pyx_PyFloat_AsFloat(__pyx_t_3); if (unlikely((__pyx_t_4 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 304, __pyx_L1_error)
+  __pyx_t_4 = __pyx_PyFloat_AsFloat(__pyx_t_3); if (unlikely((__pyx_t_4 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 360, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_v_a->r.z = __pyx_t_4;
 
-  /* "binding.pyx":306
+  /* "binding.pyx":362
  *         a.r.z = agent.r.z
  * 
  *         a.u.x = agent.u.x             # <<<<<<<<<<<<<<
  *         a.u.y = agent.u.y
  *         a.u.z = agent.u.z
  */
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_agent, __pyx_n_s_u); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 306, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_agent, __pyx_n_s_u); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 362, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_x); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 306, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_x); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 362, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_4 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_4 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 306, __pyx_L1_error)
+  __pyx_t_4 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_4 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 362, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_v_a->u.x = __pyx_t_4;
 
-  /* "binding.pyx":307
+  /* "binding.pyx":363
  * 
  *         a.u.x = agent.u.x
  *         a.u.y = agent.u.y             # <<<<<<<<<<<<<<
  *         a.u.z = agent.u.z
  * 
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_agent, __pyx_n_s_u); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 307, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_agent, __pyx_n_s_u); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 363, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_y); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 307, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_y); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 363, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_4 = __pyx_PyFloat_AsFloat(__pyx_t_3); if (unlikely((__pyx_t_4 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 307, __pyx_L1_error)
+  __pyx_t_4 = __pyx_PyFloat_AsFloat(__pyx_t_3); if (unlikely((__pyx_t_4 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 363, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_v_a->u.y = __pyx_t_4;
 
-  /* "binding.pyx":308
+  /* "binding.pyx":364
  *         a.u.x = agent.u.x
  *         a.u.y = agent.u.y
  *         a.u.z = agent.u.z             # <<<<<<<<<<<<<<
  * 
  *         a.v = agent.v
  */
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_agent, __pyx_n_s_u); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 308, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_agent, __pyx_n_s_u); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 364, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_z); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 308, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_z); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 364, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_4 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_4 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 308, __pyx_L1_error)
+  __pyx_t_4 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_4 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 364, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_v_a->u.z = __pyx_t_4;
 
-  /* "binding.pyx":310
+  /* "binding.pyx":366
  *         a.u.z = agent.u.z
  * 
  *         a.v = agent.v             # <<<<<<<<<<<<<<
  *         a.a = agent.a
  *         a.hp = agent.hp
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_agent, __pyx_n_s_v); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 310, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_agent, __pyx_n_s_v); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 366, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_4 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_4 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 310, __pyx_L1_error)
+  __pyx_t_4 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_4 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 366, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_v_a->v = __pyx_t_4;
 
-  /* "binding.pyx":311
+  /* "binding.pyx":367
  * 
  *         a.v = agent.v
  *         a.a = agent.a             # <<<<<<<<<<<<<<
  *         a.hp = agent.hp
  * 
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_agent, __pyx_n_s_a); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 311, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_agent, __pyx_n_s_a); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 367, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_4 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_4 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 311, __pyx_L1_error)
+  __pyx_t_4 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_4 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 367, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_v_a->a = __pyx_t_4;
 
-  /* "binding.pyx":312
+  /* "binding.pyx":368
  *         a.v = agent.v
  *         a.a = agent.a
  *         a.hp = agent.hp             # <<<<<<<<<<<<<<
  * 
  *     def _get_missiles_size(self):
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_agent, __pyx_n_s_hp); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 312, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_agent, __pyx_n_s_hp); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 368, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_4 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_4 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 312, __pyx_L1_error)
+  __pyx_t_4 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_4 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 368, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_v_a->hp = __pyx_t_4;
 
-  /* "binding.pyx":299
+  /* "binding.pyx":355
  *         return Agent(r, u, a.v, a.a, a.hp)
  * 
  *     def _set_agent(self, index: int, agent: Agent):             # <<<<<<<<<<<<<<
@@ -7494,7 +7494,7 @@ static PyObject *__pyx_pf_7binding_6Engine_16_set_agent(struct __pyx_obj_7bindin
   return __pyx_r;
 }
 
-/* "binding.pyx":314
+/* "binding.pyx":370
  *         a.hp = agent.hp
  * 
  *     def _get_missiles_size(self):             # <<<<<<<<<<<<<<
@@ -7552,7 +7552,7 @@ static PyObject *__pyx_pf_7binding_6Engine_18_get_missiles_size(struct __pyx_obj
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("_get_missiles_size", 1);
 
-  /* "binding.pyx":315
+  /* "binding.pyx":371
  * 
  *     def _get_missiles_size(self):
  *         return self._missiles.size             # <<<<<<<<<<<<<<
@@ -7560,13 +7560,13 @@ static PyObject *__pyx_pf_7binding_6Engine_18_get_missiles_size(struct __pyx_obj
  *     def _get_missile(self, index: int):
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyInt_From_int32_t(__pyx_v_self->_missiles.size); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 315, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_From_int32_t(__pyx_v_self->_missiles.size); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 371, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "binding.pyx":314
+  /* "binding.pyx":370
  *         a.hp = agent.hp
  * 
  *     def _get_missiles_size(self):             # <<<<<<<<<<<<<<
@@ -7585,7 +7585,7 @@ static PyObject *__pyx_pf_7binding_6Engine_18_get_missiles_size(struct __pyx_obj
   return __pyx_r;
 }
 
-/* "binding.pyx":317
+/* "binding.pyx":373
  *         return self._missiles.size
  * 
  *     def _get_missile(self, index: int):             # <<<<<<<<<<<<<<
@@ -7646,12 +7646,12 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 317, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 373, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "_get_missile") < 0)) __PYX_ERR(0, 317, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "_get_missile") < 0)) __PYX_ERR(0, 373, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs != 1)) {
       goto __pyx_L5_argtuple_error;
@@ -7662,7 +7662,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("_get_missile", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 317, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("_get_missile", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 373, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -7676,7 +7676,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_index), (&PyInt_Type), 0, "index", 1))) __PYX_ERR(0, 317, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_index), (&PyInt_Type), 0, "index", 1))) __PYX_ERR(0, 373, __pyx_L1_error)
   __pyx_r = __pyx_pf_7binding_6Engine_20_get_missile(((struct __pyx_obj_7binding_Engine *)__pyx_v_self), __pyx_v_index);
 
   /* function exit code */
@@ -7713,30 +7713,30 @@ static PyObject *__pyx_pf_7binding_6Engine_20_get_missile(struct __pyx_obj_7bind
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("_get_missile", 1);
 
-  /* "binding.pyx":318
+  /* "binding.pyx":374
  * 
  *     def _get_missile(self, index: int):
  *         cdef twsfwphysx_missile m = self._missiles.missiles[index]             # <<<<<<<<<<<<<<
  * 
  *         r = Vec(m.r.x, m.r.y, m.r.z)
  */
-  __pyx_t_1 = __Pyx_PyIndex_AsSsize_t(__pyx_v_index); if (unlikely((__pyx_t_1 == (Py_ssize_t)-1) && PyErr_Occurred())) __PYX_ERR(0, 318, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyIndex_AsSsize_t(__pyx_v_index); if (unlikely((__pyx_t_1 == (Py_ssize_t)-1) && PyErr_Occurred())) __PYX_ERR(0, 374, __pyx_L1_error)
   __pyx_v_m = (__pyx_v_self->_missiles.missiles[__pyx_t_1]);
 
-  /* "binding.pyx":320
+  /* "binding.pyx":376
  *         cdef twsfwphysx_missile m = self._missiles.missiles[index]
  * 
  *         r = Vec(m.r.x, m.r.y, m.r.z)             # <<<<<<<<<<<<<<
  *         u = Vec(m.u.x, m.u.y, m.u.z)
  * 
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_Vec); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 320, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_Vec); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 376, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_4 = PyFloat_FromDouble(__pyx_v_m.r.x); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 320, __pyx_L1_error)
+  __pyx_t_4 = PyFloat_FromDouble(__pyx_v_m.r.x); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 376, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_5 = PyFloat_FromDouble(__pyx_v_m.r.y); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 320, __pyx_L1_error)
+  __pyx_t_5 = PyFloat_FromDouble(__pyx_v_m.r.y); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 376, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_6 = PyFloat_FromDouble(__pyx_v_m.r.z); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 320, __pyx_L1_error)
+  __pyx_t_6 = PyFloat_FromDouble(__pyx_v_m.r.z); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 376, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __pyx_t_7 = NULL;
   __pyx_t_8 = 0;
@@ -7759,27 +7759,27 @@ static PyObject *__pyx_pf_7binding_6Engine_20_get_missile(struct __pyx_obj_7bind
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 320, __pyx_L1_error)
+    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 376, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   }
   __pyx_v_r = __pyx_t_2;
   __pyx_t_2 = 0;
 
-  /* "binding.pyx":321
+  /* "binding.pyx":377
  * 
  *         r = Vec(m.r.x, m.r.y, m.r.z)
  *         u = Vec(m.u.x, m.u.y, m.u.z)             # <<<<<<<<<<<<<<
  * 
  *         return Missile(r, u, m.v)
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_Vec); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 321, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_Vec); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 377, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_6 = PyFloat_FromDouble(__pyx_v_m.u.x); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 321, __pyx_L1_error)
+  __pyx_t_6 = PyFloat_FromDouble(__pyx_v_m.u.x); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 377, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
-  __pyx_t_5 = PyFloat_FromDouble(__pyx_v_m.u.y); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 321, __pyx_L1_error)
+  __pyx_t_5 = PyFloat_FromDouble(__pyx_v_m.u.y); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 377, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_4 = PyFloat_FromDouble(__pyx_v_m.u.z); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 321, __pyx_L1_error)
+  __pyx_t_4 = PyFloat_FromDouble(__pyx_v_m.u.z); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 377, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __pyx_t_7 = NULL;
   __pyx_t_8 = 0;
@@ -7802,14 +7802,14 @@ static PyObject *__pyx_pf_7binding_6Engine_20_get_missile(struct __pyx_obj_7bind
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 321, __pyx_L1_error)
+    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 377, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   }
   __pyx_v_u = __pyx_t_2;
   __pyx_t_2 = 0;
 
-  /* "binding.pyx":323
+  /* "binding.pyx":379
  *         u = Vec(m.u.x, m.u.y, m.u.z)
  * 
  *         return Missile(r, u, m.v)             # <<<<<<<<<<<<<<
@@ -7817,9 +7817,9 @@ static PyObject *__pyx_pf_7binding_6Engine_20_get_missile(struct __pyx_obj_7bind
  *     def _set_missile(self, index: int, missile: Missile):
  */
   __Pyx_XDECREF(__pyx_r);
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_Missile); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 323, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_Missile); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 379, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_4 = PyFloat_FromDouble(__pyx_v_m.v); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 323, __pyx_L1_error)
+  __pyx_t_4 = PyFloat_FromDouble(__pyx_v_m.v); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 379, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __pyx_t_5 = NULL;
   __pyx_t_8 = 0;
@@ -7840,7 +7840,7 @@ static PyObject *__pyx_pf_7binding_6Engine_20_get_missile(struct __pyx_obj_7bind
     __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_8, 3+__pyx_t_8);
     __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 323, __pyx_L1_error)
+    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 379, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   }
@@ -7848,7 +7848,7 @@ static PyObject *__pyx_pf_7binding_6Engine_20_get_missile(struct __pyx_obj_7bind
   __pyx_t_2 = 0;
   goto __pyx_L0;
 
-  /* "binding.pyx":317
+  /* "binding.pyx":373
  *         return self._missiles.size
  * 
  *     def _get_missile(self, index: int):             # <<<<<<<<<<<<<<
@@ -7874,7 +7874,7 @@ static PyObject *__pyx_pf_7binding_6Engine_20_get_missile(struct __pyx_obj_7bind
   return __pyx_r;
 }
 
-/* "binding.pyx":325
+/* "binding.pyx":381
  *         return Missile(r, u, m.v)
  * 
  *     def _set_missile(self, index: int, missile: Missile):             # <<<<<<<<<<<<<<
@@ -7938,7 +7938,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 325, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 381, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
         CYTHON_FALLTHROUGH;
         case  1:
@@ -7946,14 +7946,14 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[1]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 325, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 381, __pyx_L3_error)
         else {
-          __Pyx_RaiseArgtupleInvalid("_set_missile", 1, 2, 2, 1); __PYX_ERR(0, 325, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("_set_missile", 1, 2, 2, 1); __PYX_ERR(0, 381, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "_set_missile") < 0)) __PYX_ERR(0, 325, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "_set_missile") < 0)) __PYX_ERR(0, 381, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs != 2)) {
       goto __pyx_L5_argtuple_error;
@@ -7966,7 +7966,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("_set_missile", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 325, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("_set_missile", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 381, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -7980,7 +7980,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_index), (&PyInt_Type), 0, "index", 1))) __PYX_ERR(0, 325, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_index), (&PyInt_Type), 0, "index", 1))) __PYX_ERR(0, 381, __pyx_L1_error)
   __pyx_r = __pyx_pf_7binding_6Engine_22_set_missile(((struct __pyx_obj_7binding_Engine *)__pyx_v_self), __pyx_v_index, __pyx_v_missile);
 
   /* function exit code */
@@ -8011,126 +8011,126 @@ static PyObject *__pyx_pf_7binding_6Engine_22_set_missile(struct __pyx_obj_7bind
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("_set_missile", 1);
 
-  /* "binding.pyx":326
+  /* "binding.pyx":382
  * 
  *     def _set_missile(self, index: int, missile: Missile):
  *         cdef twsfwphysx_missile* m = &self._missiles.missiles[index]             # <<<<<<<<<<<<<<
  * 
  *         m.r.x = missile.r.x
  */
-  __pyx_t_1 = __Pyx_PyIndex_AsSsize_t(__pyx_v_index); if (unlikely((__pyx_t_1 == (Py_ssize_t)-1) && PyErr_Occurred())) __PYX_ERR(0, 326, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyIndex_AsSsize_t(__pyx_v_index); if (unlikely((__pyx_t_1 == (Py_ssize_t)-1) && PyErr_Occurred())) __PYX_ERR(0, 382, __pyx_L1_error)
   __pyx_v_m = (&(__pyx_v_self->_missiles.missiles[__pyx_t_1]));
 
-  /* "binding.pyx":328
+  /* "binding.pyx":384
  *         cdef twsfwphysx_missile* m = &self._missiles.missiles[index]
  * 
  *         m.r.x = missile.r.x             # <<<<<<<<<<<<<<
  *         m.r.y = missile.r.y
  *         m.r.z = missile.r.z
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_missile, __pyx_n_s_r); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 328, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_missile, __pyx_n_s_r); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 384, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_x); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 328, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_x); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 384, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_4 = __pyx_PyFloat_AsFloat(__pyx_t_3); if (unlikely((__pyx_t_4 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 328, __pyx_L1_error)
+  __pyx_t_4 = __pyx_PyFloat_AsFloat(__pyx_t_3); if (unlikely((__pyx_t_4 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 384, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_v_m->r.x = __pyx_t_4;
 
-  /* "binding.pyx":329
+  /* "binding.pyx":385
  * 
  *         m.r.x = missile.r.x
  *         m.r.y = missile.r.y             # <<<<<<<<<<<<<<
  *         m.r.z = missile.r.z
  * 
  */
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_missile, __pyx_n_s_r); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 329, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_missile, __pyx_n_s_r); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 385, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_y); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 329, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_y); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 385, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_4 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_4 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 329, __pyx_L1_error)
+  __pyx_t_4 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_4 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 385, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_v_m->r.y = __pyx_t_4;
 
-  /* "binding.pyx":330
+  /* "binding.pyx":386
  *         m.r.x = missile.r.x
  *         m.r.y = missile.r.y
  *         m.r.z = missile.r.z             # <<<<<<<<<<<<<<
  * 
  *         m.u.x = missile.u.x
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_missile, __pyx_n_s_r); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 330, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_missile, __pyx_n_s_r); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 386, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_z); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 330, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_z); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 386, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_4 = __pyx_PyFloat_AsFloat(__pyx_t_3); if (unlikely((__pyx_t_4 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 330, __pyx_L1_error)
+  __pyx_t_4 = __pyx_PyFloat_AsFloat(__pyx_t_3); if (unlikely((__pyx_t_4 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 386, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_v_m->r.z = __pyx_t_4;
 
-  /* "binding.pyx":332
+  /* "binding.pyx":388
  *         m.r.z = missile.r.z
  * 
  *         m.u.x = missile.u.x             # <<<<<<<<<<<<<<
  *         m.u.y = missile.u.y
  *         m.u.z = missile.u.z
  */
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_missile, __pyx_n_s_u); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 332, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_missile, __pyx_n_s_u); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 388, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_x); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 332, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_x); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 388, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_4 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_4 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 332, __pyx_L1_error)
+  __pyx_t_4 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_4 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 388, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_v_m->u.x = __pyx_t_4;
 
-  /* "binding.pyx":333
+  /* "binding.pyx":389
  * 
  *         m.u.x = missile.u.x
  *         m.u.y = missile.u.y             # <<<<<<<<<<<<<<
  *         m.u.z = missile.u.z
  * 
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_missile, __pyx_n_s_u); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 333, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_missile, __pyx_n_s_u); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 389, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_y); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 333, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_y); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 389, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_4 = __pyx_PyFloat_AsFloat(__pyx_t_3); if (unlikely((__pyx_t_4 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 333, __pyx_L1_error)
+  __pyx_t_4 = __pyx_PyFloat_AsFloat(__pyx_t_3); if (unlikely((__pyx_t_4 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 389, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_v_m->u.y = __pyx_t_4;
 
-  /* "binding.pyx":334
+  /* "binding.pyx":390
  *         m.u.x = missile.u.x
  *         m.u.y = missile.u.y
  *         m.u.z = missile.u.z             # <<<<<<<<<<<<<<
  * 
  *         m.v = missile.v
  */
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_missile, __pyx_n_s_u); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 334, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_missile, __pyx_n_s_u); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 390, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_z); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 334, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_z); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 390, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_4 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_4 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 334, __pyx_L1_error)
+  __pyx_t_4 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_4 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 390, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_v_m->u.z = __pyx_t_4;
 
-  /* "binding.pyx":336
+  /* "binding.pyx":392
  *         m.u.z = missile.u.z
  * 
  *         m.v = missile.v             # <<<<<<<<<<<<<<
  * 
  *     @property
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_missile, __pyx_n_s_v); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 336, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_missile, __pyx_n_s_v); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 392, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_4 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_4 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 336, __pyx_L1_error)
+  __pyx_t_4 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_4 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 392, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_v_m->v = __pyx_t_4;
 
-  /* "binding.pyx":325
+  /* "binding.pyx":381
  *         return Missile(r, u, m.v)
  * 
  *     def _set_missile(self, index: int, missile: Missile):             # <<<<<<<<<<<<<<
@@ -8152,12 +8152,12 @@ static PyObject *__pyx_pf_7binding_6Engine_22_set_missile(struct __pyx_obj_7bind
   return __pyx_r;
 }
 
-/* "binding.pyx":338
+/* "binding.pyx":394
  *         m.v = missile.v
  * 
  *     @property             # <<<<<<<<<<<<<<
  *     def agents(self) -> Agents:
- *         """All agents.
+ *         """View of all agents.
  */
 
 /* Python wrapper */
@@ -8187,7 +8187,7 @@ static PyObject *__pyx_pf_7binding_6Engine_6agents___get__(struct __pyx_obj_7bin
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__get__", 1);
 
-  /* "binding.pyx":346
+  /* "binding.pyx":404
  *         """
  * 
  *         return Agents(self)             # <<<<<<<<<<<<<<
@@ -8195,7 +8195,7 @@ static PyObject *__pyx_pf_7binding_6Engine_6agents___get__(struct __pyx_obj_7bin
  *     @property
  */
   __Pyx_XDECREF(__pyx_r);
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_Agents); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 346, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_Agents); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 404, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_3 = NULL;
   __pyx_t_4 = 0;
@@ -8215,7 +8215,7 @@ static PyObject *__pyx_pf_7binding_6Engine_6agents___get__(struct __pyx_obj_7bin
     PyObject *__pyx_callargs[2] = {__pyx_t_3, ((PyObject *)__pyx_v_self)};
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 346, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 404, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   }
@@ -8223,12 +8223,12 @@ static PyObject *__pyx_pf_7binding_6Engine_6agents___get__(struct __pyx_obj_7bin
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "binding.pyx":338
+  /* "binding.pyx":394
  *         m.v = missile.v
  * 
  *     @property             # <<<<<<<<<<<<<<
  *     def agents(self) -> Agents:
- *         """All agents.
+ *         """View of all agents.
  */
 
   /* function exit code */
@@ -8244,12 +8244,12 @@ static PyObject *__pyx_pf_7binding_6Engine_6agents___get__(struct __pyx_obj_7bin
   return __pyx_r;
 }
 
-/* "binding.pyx":348
+/* "binding.pyx":406
  *         return Agents(self)
  * 
  *     @property             # <<<<<<<<<<<<<<
  *     def missiles(self) -> Missiles:
- *         """All missiles.
+ *         """View of all missiles.
  */
 
 /* Python wrapper */
@@ -8279,13 +8279,13 @@ static PyObject *__pyx_pf_7binding_6Engine_8missiles___get__(struct __pyx_obj_7b
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__get__", 1);
 
-  /* "binding.pyx":356
+  /* "binding.pyx":416
  *         """
  * 
  *         return Missiles(self)             # <<<<<<<<<<<<<<
  */
   __Pyx_XDECREF(__pyx_r);
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_Missiles); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 356, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_Missiles); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 416, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_3 = NULL;
   __pyx_t_4 = 0;
@@ -8305,7 +8305,7 @@ static PyObject *__pyx_pf_7binding_6Engine_8missiles___get__(struct __pyx_obj_7b
     PyObject *__pyx_callargs[2] = {__pyx_t_3, ((PyObject *)__pyx_v_self)};
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 356, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 416, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   }
@@ -8313,12 +8313,12 @@ static PyObject *__pyx_pf_7binding_6Engine_8missiles___get__(struct __pyx_obj_7b
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "binding.pyx":348
+  /* "binding.pyx":406
  *         return Agents(self)
  * 
  *     @property             # <<<<<<<<<<<<<<
  *     def missiles(self) -> Missiles:
- *         """All missiles.
+ *         """View of all missiles.
  */
 
   /* function exit code */
@@ -8616,14 +8616,14 @@ static PyMethodDef __pyx_methods_7binding_Engine[] = {
 };
 
 static struct PyGetSetDef __pyx_getsets_7binding_Engine[] = {
-  {(char *)"agents", __pyx_getprop_7binding_6Engine_agents, 0, (char *)PyDoc_STR("All agents.\n\n        :return: Agents.\n        :rtype: Agents\n        "), 0},
-  {(char *)"missiles", __pyx_getprop_7binding_6Engine_missiles, 0, (char *)PyDoc_STR("All missiles.\n\n        :return: Missiles.\n        :rtype: Missiles\n        "), 0},
+  {(char *)"agents", __pyx_getprop_7binding_6Engine_agents, 0, (char *)PyDoc_STR("View of all agents.\n\n        Use this view to iterate over agents or to change their attributes.\n\n        :return: Agents.\n        :rtype: Agents\n        "), 0},
+  {(char *)"missiles", __pyx_getprop_7binding_6Engine_missiles, 0, (char *)PyDoc_STR("View of all missiles.\n\n        Use this view to iterate over missiles or to change their attributes.\n\n        :return: Missiles.\n        :rtype: Missiles\n        "), 0},
   {0, 0, 0, 0, 0}
 };
 #if CYTHON_USE_TYPE_SPECS
 static PyType_Slot __pyx_type_7binding_Engine_slots[] = {
   {Py_tp_dealloc, (void *)__pyx_tp_dealloc_7binding_Engine},
-  {Py_tp_doc, (void *)PyDoc_STR("Engine.")},
+  {Py_tp_doc, (void *)PyDoc_STR("Wrapper around the twsfwphysx Engine.\n\n    This class is a wrapper around the twsfwphysx Engine. It holds a list of\n    agents, missiles, and world invariants and passes those to the twsfwphysx\n    simlatiom function once\n    :class:`Engine.simulate <twsfwphysx.Engine.simulate>` is called.\n\n    The number of agents cannot be changed after a new Engine was created. In\n    order to change the number of missiles, use the function\n    :class:`Engine.launch_missile <twsfwphysx.Engine.launch_missile>`.\n    \n    Use :class:`Engine.turn_agent <twsfwphysx.Engine.turn_agent>` to turn an\n    agent and the variables :class:`Engine.agents <twsfwphysx.Engine.agents>`\n    and :class:`Engine.missiles <twsfwphysx.Engine.missiles>` to get a view of\n    the attributes of all agents and missiles, respectively.\n\n    :param world: The world invariants.\n    :type world: World\n    :param agents: Agents with their initial attributes. Note that the number of agents cannot be changed once an Engine is created.\n    :type agents: collections.abc.Iterable[Agent]\n    ")},
   {Py_tp_methods, (void *)__pyx_methods_7binding_Engine},
   {Py_tp_getset, (void *)__pyx_getsets_7binding_Engine},
   {Py_tp_init, (void *)__pyx_pw_7binding_6Engine_1__init__},
@@ -8673,7 +8673,7 @@ static PyTypeObject __pyx_type_7binding_Engine = {
   0, /*tp_setattro*/
   0, /*tp_as_buffer*/
   Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE|Py_TPFLAGS_HAVE_FINALIZE, /*tp_flags*/
-  PyDoc_STR("Engine."), /*tp_doc*/
+  PyDoc_STR("Wrapper around the twsfwphysx Engine.\n\n    This class is a wrapper around the twsfwphysx Engine. It holds a list of\n    agents, missiles, and world invariants and passes those to the twsfwphysx\n    simlatiom function once\n    :class:`Engine.simulate <twsfwphysx.Engine.simulate>` is called.\n\n    The number of agents cannot be changed after a new Engine was created. In\n    order to change the number of missiles, use the function\n    :class:`Engine.launch_missile <twsfwphysx.Engine.launch_missile>`.\n    \n    Use :class:`Engine.turn_agent <twsfwphysx.Engine.turn_agent>` to turn an\n    agent and the variables :class:`Engine.agents <twsfwphysx.Engine.agents>`\n    and :class:`Engine.missiles <twsfwphysx.Engine.missiles>` to get a view of\n    the attributes of all agents and missiles, respectively.\n\n    :param world: The world invariants.\n    :type world: World\n    :param agents: Agents with their initial attributes. Note that the number of agents cannot be changed once an Engine is created.\n    :type agents: collections.abc.Iterable[Agent]\n    "), /*tp_doc*/
   0, /*tp_traverse*/
   0, /*tp_clear*/
   0, /*tp_richcompare*/
@@ -8745,9 +8745,8 @@ static int __Pyx_CreateStringTabAndInitStrings(void) {
   __Pyx_StringTabEntry __pyx_string_tab[] = {
     {&__pyx_kp_u_, __pyx_k_, sizeof(__pyx_k_), 0, 1, 0, 0},
     {&__pyx_n_s_Agent, __pyx_k_Agent, sizeof(__pyx_k_Agent), 0, 0, 1, 1},
-    {&__pyx_kp_s_Agent_2, __pyx_k_Agent_2, sizeof(__pyx_k_Agent_2), 0, 0, 1, 0},
+    {&__pyx_kp_s_Agent_attributes, __pyx_k_Agent_attributes, sizeof(__pyx_k_Agent_attributes), 0, 0, 1, 0},
     {&__pyx_n_s_Agents, __pyx_k_Agents, sizeof(__pyx_k_Agents), 0, 0, 1, 1},
-    {&__pyx_kp_s_Agents_2, __pyx_k_Agents_2, sizeof(__pyx_k_Agents_2), 0, 0, 1, 0},
     {&__pyx_n_s_Agents___getitem, __pyx_k_Agents___getitem, sizeof(__pyx_k_Agents___getitem), 0, 0, 1, 1},
     {&__pyx_n_s_Agents___init, __pyx_k_Agents___init, sizeof(__pyx_k_Agents___init), 0, 0, 1, 1},
     {&__pyx_n_s_Agents___len, __pyx_k_Agents___len, sizeof(__pyx_k_Agents___len), 0, 0, 1, 1},
@@ -8768,20 +8767,21 @@ static int __Pyx_CreateStringTabAndInitStrings(void) {
     {&__pyx_n_s_IndexError, __pyx_k_IndexError, sizeof(__pyx_k_IndexError), 0, 0, 1, 1},
     {&__pyx_kp_u_Invalid_index, __pyx_k_Invalid_index, sizeof(__pyx_k_Invalid_index), 0, 1, 0, 0},
     {&__pyx_n_s_Missile, __pyx_k_Missile, sizeof(__pyx_k_Missile), 0, 0, 1, 1},
-    {&__pyx_kp_s_Missile_2, __pyx_k_Missile_2, sizeof(__pyx_k_Missile_2), 0, 0, 1, 0},
+    {&__pyx_kp_s_Missile_attributes, __pyx_k_Missile_attributes, sizeof(__pyx_k_Missile_attributes), 0, 0, 1, 0},
     {&__pyx_n_s_Missiles, __pyx_k_Missiles, sizeof(__pyx_k_Missiles), 0, 0, 1, 1},
-    {&__pyx_kp_s_Missiles_2, __pyx_k_Missiles_2, sizeof(__pyx_k_Missiles_2), 0, 0, 1, 0},
     {&__pyx_n_s_Missiles___getitem, __pyx_k_Missiles___getitem, sizeof(__pyx_k_Missiles___getitem), 0, 0, 1, 1},
     {&__pyx_n_s_Missiles___init, __pyx_k_Missiles___init, sizeof(__pyx_k_Missiles___init), 0, 0, 1, 1},
     {&__pyx_n_s_Missiles___len, __pyx_k_Missiles___len, sizeof(__pyx_k_Missiles___len), 0, 0, 1, 1},
     {&__pyx_n_s_Missiles___setitem, __pyx_k_Missiles___setitem, sizeof(__pyx_k_Missiles___setitem), 0, 0, 1, 1},
     {&__pyx_kp_s_Optional_float, __pyx_k_Optional_float, sizeof(__pyx_k_Optional_float), 0, 0, 1, 0},
     {&__pyx_kp_s_Optional_int, __pyx_k_Optional_int, sizeof(__pyx_k_Optional_int), 0, 0, 1, 0},
+    {&__pyx_kp_s_Representation_of_a_3D_vector, __pyx_k_Representation_of_a_3D_vector, sizeof(__pyx_k_Representation_of_a_3D_vector), 0, 0, 1, 0},
     {&__pyx_n_s_TypeError, __pyx_k_TypeError, sizeof(__pyx_k_TypeError), 0, 0, 1, 1},
     {&__pyx_n_s_Vec, __pyx_k_Vec, sizeof(__pyx_k_Vec), 0, 0, 1, 1},
-    {&__pyx_kp_s_Vec_2, __pyx_k_Vec_2, sizeof(__pyx_k_Vec_2), 0, 0, 1, 0},
-    {&__pyx_kp_s_World, __pyx_k_World, sizeof(__pyx_k_World), 0, 0, 1, 0},
-    {&__pyx_n_s_World_2, __pyx_k_World_2, sizeof(__pyx_k_World_2), 0, 0, 1, 1},
+    {&__pyx_kp_s_View_of_agents_Use_this_view_to, __pyx_k_View_of_agents_Use_this_view_to, sizeof(__pyx_k_View_of_agents_Use_this_view_to), 0, 0, 1, 0},
+    {&__pyx_kp_s_View_of_missiles_Use_this_view_t, __pyx_k_View_of_missiles_Use_this_view_t, sizeof(__pyx_k_View_of_missiles_Use_this_view_t), 0, 0, 1, 0},
+    {&__pyx_n_s_World, __pyx_k_World, sizeof(__pyx_k_World), 0, 0, 1, 1},
+    {&__pyx_kp_s_World_invariants_The_world_invar, __pyx_k_World_invariants_The_world_invar, sizeof(__pyx_k_World_invariants_The_world_invar), 0, 0, 1, 0},
     {&__pyx_n_s__2, __pyx_k__2, sizeof(__pyx_k__2), 0, 0, 1, 1},
     {&__pyx_kp_u__3, __pyx_k__3, sizeof(__pyx_k__3), 0, 1, 0, 0},
     {&__pyx_n_s__40, __pyx_k__40, sizeof(__pyx_k__40), 0, 0, 1, 1},
@@ -8797,6 +8797,7 @@ static int __Pyx_CreateStringTabAndInitStrings(void) {
     {&__pyx_n_s_bool, __pyx_k_bool, sizeof(__pyx_k_bool), 0, 0, 1, 1},
     {&__pyx_n_s_check_agent_idx, __pyx_k_check_agent_idx, sizeof(__pyx_k_check_agent_idx), 0, 0, 1, 1},
     {&__pyx_n_s_cline_in_traceback, __pyx_k_cline_in_traceback, sizeof(__pyx_k_cline_in_traceback), 0, 0, 1, 1},
+    {&__pyx_n_s_collections, __pyx_k_collections, sizeof(__pyx_k_collections), 0, 0, 1, 1},
     {&__pyx_n_s_dataclass, __pyx_k_dataclass, sizeof(__pyx_k_dataclass), 0, 0, 1, 1},
     {&__pyx_n_s_dataclasses, __pyx_k_dataclasses, sizeof(__pyx_k_dataclasses), 0, 0, 1, 1},
     {&__pyx_n_s_degrees, __pyx_k_degrees, sizeof(__pyx_k_degrees), 0, 0, 1, 1},
@@ -8869,7 +8870,6 @@ static int __Pyx_CreateStringTabAndInitStrings(void) {
     {&__pyx_kp_u_total_number_of_missiles, __pyx_k_total_number_of_missiles, sizeof(__pyx_k_total_number_of_missiles), 0, 1, 0, 0},
     {&__pyx_n_s_turn_agent, __pyx_k_turn_agent, sizeof(__pyx_k_turn_agent), 0, 0, 1, 1},
     {&__pyx_kp_s_twsfwphysx_binding_pyx, __pyx_k_twsfwphysx_binding_pyx, sizeof(__pyx_k_twsfwphysx_binding_pyx), 0, 0, 1, 0},
-    {&__pyx_n_s_typing, __pyx_k_typing, sizeof(__pyx_k_typing), 0, 0, 1, 1},
     {&__pyx_n_s_u, __pyx_k_u, sizeof(__pyx_k_u), 0, 0, 1, 1},
     {&__pyx_n_s_v, __pyx_k_v, sizeof(__pyx_k_v), 0, 0, 1, 1},
     {&__pyx_n_s_version, __pyx_k_version, sizeof(__pyx_k_version), 0, 0, 1, 1},
@@ -8883,8 +8883,8 @@ static int __Pyx_CreateStringTabAndInitStrings(void) {
 }
 /* #### Code section: cached_builtins ### */
 static CYTHON_SMALL_CODE int __Pyx_InitCachedBuiltins(void) {
-  __pyx_builtin_IndexError = __Pyx_GetBuiltinName(__pyx_n_s_IndexError); if (!__pyx_builtin_IndexError) __PYX_ERR(0, 130, __pyx_L1_error)
-  __pyx_builtin_enumerate = __Pyx_GetBuiltinName(__pyx_n_s_enumerate); if (!__pyx_builtin_enumerate) __PYX_ERR(0, 190, __pyx_L1_error)
+  __pyx_builtin_IndexError = __Pyx_GetBuiltinName(__pyx_n_s_IndexError); if (!__pyx_builtin_IndexError) __PYX_ERR(0, 143, __pyx_L1_error)
+  __pyx_builtin_enumerate = __Pyx_GetBuiltinName(__pyx_n_s_enumerate); if (!__pyx_builtin_enumerate) __PYX_ERR(0, 233, __pyx_L1_error)
   __pyx_builtin_TypeError = __Pyx_GetBuiltinName(__pyx_n_s_TypeError); if (!__pyx_builtin_TypeError) __PYX_ERR(1, 2, __pyx_L1_error)
   return 0;
   __pyx_L1_error:;
@@ -8908,206 +8908,206 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_GIVEREF(__pyx_tuple__4);
   __pyx_codeobj__5 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__4, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_twsfwphysx_binding_pyx, __pyx_n_s_get_twsfwphysx_version, 75, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__5)) __PYX_ERR(0, 75, __pyx_L1_error)
 
-  /* "binding.pyx":121
- *     """Agents."""
+  /* "binding.pyx":134
+ *     """
  * 
  *     def __init__(self, engine):             # <<<<<<<<<<<<<<
  *         self._engine = engine
  * 
  */
-  __pyx_tuple__6 = PyTuple_Pack(2, __pyx_n_s_self, __pyx_n_s_engine); if (unlikely(!__pyx_tuple__6)) __PYX_ERR(0, 121, __pyx_L1_error)
+  __pyx_tuple__6 = PyTuple_Pack(2, __pyx_n_s_self, __pyx_n_s_engine); if (unlikely(!__pyx_tuple__6)) __PYX_ERR(0, 134, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__6);
   __Pyx_GIVEREF(__pyx_tuple__6);
-  __pyx_codeobj__7 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__6, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_twsfwphysx_binding_pyx, __pyx_n_s_init, 121, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__7)) __PYX_ERR(0, 121, __pyx_L1_error)
+  __pyx_codeobj__7 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__6, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_twsfwphysx_binding_pyx, __pyx_n_s_init, 134, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__7)) __PYX_ERR(0, 134, __pyx_L1_error)
 
-  /* "binding.pyx":124
+  /* "binding.pyx":137
  *         self._engine = engine
  * 
  *     def __len__(self):             # <<<<<<<<<<<<<<
  *         return self._engine._get_agents_size()
  * 
  */
-  __pyx_tuple__8 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__8)) __PYX_ERR(0, 124, __pyx_L1_error)
+  __pyx_tuple__8 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__8)) __PYX_ERR(0, 137, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__8);
   __Pyx_GIVEREF(__pyx_tuple__8);
-  __pyx_codeobj__9 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__8, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_twsfwphysx_binding_pyx, __pyx_n_s_len, 124, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__9)) __PYX_ERR(0, 124, __pyx_L1_error)
+  __pyx_codeobj__9 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__8, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_twsfwphysx_binding_pyx, __pyx_n_s_len, 137, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__9)) __PYX_ERR(0, 137, __pyx_L1_error)
 
-  /* "binding.pyx":127
+  /* "binding.pyx":140
  *         return self._engine._get_agents_size()
  * 
  *     def __getitem__(self, index: int):             # <<<<<<<<<<<<<<
  *         n = self._engine._get_agents_size()
  *         if index < 0 or index >= n:
  */
-  __pyx_tuple__10 = PyTuple_Pack(3, __pyx_n_s_self, __pyx_n_s_index, __pyx_n_s_n); if (unlikely(!__pyx_tuple__10)) __PYX_ERR(0, 127, __pyx_L1_error)
+  __pyx_tuple__10 = PyTuple_Pack(3, __pyx_n_s_self, __pyx_n_s_index, __pyx_n_s_n); if (unlikely(!__pyx_tuple__10)) __PYX_ERR(0, 140, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__10);
   __Pyx_GIVEREF(__pyx_tuple__10);
-  __pyx_codeobj__11 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__10, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_twsfwphysx_binding_pyx, __pyx_n_s_getitem, 127, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__11)) __PYX_ERR(0, 127, __pyx_L1_error)
+  __pyx_codeobj__11 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__10, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_twsfwphysx_binding_pyx, __pyx_n_s_getitem, 140, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__11)) __PYX_ERR(0, 140, __pyx_L1_error)
 
-  /* "binding.pyx":136
+  /* "binding.pyx":149
  *         return self._engine._get_agent(index)
  * 
  *     def __setitem__(self, index: int, agent: Agent):             # <<<<<<<<<<<<<<
  *         n = self._engine._get_agents_size()
  *         if index < 0 or index >= n:
  */
-  __pyx_tuple__12 = PyTuple_Pack(4, __pyx_n_s_self, __pyx_n_s_index, __pyx_n_s_agent, __pyx_n_s_n); if (unlikely(!__pyx_tuple__12)) __PYX_ERR(0, 136, __pyx_L1_error)
+  __pyx_tuple__12 = PyTuple_Pack(4, __pyx_n_s_self, __pyx_n_s_index, __pyx_n_s_agent, __pyx_n_s_n); if (unlikely(!__pyx_tuple__12)) __PYX_ERR(0, 149, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__12);
   __Pyx_GIVEREF(__pyx_tuple__12);
-  __pyx_codeobj__13 = (PyObject*)__Pyx_PyCode_New(3, 0, 0, 4, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__12, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_twsfwphysx_binding_pyx, __pyx_n_s_setitem, 136, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__13)) __PYX_ERR(0, 136, __pyx_L1_error)
+  __pyx_codeobj__13 = (PyObject*)__Pyx_PyCode_New(3, 0, 0, 4, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__12, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_twsfwphysx_binding_pyx, __pyx_n_s_setitem, 149, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__13)) __PYX_ERR(0, 149, __pyx_L1_error)
 
-  /* "binding.pyx":148
- * class Missiles:
- *     """Missiles."""
+  /* "binding.pyx":171
+ *     """
+ * 
  *     def __init__(self, engine):             # <<<<<<<<<<<<<<
  *         self._engine = engine
  * 
  */
-  __pyx_codeobj__14 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__6, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_twsfwphysx_binding_pyx, __pyx_n_s_init, 148, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__14)) __PYX_ERR(0, 148, __pyx_L1_error)
+  __pyx_codeobj__14 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__6, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_twsfwphysx_binding_pyx, __pyx_n_s_init, 171, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__14)) __PYX_ERR(0, 171, __pyx_L1_error)
 
-  /* "binding.pyx":151
+  /* "binding.pyx":174
  *         self._engine = engine
  * 
  *     def __len__(self):             # <<<<<<<<<<<<<<
  *         return self._engine._get_missiles_size()
  * 
  */
-  __pyx_codeobj__15 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__8, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_twsfwphysx_binding_pyx, __pyx_n_s_len, 151, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__15)) __PYX_ERR(0, 151, __pyx_L1_error)
+  __pyx_codeobj__15 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__8, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_twsfwphysx_binding_pyx, __pyx_n_s_len, 174, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__15)) __PYX_ERR(0, 174, __pyx_L1_error)
 
-  /* "binding.pyx":154
+  /* "binding.pyx":177
  *         return self._engine._get_missiles_size()
  * 
  *     def __getitem__(self, index: int):             # <<<<<<<<<<<<<<
  *         n = self._engine._get_missiles_size()
  *         if index < 0 or index >= n:
  */
-  __pyx_codeobj__16 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__10, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_twsfwphysx_binding_pyx, __pyx_n_s_getitem, 154, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__16)) __PYX_ERR(0, 154, __pyx_L1_error)
+  __pyx_codeobj__16 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__10, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_twsfwphysx_binding_pyx, __pyx_n_s_getitem, 177, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__16)) __PYX_ERR(0, 177, __pyx_L1_error)
 
-  /* "binding.pyx":163
+  /* "binding.pyx":186
  *         return self._engine._get_missile(index)
  * 
  *     def __setitem__(self, index: int, missile: Missile):             # <<<<<<<<<<<<<<
  *         n = self._engine._get_missiles_size()
  *         if index < 0 or index >= n:
  */
-  __pyx_tuple__17 = PyTuple_Pack(4, __pyx_n_s_self, __pyx_n_s_index, __pyx_n_s_missile, __pyx_n_s_n); if (unlikely(!__pyx_tuple__17)) __PYX_ERR(0, 163, __pyx_L1_error)
+  __pyx_tuple__17 = PyTuple_Pack(4, __pyx_n_s_self, __pyx_n_s_index, __pyx_n_s_missile, __pyx_n_s_n); if (unlikely(!__pyx_tuple__17)) __PYX_ERR(0, 186, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__17);
   __Pyx_GIVEREF(__pyx_tuple__17);
-  __pyx_codeobj__18 = (PyObject*)__Pyx_PyCode_New(3, 0, 0, 4, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__17, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_twsfwphysx_binding_pyx, __pyx_n_s_setitem, 163, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__18)) __PYX_ERR(0, 163, __pyx_L1_error)
+  __pyx_codeobj__18 = (PyObject*)__Pyx_PyCode_New(3, 0, 0, 4, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__17, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_twsfwphysx_binding_pyx, __pyx_n_s_setitem, 186, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__18)) __PYX_ERR(0, 186, __pyx_L1_error)
 
-  /* "binding.pyx":216
+  /* "binding.pyx":259
  *             twsfwphysx_delete_simulation_buffer(self._simulation_buffer)
  * 
  *     def _check_agent_idx(self, idx: int):             # <<<<<<<<<<<<<<
  *         if idx < 0 or idx >= self._agents.size:
  *             raise IndexError(
  */
-  __pyx_tuple__19 = PyTuple_Pack(2, __pyx_n_s_self, __pyx_n_s_idx); if (unlikely(!__pyx_tuple__19)) __PYX_ERR(0, 216, __pyx_L1_error)
+  __pyx_tuple__19 = PyTuple_Pack(2, __pyx_n_s_self, __pyx_n_s_idx); if (unlikely(!__pyx_tuple__19)) __PYX_ERR(0, 259, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__19);
   __Pyx_GIVEREF(__pyx_tuple__19);
-  __pyx_codeobj__20 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__19, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_twsfwphysx_binding_pyx, __pyx_n_s_check_agent_idx, 216, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__20)) __PYX_ERR(0, 216, __pyx_L1_error)
+  __pyx_codeobj__20 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__19, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_twsfwphysx_binding_pyx, __pyx_n_s_check_agent_idx, 259, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__20)) __PYX_ERR(0, 259, __pyx_L1_error)
 
-  /* "binding.pyx":222
+  /* "binding.pyx":265
  *             )
  * 
  *     def simulate(self, *, t: float, n_steps: int):             # <<<<<<<<<<<<<<
- *         """simulate."""
+ *         """Simulates the propagation and interactions of agents and missiles.
  * 
  */
-  __pyx_tuple__21 = PyTuple_Pack(3, __pyx_n_s_self, __pyx_n_s_t, __pyx_n_s_n_steps); if (unlikely(!__pyx_tuple__21)) __PYX_ERR(0, 222, __pyx_L1_error)
+  __pyx_tuple__21 = PyTuple_Pack(3, __pyx_n_s_self, __pyx_n_s_t, __pyx_n_s_n_steps); if (unlikely(!__pyx_tuple__21)) __PYX_ERR(0, 265, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__21);
   __Pyx_GIVEREF(__pyx_tuple__21);
-  __pyx_codeobj__22 = (PyObject*)__Pyx_PyCode_New(1, 0, 2, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__21, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_twsfwphysx_binding_pyx, __pyx_n_s_simulate, 222, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__22)) __PYX_ERR(0, 222, __pyx_L1_error)
+  __pyx_codeobj__22 = (PyObject*)__Pyx_PyCode_New(1, 0, 2, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__21, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_twsfwphysx_binding_pyx, __pyx_n_s_simulate, 265, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__22)) __PYX_ERR(0, 265, __pyx_L1_error)
 
-  /* "binding.pyx":234
+  /* "binding.pyx":290
  *         )
  * 
  *     def launch_missile(self,             # <<<<<<<<<<<<<<
  *                        *,
  *                        agent_idx: int,
  */
-  __pyx_tuple__23 = PyTuple_Pack(6, __pyx_n_s_self, __pyx_n_s_agent_idx, __pyx_n_s_v, __pyx_n_s_payload, __pyx_n_s_agent, __pyx_n_s_missile); if (unlikely(!__pyx_tuple__23)) __PYX_ERR(0, 234, __pyx_L1_error)
+  __pyx_tuple__23 = PyTuple_Pack(6, __pyx_n_s_self, __pyx_n_s_agent_idx, __pyx_n_s_v, __pyx_n_s_payload, __pyx_n_s_agent, __pyx_n_s_missile); if (unlikely(!__pyx_tuple__23)) __PYX_ERR(0, 290, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__23);
   __Pyx_GIVEREF(__pyx_tuple__23);
-  __pyx_codeobj__24 = (PyObject*)__Pyx_PyCode_New(1, 0, 3, 6, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__23, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_twsfwphysx_binding_pyx, __pyx_n_s_launch_missile, 234, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__24)) __PYX_ERR(0, 234, __pyx_L1_error)
+  __pyx_codeobj__24 = (PyObject*)__Pyx_PyCode_New(1, 0, 3, 6, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__23, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_twsfwphysx_binding_pyx, __pyx_n_s_launch_missile, 290, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__24)) __PYX_ERR(0, 290, __pyx_L1_error)
 
-  /* "binding.pyx":266
+  /* "binding.pyx":322
  *         twsfwphysx_add_missile(&self._missiles, missile)
  * 
  *     def turn_agent(self, *, agent_idx: int, angle: float, degrees: bool=True):             # <<<<<<<<<<<<<<
  *         """Turns the agent.
  * 
  */
-  __pyx_tuple__25 = PyTuple_Pack(4, __pyx_n_s_self, __pyx_n_s_agent_idx, __pyx_n_s_angle, __pyx_n_s_degrees); if (unlikely(!__pyx_tuple__25)) __PYX_ERR(0, 266, __pyx_L1_error)
+  __pyx_tuple__25 = PyTuple_Pack(4, __pyx_n_s_self, __pyx_n_s_agent_idx, __pyx_n_s_angle, __pyx_n_s_degrees); if (unlikely(!__pyx_tuple__25)) __PYX_ERR(0, 322, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__25);
   __Pyx_GIVEREF(__pyx_tuple__25);
-  __pyx_codeobj__26 = (PyObject*)__Pyx_PyCode_New(1, 0, 3, 4, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__25, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_twsfwphysx_binding_pyx, __pyx_n_s_turn_agent, 266, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__26)) __PYX_ERR(0, 266, __pyx_L1_error)
+  __pyx_codeobj__26 = (PyObject*)__Pyx_PyCode_New(1, 0, 3, 4, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__25, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_twsfwphysx_binding_pyx, __pyx_n_s_turn_agent, 322, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__26)) __PYX_ERR(0, 322, __pyx_L1_error)
 
-  /* "binding.pyx":288
+  /* "binding.pyx":344
  *         twsfwphysx_turn_agent(&self._agents.agents[agent_idx], angle)
  * 
  *     def _get_agents_size(self):             # <<<<<<<<<<<<<<
  *         return self._agents.size
  * 
  */
-  __pyx_codeobj__27 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__8, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_twsfwphysx_binding_pyx, __pyx_n_s_get_agents_size, 288, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__27)) __PYX_ERR(0, 288, __pyx_L1_error)
+  __pyx_codeobj__27 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__8, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_twsfwphysx_binding_pyx, __pyx_n_s_get_agents_size, 344, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__27)) __PYX_ERR(0, 344, __pyx_L1_error)
 
-  /* "binding.pyx":291
+  /* "binding.pyx":347
  *         return self._agents.size
  * 
  *     def _get_agent(self, index: int):             # <<<<<<<<<<<<<<
  *         cdef twsfwphysx_agent a = self._agents.agents[index]
  * 
  */
-  __pyx_tuple__28 = PyTuple_Pack(5, __pyx_n_s_self, __pyx_n_s_index, __pyx_n_s_a, __pyx_n_s_r, __pyx_n_s_u); if (unlikely(!__pyx_tuple__28)) __PYX_ERR(0, 291, __pyx_L1_error)
+  __pyx_tuple__28 = PyTuple_Pack(5, __pyx_n_s_self, __pyx_n_s_index, __pyx_n_s_a, __pyx_n_s_r, __pyx_n_s_u); if (unlikely(!__pyx_tuple__28)) __PYX_ERR(0, 347, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__28);
   __Pyx_GIVEREF(__pyx_tuple__28);
-  __pyx_codeobj__29 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__28, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_twsfwphysx_binding_pyx, __pyx_n_s_get_agent, 291, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__29)) __PYX_ERR(0, 291, __pyx_L1_error)
+  __pyx_codeobj__29 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__28, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_twsfwphysx_binding_pyx, __pyx_n_s_get_agent, 347, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__29)) __PYX_ERR(0, 347, __pyx_L1_error)
 
-  /* "binding.pyx":299
+  /* "binding.pyx":355
  *         return Agent(r, u, a.v, a.a, a.hp)
  * 
  *     def _set_agent(self, index: int, agent: Agent):             # <<<<<<<<<<<<<<
  *         cdef twsfwphysx_agent* a = &self._agents.agents[index]
  * 
  */
-  __pyx_tuple__30 = PyTuple_Pack(4, __pyx_n_s_self, __pyx_n_s_index, __pyx_n_s_agent, __pyx_n_s_a); if (unlikely(!__pyx_tuple__30)) __PYX_ERR(0, 299, __pyx_L1_error)
+  __pyx_tuple__30 = PyTuple_Pack(4, __pyx_n_s_self, __pyx_n_s_index, __pyx_n_s_agent, __pyx_n_s_a); if (unlikely(!__pyx_tuple__30)) __PYX_ERR(0, 355, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__30);
   __Pyx_GIVEREF(__pyx_tuple__30);
-  __pyx_codeobj__31 = (PyObject*)__Pyx_PyCode_New(3, 0, 0, 4, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__30, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_twsfwphysx_binding_pyx, __pyx_n_s_set_agent, 299, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__31)) __PYX_ERR(0, 299, __pyx_L1_error)
+  __pyx_codeobj__31 = (PyObject*)__Pyx_PyCode_New(3, 0, 0, 4, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__30, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_twsfwphysx_binding_pyx, __pyx_n_s_set_agent, 355, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__31)) __PYX_ERR(0, 355, __pyx_L1_error)
 
-  /* "binding.pyx":314
+  /* "binding.pyx":370
  *         a.hp = agent.hp
  * 
  *     def _get_missiles_size(self):             # <<<<<<<<<<<<<<
  *         return self._missiles.size
  * 
  */
-  __pyx_codeobj__32 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__8, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_twsfwphysx_binding_pyx, __pyx_n_s_get_missiles_size, 314, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__32)) __PYX_ERR(0, 314, __pyx_L1_error)
+  __pyx_codeobj__32 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__8, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_twsfwphysx_binding_pyx, __pyx_n_s_get_missiles_size, 370, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__32)) __PYX_ERR(0, 370, __pyx_L1_error)
 
-  /* "binding.pyx":317
+  /* "binding.pyx":373
  *         return self._missiles.size
  * 
  *     def _get_missile(self, index: int):             # <<<<<<<<<<<<<<
  *         cdef twsfwphysx_missile m = self._missiles.missiles[index]
  * 
  */
-  __pyx_tuple__33 = PyTuple_Pack(5, __pyx_n_s_self, __pyx_n_s_index, __pyx_n_s_m, __pyx_n_s_r, __pyx_n_s_u); if (unlikely(!__pyx_tuple__33)) __PYX_ERR(0, 317, __pyx_L1_error)
+  __pyx_tuple__33 = PyTuple_Pack(5, __pyx_n_s_self, __pyx_n_s_index, __pyx_n_s_m, __pyx_n_s_r, __pyx_n_s_u); if (unlikely(!__pyx_tuple__33)) __PYX_ERR(0, 373, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__33);
   __Pyx_GIVEREF(__pyx_tuple__33);
-  __pyx_codeobj__34 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__33, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_twsfwphysx_binding_pyx, __pyx_n_s_get_missile, 317, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__34)) __PYX_ERR(0, 317, __pyx_L1_error)
+  __pyx_codeobj__34 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__33, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_twsfwphysx_binding_pyx, __pyx_n_s_get_missile, 373, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__34)) __PYX_ERR(0, 373, __pyx_L1_error)
 
-  /* "binding.pyx":325
+  /* "binding.pyx":381
  *         return Missile(r, u, m.v)
  * 
  *     def _set_missile(self, index: int, missile: Missile):             # <<<<<<<<<<<<<<
  *         cdef twsfwphysx_missile* m = &self._missiles.missiles[index]
  * 
  */
-  __pyx_tuple__35 = PyTuple_Pack(4, __pyx_n_s_self, __pyx_n_s_index, __pyx_n_s_missile, __pyx_n_s_m); if (unlikely(!__pyx_tuple__35)) __PYX_ERR(0, 325, __pyx_L1_error)
+  __pyx_tuple__35 = PyTuple_Pack(4, __pyx_n_s_self, __pyx_n_s_index, __pyx_n_s_missile, __pyx_n_s_m); if (unlikely(!__pyx_tuple__35)) __PYX_ERR(0, 381, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__35);
   __Pyx_GIVEREF(__pyx_tuple__35);
-  __pyx_codeobj__36 = (PyObject*)__Pyx_PyCode_New(3, 0, 0, 4, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__35, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_twsfwphysx_binding_pyx, __pyx_n_s_set_missile, 325, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__36)) __PYX_ERR(0, 325, __pyx_L1_error)
+  __pyx_codeobj__36 = (PyObject*)__Pyx_PyCode_New(3, 0, 0, 4, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__35, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_twsfwphysx_binding_pyx, __pyx_n_s_set_missile, 381, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__36)) __PYX_ERR(0, 381, __pyx_L1_error)
 
   /* "(tree fragment)":1
  * def __reduce_cython__(self):             # <<<<<<<<<<<<<<
@@ -9190,15 +9190,15 @@ static int __Pyx_modinit_type_init_code(void) {
   __Pyx_RefNannySetupContext("__Pyx_modinit_type_init_code", 0);
   /*--- Type init code ---*/
   #if CYTHON_USE_TYPE_SPECS
-  __pyx_ptype_7binding_Engine = (PyTypeObject *) __Pyx_PyType_FromModuleAndSpec(__pyx_m, &__pyx_type_7binding_Engine_spec, NULL); if (unlikely(!__pyx_ptype_7binding_Engine)) __PYX_ERR(0, 173, __pyx_L1_error)
-  if (__Pyx_fix_up_extension_type_from_spec(&__pyx_type_7binding_Engine_spec, __pyx_ptype_7binding_Engine) < 0) __PYX_ERR(0, 173, __pyx_L1_error)
+  __pyx_ptype_7binding_Engine = (PyTypeObject *) __Pyx_PyType_FromModuleAndSpec(__pyx_m, &__pyx_type_7binding_Engine_spec, NULL); if (unlikely(!__pyx_ptype_7binding_Engine)) __PYX_ERR(0, 196, __pyx_L1_error)
+  if (__Pyx_fix_up_extension_type_from_spec(&__pyx_type_7binding_Engine_spec, __pyx_ptype_7binding_Engine) < 0) __PYX_ERR(0, 196, __pyx_L1_error)
   #else
   __pyx_ptype_7binding_Engine = &__pyx_type_7binding_Engine;
   #endif
   #if !CYTHON_COMPILING_IN_LIMITED_API
   #endif
   #if !CYTHON_USE_TYPE_SPECS
-  if (__Pyx_PyType_Ready(__pyx_ptype_7binding_Engine) < 0) __PYX_ERR(0, 173, __pyx_L1_error)
+  if (__Pyx_PyType_Ready(__pyx_ptype_7binding_Engine) < 0) __PYX_ERR(0, 196, __pyx_L1_error)
   #endif
   #if PY_MAJOR_VERSION < 3
   __pyx_ptype_7binding_Engine->tp_print = 0;
@@ -9208,9 +9208,9 @@ static int __Pyx_modinit_type_init_code(void) {
     __pyx_ptype_7binding_Engine->tp_getattro = __Pyx_PyObject_GenericGetAttr;
   }
   #endif
-  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_Engine, (PyObject *) __pyx_ptype_7binding_Engine) < 0) __PYX_ERR(0, 173, __pyx_L1_error)
+  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_Engine, (PyObject *) __pyx_ptype_7binding_Engine) < 0) __PYX_ERR(0, 196, __pyx_L1_error)
   #if !CYTHON_COMPILING_IN_LIMITED_API
-  if (__Pyx_setup_reduce((PyObject *) __pyx_ptype_7binding_Engine) < 0) __PYX_ERR(0, 173, __pyx_L1_error)
+  if (__Pyx_setup_reduce((PyObject *) __pyx_ptype_7binding_Engine) < 0) __PYX_ERR(0, 196, __pyx_L1_error)
   #endif
   __Pyx_RefNannyFinishContext();
   return 0;
@@ -9527,17 +9527,17 @@ if (!__Pyx_RefNanny) {
   #endif
 
   /* "binding.pyx":1
- * import typing             # <<<<<<<<<<<<<<
+ * import collections             # <<<<<<<<<<<<<<
  * 
  * from dataclasses import dataclass
  */
-  __pyx_t_2 = __Pyx_ImportDottedModule(__pyx_n_s_typing, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_ImportDottedModule(__pyx_n_s_collections, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_typing, __pyx_t_2) < 0) __PYX_ERR(0, 1, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_collections, __pyx_t_2) < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
   /* "binding.pyx":3
- * import typing
+ * import collections
  * 
  * from dataclasses import dataclass             # <<<<<<<<<<<<<<
  * from math import pi
@@ -9599,10 +9599,10 @@ if (!__Pyx_RefNanny) {
  * 
  * @dataclass(frozen=True)
  * class World:             # <<<<<<<<<<<<<<
- *     """World."""
+ *     """World invariants.
  * 
  */
-  __pyx_t_3 = __Pyx_Py3MetaclassPrepare((PyObject *) NULL, __pyx_empty_tuple, __pyx_n_s_World_2, __pyx_n_s_World_2, (PyObject *) NULL, __pyx_n_s_binding, __pyx_kp_s_World); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 81, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_Py3MetaclassPrepare((PyObject *) NULL, __pyx_empty_tuple, __pyx_n_s_World, __pyx_n_s_World, (PyObject *) NULL, __pyx_n_s_binding, __pyx_kp_s_World_invariants_The_world_invar); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 81, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_2 = __Pyx_PyDict_NewPresized(3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 81, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
@@ -9617,7 +9617,7 @@ if (!__Pyx_RefNanny) {
  * 
  * @dataclass(frozen=True)             # <<<<<<<<<<<<<<
  * class World:
- *     """World."""
+ *     """World invariants.
  */
   __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_dataclass); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 80, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
@@ -9633,10 +9633,10 @@ if (!__Pyx_RefNanny) {
  * 
  * @dataclass(frozen=True)
  * class World:             # <<<<<<<<<<<<<<
- *     """World."""
+ *     """World invariants.
  * 
  */
-  __pyx_t_5 = __Pyx_Py3ClassCreate(((PyObject*)&PyType_Type), __pyx_n_s_World_2, __pyx_empty_tuple, __pyx_t_3, NULL, 0, 0); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 81, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_Py3ClassCreate(((PyObject*)&PyType_Type), __pyx_n_s_World, __pyx_empty_tuple, __pyx_t_3, NULL, 0, 0); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 81, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __pyx_t_4 = NULL;
   __pyx_t_7 = 0;
@@ -9661,52 +9661,52 @@ if (!__Pyx_RefNanny) {
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
   }
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_World_2, __pyx_t_2) < 0) __PYX_ERR(0, 81, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_World, __pyx_t_2) < 0) __PYX_ERR(0, 81, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "binding.pyx":90
+  /* "binding.pyx":95
  * 
  * @dataclass(frozen=True)
  * class Vec:             # <<<<<<<<<<<<<<
- *     """Vec."""
+ *     """Representation of a 3D vector"""
  * 
  */
-  __pyx_t_3 = __Pyx_Py3MetaclassPrepare((PyObject *) NULL, __pyx_empty_tuple, __pyx_n_s_Vec, __pyx_n_s_Vec, (PyObject *) NULL, __pyx_n_s_binding, __pyx_kp_s_Vec_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 90, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_Py3MetaclassPrepare((PyObject *) NULL, __pyx_empty_tuple, __pyx_n_s_Vec, __pyx_n_s_Vec, (PyObject *) NULL, __pyx_n_s_binding, __pyx_kp_s_Representation_of_a_3D_vector); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 95, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_2 = __Pyx_PyDict_NewPresized(3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 90, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyDict_NewPresized(3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 95, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_x, __pyx_n_s_float) < 0) __PYX_ERR(0, 90, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_y, __pyx_n_s_float) < 0) __PYX_ERR(0, 90, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_z, __pyx_n_s_float) < 0) __PYX_ERR(0, 90, __pyx_L1_error)
-  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_annotations, __pyx_t_2) < 0) __PYX_ERR(0, 90, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_x, __pyx_n_s_float) < 0) __PYX_ERR(0, 95, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_y, __pyx_n_s_float) < 0) __PYX_ERR(0, 95, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_z, __pyx_n_s_float) < 0) __PYX_ERR(0, 95, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_annotations, __pyx_t_2) < 0) __PYX_ERR(0, 95, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "binding.pyx":89
+  /* "binding.pyx":94
  * 
  * 
  * @dataclass(frozen=True)             # <<<<<<<<<<<<<<
  * class Vec:
- *     """Vec."""
+ *     """Representation of a 3D vector"""
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_dataclass); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 89, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_dataclass); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 94, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
-  __pyx_t_5 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 89, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 94, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_frozen, Py_True) < 0) __PYX_ERR(0, 89, __pyx_L1_error)
-  __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_6, __pyx_empty_tuple, __pyx_t_5); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 89, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_frozen, Py_True) < 0) __PYX_ERR(0, 94, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_6, __pyx_empty_tuple, __pyx_t_5); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 94, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-  /* "binding.pyx":90
+  /* "binding.pyx":95
  * 
  * @dataclass(frozen=True)
  * class Vec:             # <<<<<<<<<<<<<<
- *     """Vec."""
+ *     """Representation of a 3D vector"""
  * 
  */
-  __pyx_t_5 = __Pyx_Py3ClassCreate(((PyObject*)&PyType_Type), __pyx_n_s_Vec, __pyx_empty_tuple, __pyx_t_3, NULL, 0, 0); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 90, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_Py3ClassCreate(((PyObject*)&PyType_Type), __pyx_n_s_Vec, __pyx_empty_tuple, __pyx_t_3, NULL, 0, 0); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 95, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __pyx_t_6 = NULL;
   __pyx_t_7 = 0;
@@ -9727,58 +9727,58 @@ if (!__Pyx_RefNanny) {
     __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_4, __pyx_callargs+1-__pyx_t_7, 1+__pyx_t_7);
     __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 89, __pyx_L1_error)
+    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 94, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   }
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_Vec, __pyx_t_2) < 0) __PYX_ERR(0, 90, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_Vec, __pyx_t_2) < 0) __PYX_ERR(0, 95, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "binding.pyx":99
+  /* "binding.pyx":104
  * 
  * @dataclass(frozen=True)
  * class Agent:             # <<<<<<<<<<<<<<
- *     """Agent."""
+ *     """Agent attributes."""
  * 
  */
-  __pyx_t_3 = __Pyx_Py3MetaclassPrepare((PyObject *) NULL, __pyx_empty_tuple, __pyx_n_s_Agent, __pyx_n_s_Agent, (PyObject *) NULL, __pyx_n_s_binding, __pyx_kp_s_Agent_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 99, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_Py3MetaclassPrepare((PyObject *) NULL, __pyx_empty_tuple, __pyx_n_s_Agent, __pyx_n_s_Agent, (PyObject *) NULL, __pyx_n_s_binding, __pyx_kp_s_Agent_attributes); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 104, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_2 = __Pyx_PyDict_NewPresized(5); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 99, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyDict_NewPresized(5); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 104, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_r, __pyx_n_s_Vec) < 0) __PYX_ERR(0, 99, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_u, __pyx_n_s_Vec) < 0) __PYX_ERR(0, 99, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_v, __pyx_n_s_float) < 0) __PYX_ERR(0, 99, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_a, __pyx_n_s_float) < 0) __PYX_ERR(0, 99, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_hp, __pyx_n_s_float) < 0) __PYX_ERR(0, 99, __pyx_L1_error)
-  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_annotations, __pyx_t_2) < 0) __PYX_ERR(0, 99, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_r, __pyx_n_s_Vec) < 0) __PYX_ERR(0, 104, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_u, __pyx_n_s_Vec) < 0) __PYX_ERR(0, 104, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_v, __pyx_n_s_float) < 0) __PYX_ERR(0, 104, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_a, __pyx_n_s_float) < 0) __PYX_ERR(0, 104, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_hp, __pyx_n_s_float) < 0) __PYX_ERR(0, 104, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_annotations, __pyx_t_2) < 0) __PYX_ERR(0, 104, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "binding.pyx":98
+  /* "binding.pyx":103
  * 
  * 
  * @dataclass(frozen=True)             # <<<<<<<<<<<<<<
  * class Agent:
- *     """Agent."""
+ *     """Agent attributes."""
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_dataclass); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 98, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_dataclass); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 103, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_5 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 98, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 103, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_frozen, Py_True) < 0) __PYX_ERR(0, 98, __pyx_L1_error)
-  __pyx_t_6 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_empty_tuple, __pyx_t_5); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 98, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_frozen, Py_True) < 0) __PYX_ERR(0, 103, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_empty_tuple, __pyx_t_5); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 103, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-  /* "binding.pyx":99
+  /* "binding.pyx":104
  * 
  * @dataclass(frozen=True)
  * class Agent:             # <<<<<<<<<<<<<<
- *     """Agent."""
+ *     """Agent attributes."""
  * 
  */
-  __pyx_t_5 = __Pyx_Py3ClassCreate(((PyObject*)&PyType_Type), __pyx_n_s_Agent, __pyx_empty_tuple, __pyx_t_3, NULL, 0, 0); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 99, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_Py3ClassCreate(((PyObject*)&PyType_Type), __pyx_n_s_Agent, __pyx_empty_tuple, __pyx_t_3, NULL, 0, 0); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 104, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __pyx_t_4 = NULL;
   __pyx_t_7 = 0;
@@ -9799,56 +9799,56 @@ if (!__Pyx_RefNanny) {
     __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_6, __pyx_callargs+1-__pyx_t_7, 1+__pyx_t_7);
     __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 98, __pyx_L1_error)
+    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 103, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
   }
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_Agent, __pyx_t_2) < 0) __PYX_ERR(0, 99, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_Agent, __pyx_t_2) < 0) __PYX_ERR(0, 104, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "binding.pyx":110
+  /* "binding.pyx":115
  * 
  * @dataclass(frozen=True)
  * class Missile:             # <<<<<<<<<<<<<<
- *     """Missile."""
+ *     """Missile attributes."""
  * 
  */
-  __pyx_t_3 = __Pyx_Py3MetaclassPrepare((PyObject *) NULL, __pyx_empty_tuple, __pyx_n_s_Missile, __pyx_n_s_Missile, (PyObject *) NULL, __pyx_n_s_binding, __pyx_kp_s_Missile_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 110, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_Py3MetaclassPrepare((PyObject *) NULL, __pyx_empty_tuple, __pyx_n_s_Missile, __pyx_n_s_Missile, (PyObject *) NULL, __pyx_n_s_binding, __pyx_kp_s_Missile_attributes); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 115, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_2 = __Pyx_PyDict_NewPresized(3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 110, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyDict_NewPresized(3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 115, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_r, __pyx_n_s_Vec) < 0) __PYX_ERR(0, 110, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_u, __pyx_n_s_Vec) < 0) __PYX_ERR(0, 110, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_v, __pyx_n_s_float) < 0) __PYX_ERR(0, 110, __pyx_L1_error)
-  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_annotations, __pyx_t_2) < 0) __PYX_ERR(0, 110, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_r, __pyx_n_s_Vec) < 0) __PYX_ERR(0, 115, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_u, __pyx_n_s_Vec) < 0) __PYX_ERR(0, 115, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_v, __pyx_n_s_float) < 0) __PYX_ERR(0, 115, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_annotations, __pyx_t_2) < 0) __PYX_ERR(0, 115, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "binding.pyx":109
+  /* "binding.pyx":114
  * 
  * 
  * @dataclass(frozen=True)             # <<<<<<<<<<<<<<
  * class Missile:
- *     """Missile."""
+ *     """Missile attributes."""
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_dataclass); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 109, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_dataclass); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 114, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
-  __pyx_t_5 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 109, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 114, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_frozen, Py_True) < 0) __PYX_ERR(0, 109, __pyx_L1_error)
-  __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_6, __pyx_empty_tuple, __pyx_t_5); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 109, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_frozen, Py_True) < 0) __PYX_ERR(0, 114, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_6, __pyx_empty_tuple, __pyx_t_5); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 114, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-  /* "binding.pyx":110
+  /* "binding.pyx":115
  * 
  * @dataclass(frozen=True)
  * class Missile:             # <<<<<<<<<<<<<<
- *     """Missile."""
+ *     """Missile attributes."""
  * 
  */
-  __pyx_t_5 = __Pyx_Py3ClassCreate(((PyObject*)&PyType_Type), __pyx_n_s_Missile, __pyx_empty_tuple, __pyx_t_3, NULL, 0, 0); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 110, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_Py3ClassCreate(((PyObject*)&PyType_Type), __pyx_n_s_Missile, __pyx_empty_tuple, __pyx_t_3, NULL, 0, 0); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 115, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __pyx_t_6 = NULL;
   __pyx_t_7 = 0;
@@ -9869,387 +9869,387 @@ if (!__Pyx_RefNanny) {
     __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_4, __pyx_callargs+1-__pyx_t_7, 1+__pyx_t_7);
     __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 109, __pyx_L1_error)
+    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 114, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   }
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_Missile, __pyx_t_2) < 0) __PYX_ERR(0, 110, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_Missile, __pyx_t_2) < 0) __PYX_ERR(0, 115, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "binding.pyx":118
+  /* "binding.pyx":123
  * 
  * 
  * class Agents:             # <<<<<<<<<<<<<<
- *     """Agents."""
+ *     """View of agents.
  * 
  */
-  __pyx_t_3 = __Pyx_Py3MetaclassPrepare((PyObject *) NULL, __pyx_empty_tuple, __pyx_n_s_Agents, __pyx_n_s_Agents, (PyObject *) NULL, __pyx_n_s_binding, __pyx_kp_s_Agents_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 118, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_Py3MetaclassPrepare((PyObject *) NULL, __pyx_empty_tuple, __pyx_n_s_Agents, __pyx_n_s_Agents, (PyObject *) NULL, __pyx_n_s_binding, __pyx_kp_s_View_of_agents_Use_this_view_to); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 123, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
 
-  /* "binding.pyx":121
- *     """Agents."""
+  /* "binding.pyx":134
+ *     """
  * 
  *     def __init__(self, engine):             # <<<<<<<<<<<<<<
  *         self._engine = engine
  * 
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_7binding_6Agents_1__init__, 0, __pyx_n_s_Agents___init, NULL, __pyx_n_s_binding, __pyx_d, ((PyObject *)__pyx_codeobj__7)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 121, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_7binding_6Agents_1__init__, 0, __pyx_n_s_Agents___init, NULL, __pyx_n_s_binding, __pyx_d, ((PyObject *)__pyx_codeobj__7)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 134, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_init, __pyx_t_2) < 0) __PYX_ERR(0, 121, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_init, __pyx_t_2) < 0) __PYX_ERR(0, 134, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "binding.pyx":124
+  /* "binding.pyx":137
  *         self._engine = engine
  * 
  *     def __len__(self):             # <<<<<<<<<<<<<<
  *         return self._engine._get_agents_size()
  * 
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_7binding_6Agents_3__len__, 0, __pyx_n_s_Agents___len, NULL, __pyx_n_s_binding, __pyx_d, ((PyObject *)__pyx_codeobj__9)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 124, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_7binding_6Agents_3__len__, 0, __pyx_n_s_Agents___len, NULL, __pyx_n_s_binding, __pyx_d, ((PyObject *)__pyx_codeobj__9)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 137, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_len, __pyx_t_2) < 0) __PYX_ERR(0, 124, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_len, __pyx_t_2) < 0) __PYX_ERR(0, 137, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "binding.pyx":127
+  /* "binding.pyx":140
  *         return self._engine._get_agents_size()
  * 
  *     def __getitem__(self, index: int):             # <<<<<<<<<<<<<<
  *         n = self._engine._get_agents_size()
  *         if index < 0 or index >= n:
  */
-  __pyx_t_2 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 127, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 140, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_index, __pyx_n_s_int) < 0) __PYX_ERR(0, 127, __pyx_L1_error)
-  __pyx_t_4 = __Pyx_CyFunction_New(&__pyx_mdef_7binding_6Agents_5__getitem__, 0, __pyx_n_s_Agents___getitem, NULL, __pyx_n_s_binding, __pyx_d, ((PyObject *)__pyx_codeobj__11)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 127, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_index, __pyx_n_s_int) < 0) __PYX_ERR(0, 140, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_CyFunction_New(&__pyx_mdef_7binding_6Agents_5__getitem__, 0, __pyx_n_s_Agents___getitem, NULL, __pyx_n_s_binding, __pyx_d, ((PyObject *)__pyx_codeobj__11)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 140, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_4, __pyx_t_2);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_getitem, __pyx_t_4) < 0) __PYX_ERR(0, 127, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_getitem, __pyx_t_4) < 0) __PYX_ERR(0, 140, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-  /* "binding.pyx":136
+  /* "binding.pyx":149
  *         return self._engine._get_agent(index)
  * 
  *     def __setitem__(self, index: int, agent: Agent):             # <<<<<<<<<<<<<<
  *         n = self._engine._get_agents_size()
  *         if index < 0 or index >= n:
  */
-  __pyx_t_4 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 136, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 149, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_index, __pyx_n_s_int) < 0) __PYX_ERR(0, 136, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_agent, __pyx_n_s_Agent) < 0) __PYX_ERR(0, 136, __pyx_L1_error)
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_7binding_6Agents_7__setitem__, 0, __pyx_n_s_Agents___setitem, NULL, __pyx_n_s_binding, __pyx_d, ((PyObject *)__pyx_codeobj__13)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 136, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_index, __pyx_n_s_int) < 0) __PYX_ERR(0, 149, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_agent, __pyx_n_s_Agent) < 0) __PYX_ERR(0, 149, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_7binding_6Agents_7__setitem__, 0, __pyx_n_s_Agents___setitem, NULL, __pyx_n_s_binding, __pyx_d, ((PyObject *)__pyx_codeobj__13)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 149, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_2, __pyx_t_4);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_setitem, __pyx_t_2) < 0) __PYX_ERR(0, 136, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_setitem, __pyx_t_2) < 0) __PYX_ERR(0, 149, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "binding.pyx":118
+  /* "binding.pyx":123
  * 
  * 
  * class Agents:             # <<<<<<<<<<<<<<
- *     """Agents."""
+ *     """View of agents.
  * 
  */
-  __pyx_t_2 = __Pyx_Py3ClassCreate(((PyObject*)&PyType_Type), __pyx_n_s_Agents, __pyx_empty_tuple, __pyx_t_3, NULL, 0, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 118, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_Py3ClassCreate(((PyObject*)&PyType_Type), __pyx_n_s_Agents, __pyx_empty_tuple, __pyx_t_3, NULL, 0, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 123, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_Agents, __pyx_t_2) < 0) __PYX_ERR(0, 118, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_Agents, __pyx_t_2) < 0) __PYX_ERR(0, 123, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "binding.pyx":146
+  /* "binding.pyx":159
  * 
  * 
  * class Missiles:             # <<<<<<<<<<<<<<
- *     """Missiles."""
- *     def __init__(self, engine):
+ *     """View of missiles.
+ * 
  */
-  __pyx_t_3 = __Pyx_Py3MetaclassPrepare((PyObject *) NULL, __pyx_empty_tuple, __pyx_n_s_Missiles, __pyx_n_s_Missiles, (PyObject *) NULL, __pyx_n_s_binding, __pyx_kp_s_Missiles_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 146, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_Py3MetaclassPrepare((PyObject *) NULL, __pyx_empty_tuple, __pyx_n_s_Missiles, __pyx_n_s_Missiles, (PyObject *) NULL, __pyx_n_s_binding, __pyx_kp_s_View_of_missiles_Use_this_view_t); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 159, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
 
-  /* "binding.pyx":148
- * class Missiles:
- *     """Missiles."""
+  /* "binding.pyx":171
+ *     """
+ * 
  *     def __init__(self, engine):             # <<<<<<<<<<<<<<
  *         self._engine = engine
  * 
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_7binding_8Missiles_1__init__, 0, __pyx_n_s_Missiles___init, NULL, __pyx_n_s_binding, __pyx_d, ((PyObject *)__pyx_codeobj__14)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 148, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_7binding_8Missiles_1__init__, 0, __pyx_n_s_Missiles___init, NULL, __pyx_n_s_binding, __pyx_d, ((PyObject *)__pyx_codeobj__14)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 171, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_init, __pyx_t_2) < 0) __PYX_ERR(0, 148, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_init, __pyx_t_2) < 0) __PYX_ERR(0, 171, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "binding.pyx":151
+  /* "binding.pyx":174
  *         self._engine = engine
  * 
  *     def __len__(self):             # <<<<<<<<<<<<<<
  *         return self._engine._get_missiles_size()
  * 
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_7binding_8Missiles_3__len__, 0, __pyx_n_s_Missiles___len, NULL, __pyx_n_s_binding, __pyx_d, ((PyObject *)__pyx_codeobj__15)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 151, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_7binding_8Missiles_3__len__, 0, __pyx_n_s_Missiles___len, NULL, __pyx_n_s_binding, __pyx_d, ((PyObject *)__pyx_codeobj__15)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 174, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_len, __pyx_t_2) < 0) __PYX_ERR(0, 151, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_len, __pyx_t_2) < 0) __PYX_ERR(0, 174, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "binding.pyx":154
+  /* "binding.pyx":177
  *         return self._engine._get_missiles_size()
  * 
  *     def __getitem__(self, index: int):             # <<<<<<<<<<<<<<
  *         n = self._engine._get_missiles_size()
  *         if index < 0 or index >= n:
  */
-  __pyx_t_2 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 154, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 177, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_index, __pyx_n_s_int) < 0) __PYX_ERR(0, 154, __pyx_L1_error)
-  __pyx_t_4 = __Pyx_CyFunction_New(&__pyx_mdef_7binding_8Missiles_5__getitem__, 0, __pyx_n_s_Missiles___getitem, NULL, __pyx_n_s_binding, __pyx_d, ((PyObject *)__pyx_codeobj__16)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 154, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_index, __pyx_n_s_int) < 0) __PYX_ERR(0, 177, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_CyFunction_New(&__pyx_mdef_7binding_8Missiles_5__getitem__, 0, __pyx_n_s_Missiles___getitem, NULL, __pyx_n_s_binding, __pyx_d, ((PyObject *)__pyx_codeobj__16)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 177, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_4, __pyx_t_2);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_getitem, __pyx_t_4) < 0) __PYX_ERR(0, 154, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_getitem, __pyx_t_4) < 0) __PYX_ERR(0, 177, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-  /* "binding.pyx":163
+  /* "binding.pyx":186
  *         return self._engine._get_missile(index)
  * 
  *     def __setitem__(self, index: int, missile: Missile):             # <<<<<<<<<<<<<<
  *         n = self._engine._get_missiles_size()
  *         if index < 0 or index >= n:
  */
-  __pyx_t_4 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 163, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 186, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_index, __pyx_n_s_int) < 0) __PYX_ERR(0, 163, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_missile, __pyx_n_s_Missile) < 0) __PYX_ERR(0, 163, __pyx_L1_error)
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_7binding_8Missiles_7__setitem__, 0, __pyx_n_s_Missiles___setitem, NULL, __pyx_n_s_binding, __pyx_d, ((PyObject *)__pyx_codeobj__18)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 163, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_index, __pyx_n_s_int) < 0) __PYX_ERR(0, 186, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_missile, __pyx_n_s_Missile) < 0) __PYX_ERR(0, 186, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_7binding_8Missiles_7__setitem__, 0, __pyx_n_s_Missiles___setitem, NULL, __pyx_n_s_binding, __pyx_d, ((PyObject *)__pyx_codeobj__18)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 186, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_2, __pyx_t_4);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_setitem, __pyx_t_2) < 0) __PYX_ERR(0, 163, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_setitem, __pyx_t_2) < 0) __PYX_ERR(0, 186, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "binding.pyx":146
+  /* "binding.pyx":159
  * 
  * 
  * class Missiles:             # <<<<<<<<<<<<<<
- *     """Missiles."""
- *     def __init__(self, engine):
+ *     """View of missiles.
+ * 
  */
-  __pyx_t_2 = __Pyx_Py3ClassCreate(((PyObject*)&PyType_Type), __pyx_n_s_Missiles, __pyx_empty_tuple, __pyx_t_3, NULL, 0, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 146, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_Py3ClassCreate(((PyObject*)&PyType_Type), __pyx_n_s_Missiles, __pyx_empty_tuple, __pyx_t_3, NULL, 0, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 159, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_Missiles, __pyx_t_2) < 0) __PYX_ERR(0, 146, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_Missiles, __pyx_t_2) < 0) __PYX_ERR(0, 159, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "binding.pyx":216
+  /* "binding.pyx":259
  *             twsfwphysx_delete_simulation_buffer(self._simulation_buffer)
  * 
  *     def _check_agent_idx(self, idx: int):             # <<<<<<<<<<<<<<
  *         if idx < 0 or idx >= self._agents.size:
  *             raise IndexError(
  */
-  __pyx_t_3 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 216, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 259, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_idx, __pyx_n_s_int) < 0) __PYX_ERR(0, 216, __pyx_L1_error)
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_7binding_6Engine_5_check_agent_idx, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_Engine__check_agent_idx, NULL, __pyx_n_s_binding, __pyx_d, ((PyObject *)__pyx_codeobj__20)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 216, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_idx, __pyx_n_s_int) < 0) __PYX_ERR(0, 259, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_7binding_6Engine_5_check_agent_idx, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_Engine__check_agent_idx, NULL, __pyx_n_s_binding, __pyx_d, ((PyObject *)__pyx_codeobj__20)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 259, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_2, __pyx_t_3);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_7binding_Engine, __pyx_n_s_check_agent_idx, __pyx_t_2) < 0) __PYX_ERR(0, 216, __pyx_L1_error)
+  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_7binding_Engine, __pyx_n_s_check_agent_idx, __pyx_t_2) < 0) __PYX_ERR(0, 259, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   PyType_Modified(__pyx_ptype_7binding_Engine);
 
-  /* "binding.pyx":222
+  /* "binding.pyx":265
  *             )
  * 
  *     def simulate(self, *, t: float, n_steps: int):             # <<<<<<<<<<<<<<
- *         """simulate."""
+ *         """Simulates the propagation and interactions of agents and missiles.
  * 
  */
-  __pyx_t_2 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 222, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 265, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_t, __pyx_n_s_float) < 0) __PYX_ERR(0, 222, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_n_steps, __pyx_n_s_int) < 0) __PYX_ERR(0, 222, __pyx_L1_error)
-  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_7binding_6Engine_7simulate, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_Engine_simulate, NULL, __pyx_n_s_binding, __pyx_d, ((PyObject *)__pyx_codeobj__22)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 222, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_t, __pyx_n_s_float) < 0) __PYX_ERR(0, 265, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_n_steps, __pyx_n_s_int) < 0) __PYX_ERR(0, 265, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_7binding_6Engine_7simulate, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_Engine_simulate, NULL, __pyx_n_s_binding, __pyx_d, ((PyObject *)__pyx_codeobj__22)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 265, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_3, __pyx_t_2);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_7binding_Engine, __pyx_n_s_simulate, __pyx_t_3) < 0) __PYX_ERR(0, 222, __pyx_L1_error)
+  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_7binding_Engine, __pyx_n_s_simulate, __pyx_t_3) < 0) __PYX_ERR(0, 265, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   PyType_Modified(__pyx_ptype_7binding_Engine);
 
-  /* "binding.pyx":234
+  /* "binding.pyx":290
  *         )
  * 
  *     def launch_missile(self,             # <<<<<<<<<<<<<<
  *                        *,
  *                        agent_idx: int,
  */
-  __pyx_t_3 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 234, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 290, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
 
-  /* "binding.pyx":237
+  /* "binding.pyx":293
  *                        *,
  *                        agent_idx: int,
  *                        v: Optional[float]=None,             # <<<<<<<<<<<<<<
  *                        payload: Optional[int]=None):
  *         """launch missile.
  */
-  if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_v, Py_None) < 0) __PYX_ERR(0, 234, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_v, Py_None) < 0) __PYX_ERR(0, 290, __pyx_L1_error)
 
-  /* "binding.pyx":238
+  /* "binding.pyx":294
  *                        agent_idx: int,
  *                        v: Optional[float]=None,
  *                        payload: Optional[int]=None):             # <<<<<<<<<<<<<<
  *         """launch missile.
  * 
  */
-  if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_payload, Py_None) < 0) __PYX_ERR(0, 234, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_payload, Py_None) < 0) __PYX_ERR(0, 290, __pyx_L1_error)
 
-  /* "binding.pyx":234
+  /* "binding.pyx":290
  *         )
  * 
  *     def launch_missile(self,             # <<<<<<<<<<<<<<
  *                        *,
  *                        agent_idx: int,
  */
-  __pyx_t_2 = __Pyx_PyDict_NewPresized(3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 234, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyDict_NewPresized(3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 290, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_agent_idx, __pyx_n_s_int) < 0) __PYX_ERR(0, 234, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_v, __pyx_kp_s_Optional_float) < 0) __PYX_ERR(0, 234, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_payload, __pyx_kp_s_Optional_int) < 0) __PYX_ERR(0, 234, __pyx_L1_error)
-  __pyx_t_4 = __Pyx_CyFunction_New(&__pyx_mdef_7binding_6Engine_9launch_missile, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_Engine_launch_missile, NULL, __pyx_n_s_binding, __pyx_d, ((PyObject *)__pyx_codeobj__24)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 234, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_agent_idx, __pyx_n_s_int) < 0) __PYX_ERR(0, 290, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_v, __pyx_kp_s_Optional_float) < 0) __PYX_ERR(0, 290, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_payload, __pyx_kp_s_Optional_int) < 0) __PYX_ERR(0, 290, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_CyFunction_New(&__pyx_mdef_7binding_6Engine_9launch_missile, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_Engine_launch_missile, NULL, __pyx_n_s_binding, __pyx_d, ((PyObject *)__pyx_codeobj__24)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 290, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_CyFunction_SetDefaultsKwDict(__pyx_t_4, __pyx_t_3);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_4, __pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_7binding_Engine, __pyx_n_s_launch_missile, __pyx_t_4) < 0) __PYX_ERR(0, 234, __pyx_L1_error)
+  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_7binding_Engine, __pyx_n_s_launch_missile, __pyx_t_4) < 0) __PYX_ERR(0, 290, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   PyType_Modified(__pyx_ptype_7binding_Engine);
 
-  /* "binding.pyx":266
+  /* "binding.pyx":322
  *         twsfwphysx_add_missile(&self._missiles, missile)
  * 
  *     def turn_agent(self, *, agent_idx: int, angle: float, degrees: bool=True):             # <<<<<<<<<<<<<<
  *         """Turns the agent.
  * 
  */
-  __pyx_t_4 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 266, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 322, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_degrees, Py_True) < 0) __PYX_ERR(0, 266, __pyx_L1_error)
-  __pyx_t_2 = __Pyx_PyDict_NewPresized(3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 266, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_degrees, Py_True) < 0) __PYX_ERR(0, 322, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyDict_NewPresized(3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 322, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_agent_idx, __pyx_n_s_int) < 0) __PYX_ERR(0, 266, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_angle, __pyx_n_s_float) < 0) __PYX_ERR(0, 266, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_degrees, __pyx_n_s_bool) < 0) __PYX_ERR(0, 266, __pyx_L1_error)
-  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_7binding_6Engine_11turn_agent, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_Engine_turn_agent, NULL, __pyx_n_s_binding, __pyx_d, ((PyObject *)__pyx_codeobj__26)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 266, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_agent_idx, __pyx_n_s_int) < 0) __PYX_ERR(0, 322, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_angle, __pyx_n_s_float) < 0) __PYX_ERR(0, 322, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_degrees, __pyx_n_s_bool) < 0) __PYX_ERR(0, 322, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_7binding_6Engine_11turn_agent, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_Engine_turn_agent, NULL, __pyx_n_s_binding, __pyx_d, ((PyObject *)__pyx_codeobj__26)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 322, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_CyFunction_SetDefaultsKwDict(__pyx_t_3, __pyx_t_4);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_3, __pyx_t_2);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_7binding_Engine, __pyx_n_s_turn_agent, __pyx_t_3) < 0) __PYX_ERR(0, 266, __pyx_L1_error)
+  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_7binding_Engine, __pyx_n_s_turn_agent, __pyx_t_3) < 0) __PYX_ERR(0, 322, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   PyType_Modified(__pyx_ptype_7binding_Engine);
 
-  /* "binding.pyx":288
+  /* "binding.pyx":344
  *         twsfwphysx_turn_agent(&self._agents.agents[agent_idx], angle)
  * 
  *     def _get_agents_size(self):             # <<<<<<<<<<<<<<
  *         return self._agents.size
  * 
  */
-  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_7binding_6Engine_13_get_agents_size, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_Engine__get_agents_size, NULL, __pyx_n_s_binding, __pyx_d, ((PyObject *)__pyx_codeobj__27)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 288, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_7binding_6Engine_13_get_agents_size, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_Engine__get_agents_size, NULL, __pyx_n_s_binding, __pyx_d, ((PyObject *)__pyx_codeobj__27)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 344, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_7binding_Engine, __pyx_n_s_get_agents_size, __pyx_t_3) < 0) __PYX_ERR(0, 288, __pyx_L1_error)
+  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_7binding_Engine, __pyx_n_s_get_agents_size, __pyx_t_3) < 0) __PYX_ERR(0, 344, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   PyType_Modified(__pyx_ptype_7binding_Engine);
 
-  /* "binding.pyx":291
+  /* "binding.pyx":347
  *         return self._agents.size
  * 
  *     def _get_agent(self, index: int):             # <<<<<<<<<<<<<<
  *         cdef twsfwphysx_agent a = self._agents.agents[index]
  * 
  */
-  __pyx_t_3 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 291, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 347, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_index, __pyx_n_s_int) < 0) __PYX_ERR(0, 291, __pyx_L1_error)
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_7binding_6Engine_15_get_agent, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_Engine__get_agent, NULL, __pyx_n_s_binding, __pyx_d, ((PyObject *)__pyx_codeobj__29)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 291, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_index, __pyx_n_s_int) < 0) __PYX_ERR(0, 347, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_7binding_6Engine_15_get_agent, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_Engine__get_agent, NULL, __pyx_n_s_binding, __pyx_d, ((PyObject *)__pyx_codeobj__29)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 347, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_2, __pyx_t_3);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_7binding_Engine, __pyx_n_s_get_agent, __pyx_t_2) < 0) __PYX_ERR(0, 291, __pyx_L1_error)
+  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_7binding_Engine, __pyx_n_s_get_agent, __pyx_t_2) < 0) __PYX_ERR(0, 347, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   PyType_Modified(__pyx_ptype_7binding_Engine);
 
-  /* "binding.pyx":299
+  /* "binding.pyx":355
  *         return Agent(r, u, a.v, a.a, a.hp)
  * 
  *     def _set_agent(self, index: int, agent: Agent):             # <<<<<<<<<<<<<<
  *         cdef twsfwphysx_agent* a = &self._agents.agents[index]
  * 
  */
-  __pyx_t_2 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 299, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 355, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_index, __pyx_n_s_int) < 0) __PYX_ERR(0, 299, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_agent, __pyx_n_s_Agent) < 0) __PYX_ERR(0, 299, __pyx_L1_error)
-  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_7binding_6Engine_17_set_agent, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_Engine__set_agent, NULL, __pyx_n_s_binding, __pyx_d, ((PyObject *)__pyx_codeobj__31)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 299, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_index, __pyx_n_s_int) < 0) __PYX_ERR(0, 355, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_agent, __pyx_n_s_Agent) < 0) __PYX_ERR(0, 355, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_7binding_6Engine_17_set_agent, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_Engine__set_agent, NULL, __pyx_n_s_binding, __pyx_d, ((PyObject *)__pyx_codeobj__31)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 355, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_3, __pyx_t_2);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_7binding_Engine, __pyx_n_s_set_agent, __pyx_t_3) < 0) __PYX_ERR(0, 299, __pyx_L1_error)
+  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_7binding_Engine, __pyx_n_s_set_agent, __pyx_t_3) < 0) __PYX_ERR(0, 355, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   PyType_Modified(__pyx_ptype_7binding_Engine);
 
-  /* "binding.pyx":314
+  /* "binding.pyx":370
  *         a.hp = agent.hp
  * 
  *     def _get_missiles_size(self):             # <<<<<<<<<<<<<<
  *         return self._missiles.size
  * 
  */
-  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_7binding_6Engine_19_get_missiles_size, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_Engine__get_missiles_size, NULL, __pyx_n_s_binding, __pyx_d, ((PyObject *)__pyx_codeobj__32)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 314, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_7binding_6Engine_19_get_missiles_size, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_Engine__get_missiles_size, NULL, __pyx_n_s_binding, __pyx_d, ((PyObject *)__pyx_codeobj__32)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 370, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_7binding_Engine, __pyx_n_s_get_missiles_size, __pyx_t_3) < 0) __PYX_ERR(0, 314, __pyx_L1_error)
+  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_7binding_Engine, __pyx_n_s_get_missiles_size, __pyx_t_3) < 0) __PYX_ERR(0, 370, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   PyType_Modified(__pyx_ptype_7binding_Engine);
 
-  /* "binding.pyx":317
+  /* "binding.pyx":373
  *         return self._missiles.size
  * 
  *     def _get_missile(self, index: int):             # <<<<<<<<<<<<<<
  *         cdef twsfwphysx_missile m = self._missiles.missiles[index]
  * 
  */
-  __pyx_t_3 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 317, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 373, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_index, __pyx_n_s_int) < 0) __PYX_ERR(0, 317, __pyx_L1_error)
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_7binding_6Engine_21_get_missile, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_Engine__get_missile, NULL, __pyx_n_s_binding, __pyx_d, ((PyObject *)__pyx_codeobj__34)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 317, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_index, __pyx_n_s_int) < 0) __PYX_ERR(0, 373, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_7binding_6Engine_21_get_missile, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_Engine__get_missile, NULL, __pyx_n_s_binding, __pyx_d, ((PyObject *)__pyx_codeobj__34)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 373, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_2, __pyx_t_3);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_7binding_Engine, __pyx_n_s_get_missile, __pyx_t_2) < 0) __PYX_ERR(0, 317, __pyx_L1_error)
+  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_7binding_Engine, __pyx_n_s_get_missile, __pyx_t_2) < 0) __PYX_ERR(0, 373, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   PyType_Modified(__pyx_ptype_7binding_Engine);
 
-  /* "binding.pyx":325
+  /* "binding.pyx":381
  *         return Missile(r, u, m.v)
  * 
  *     def _set_missile(self, index: int, missile: Missile):             # <<<<<<<<<<<<<<
  *         cdef twsfwphysx_missile* m = &self._missiles.missiles[index]
  * 
  */
-  __pyx_t_2 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 325, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 381, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_index, __pyx_n_s_int) < 0) __PYX_ERR(0, 325, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_missile, __pyx_n_s_Missile) < 0) __PYX_ERR(0, 325, __pyx_L1_error)
-  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_7binding_6Engine_23_set_missile, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_Engine__set_missile, NULL, __pyx_n_s_binding, __pyx_d, ((PyObject *)__pyx_codeobj__36)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 325, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_index, __pyx_n_s_int) < 0) __PYX_ERR(0, 381, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_missile, __pyx_n_s_Missile) < 0) __PYX_ERR(0, 381, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_7binding_6Engine_23_set_missile, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_Engine__set_missile, NULL, __pyx_n_s_binding, __pyx_d, ((PyObject *)__pyx_codeobj__36)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 381, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_3, __pyx_t_2);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_7binding_Engine, __pyx_n_s_set_missile, __pyx_t_3) < 0) __PYX_ERR(0, 325, __pyx_L1_error)
+  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_7binding_Engine, __pyx_n_s_set_missile, __pyx_t_3) < 0) __PYX_ERR(0, 381, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   PyType_Modified(__pyx_ptype_7binding_Engine);
 
@@ -10275,7 +10275,7 @@ if (!__Pyx_RefNanny) {
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
   /* "binding.pyx":1
- * import typing             # <<<<<<<<<<<<<<
+ * import collections             # <<<<<<<<<<<<<<
  * 
  * from dataclasses import dataclass
  */
