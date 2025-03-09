@@ -1,3 +1,5 @@
+import typing
+
 from dataclasses import dataclass
 from math import pi
 
@@ -70,7 +72,7 @@ cdef extern from "twsfwphysx/twsfwphysx.h":
     void twsfwphysx_turn_agent(twsfwphysx_agent *agent, float angle)
 
 
-def get_twsfwphysx_version():
+def get_twsfwphysx_version() -> str:
     cdef const char* version = twsfwphysx_version()
     return version.decode("utf-8")
 
@@ -143,7 +145,6 @@ class Agents:
 
 class Missiles:
     """Missiles."""
-
     def __init__(self, engine):
         self._engine = engine
 
@@ -177,7 +178,7 @@ cdef class Engine:
     cdef twsfwphysx_missiles _missiles
     cdef void *_simulation_buffer
 
-    def __init__(self, world: World, agents: list[Agent]):
+    def __init__(self, world: World, agents: typing.Iterable[Agent]):
         self._world = twsfwphysx_world(
             world.restitution,
             world.agent_radius,
@@ -235,7 +236,19 @@ cdef class Engine:
                        agent_idx: int,
                        v: Optional[float]=None,
                        payload: Optional[int]=None):
-        """launch missile."""
+        """launch missile.
+
+        Launches a missile next to the given agent. For internal reasons this
+        function cannot be implemented as a member function of
+        :class:`Agent <twsfwphysx.Agent>`. Hence, the index of the agent's
+        position in :class:`Engine.agents <twsfwphysx.Engine.agents>` has to be
+        given as the first argument.
+
+        :param agent_idx: Index of agent in :class:`Engine.agents <twsfwphysx.Engine.agents>`.
+        :param v: Initial velocity. If not given, the velocity of the agent is used.
+        :param payload: An optional persistent payload.
+        :raises IndexError: if `agent_idx` is invalid.
+        """
 
         self._check_agent_idx(agent_idx)
         cdef twsfwphysx_agent agent = self._agents.agents[agent_idx]
@@ -251,7 +264,19 @@ cdef class Engine:
         twsfwphysx_add_missile(&self._missiles, missile)
 
     def turn_agent(self, *, agent_idx: int, angle: float, degrees: bool=True):
-        """turn agent."""
+        """Turns the agent.
+
+        Turns the (angular momentum vector of) agent by the given angle. For
+        internal reasons this helper function cannot be implemented as a
+        member function of :class:`Agent <twsfwphysx.Agent>`. Hence, the index
+        of the agent's position in :class:`Engine.agents <twsfwphysx.Engine.agents>`
+        has to be given as the first argument.
+
+        :param agent_idx: Index of agent in :class:`Engine.agents <twsfwphysx.Engine.agents>`.
+        :param angle: Rotation angle in degrees (default) or radians.
+        :param degrees: Unit of rotation angle. If set to `False`, the unit is radians.
+        :raises IndexError: if `agent_idx` is invalid.
+        """
 
         self._check_agent_idx(agent_idx)
 
@@ -311,13 +336,21 @@ cdef class Engine:
         m.v = missile.v
 
     @property
-    def agents(self):
-        """agents."""
+    def agents(self) -> Agents:
+        """All agents.
+
+        :return: Agents.
+        :rtype: Agents
+        """
 
         return Agents(self)
 
     @property
-    def missiles(self):
-        """missiles."""
+    def missiles(self) -> Missiles:
+        """All missiles.
+
+        :return: Missiles.
+        :rtype: Missiles
+        """
 
         return Missiles(self)

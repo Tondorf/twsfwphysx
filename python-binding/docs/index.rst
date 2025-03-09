@@ -2,6 +2,6 @@ twsfwphysx documentation
 ========================
 
 .. automodule:: twsfwphysx
-   :members: Engine, World, Vec, Agent, Agents, Missile, Missiles, 
+   :members: Engine, World, Agent, Missile, Agents, Missiles, Vec
    :undoc-members:
    :show-inheritance:
