@@ -1,0 +1,43 @@
+name: Create new release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Checkout FlatBuffers repository
+      run: git clone --recursive https://github.com/google/flatbuffers.git
+
+    - name: Build flatc with CMake
+      run: |
+        cd flatbuffers
+        mkdir build
+        cd build
+        cmake -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Release ..
+        make flatc
+
+    - name: Verify flatc build
+      run: |
+        ./flatbuffers/build/flatc --version
+
+    - name: Get Latest Git Tag
+      run: echo "tag=$(git describe --tags --abbrev=0)" >> $GITHUB_ENV
+
+    - name: Generate FlatBuffers C++ Code
+      run: |
+        ./flatbuffers/build/flatc --cpp twsfwphysx_world_state.fbs
+        mv twsfwphysx_world_state_generated.h twsfwphysx_world_state-${{ env.tag }}.h
+
+    - name: Create GitHub Release and Upload Asset
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        gh release create "${tag}" twsfwphysx_world_state-"${tag}".h --title "${tag}"
