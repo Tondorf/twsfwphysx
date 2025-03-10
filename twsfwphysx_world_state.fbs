@@ -1,0 +1,29 @@
+namespace twsfwphysx;
+
+struct Vec {
+    x: float;
+    y: float;
+    z: float;
+}
+
+table Agent {
+    r: Vec;
+    u: Vec;
+    v: float;
+    a: float;
+    hp: float;
+}
+
+table Missile {
+    r: Vec;
+    u: Vec;
+    v: float;
+    payload: int32;
+}
+
+table WorldState {
+    agents: [Agent];
+    missiles: [Missile];
+}
+
+root_type WorldState;
