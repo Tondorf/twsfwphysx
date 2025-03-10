@@ -4,7 +4,7 @@ include(cmake/prelude.cmake)
 
 project(
         twsfwphysx
-        VERSION 0.7.0
+        VERSION 0.8.0
         DESCRIPTION "The physics engine for twsfw (the 'w' stands for WASM)"
         HOMEPAGE_URL "https://github.com/tondorf/twsfwphysx"
         LANGUAGES NONE

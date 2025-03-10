@@ -1,0 +1,68 @@
+name: Create new release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Checkout FlatBuffers repository
+      run: git clone --recursive https://github.com/google/flatbuffers.git
+
+    - name: Build flatc with CMake
+      run: |
+        cd flatbuffers
+        mkdir build
+        cd build
+        cmake -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Release ..
+        make flatc
+
+    - name: Verify flatc build
+      run: |
+        ./flatbuffers/build/flatc --version
+
+    - name: Generate FlatBuffers C++ Code
+      run: |
+        ./flatbuffers/build/flatc --cpp -o fbs/cpp twsfwphysx_world_state.fbs
+
+    - name: Generate FlatBuffers Rust Code
+      run: |
+        ./flatbuffers/build/flatc --rust -o fbs/rust twsfwphysx_world_state.fbs
+
+    - name: Generate FlatBuffers Swift Code
+      run: |
+        ./flatbuffers/build/flatc --swift -o fbs/swift twsfwphysx_world_state.fbs
+
+    - name: Generate FlatBuffers Python Code
+      run: |
+        ./flatbuffers/build/flatc --python -o fbs/python twsfwphysx_world_state.fbs
+        cd fbs/python/
+        zip -r ../twsfwphysx_world_state-python.zip .
+
+    - name: Generate FlatBuffers Go Code
+      run: |
+        ./flatbuffers/build/flatc --go -o fbs/go twsfwphysx_world_state.fbs
+        cd fbs/go/
+        zip -r ../twsfwphysx_world_state-go.zip .
+
+    - name: Generate FlatBuffers TS Code
+      run: |
+        ./flatbuffers/build/flatc --ts -o fbs/ts twsfwphysx_world_state.fbs
+        cd fbs/ts/
+        zip -r ../twsfwphysx_world_state-ts.zip .
+
+    - name: Get Latest Git Tag
+      run: echo "tag=$(git describe --tags --abbrev=0)" >> $GITHUB_ENV
+
+    - name: Create GitHub Release and Upload Asset
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        gh release create "${tag}" fbs/cpp/*.h fbs/rust/*.rs fbs/swift/*.swift fbs/*.zip --title "${tag}"
