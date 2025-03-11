@@ -118,9 +118,9 @@ const char *twsfwphysx_version(void);
  * @brief Represents a 3D vector.
  */
 struct twsfwphysx_vec {
-	float x; ///< x-component of the vector
-	float y; ///< y-component of the vector
-	float z; ///< z-component of the vector
+    float x; ///< x-component of the vector
+    float y; ///< y-component of the vector
+    float z; ///< z-component of the vector
 };
 
 /**
@@ -156,16 +156,16 @@ struct twsfwphysx_vec {
  * \endcode
  */
 struct twsfwphysx_agent {
-	struct twsfwphysx_vec r;
-	///< Normalized vector pointing to the position of the agent on the unit sphere.
+    struct twsfwphysx_vec r;
+    ///< Normalized vector pointing to the position of the agent on the unit sphere.
 
-	struct twsfwphysx_vec u; ///< Rotation axis.
+    struct twsfwphysx_vec u; ///< Rotation axis.
 
-	float v; ///< Magnitude of instantaneous velocity
+    float v; ///< Magnitude of instantaneous velocity
 
-	float a; ///< Acceleration used for propulsion (terminal velocity)
+    float a; ///< Acceleration used for propulsion (terminal velocity)
 
-	float hp; ///< Health points
+    float hp; ///< Health points
 };
 
 /**
@@ -189,14 +189,14 @@ struct twsfwphysx_agent {
  * for (int i = 0; i < crowd.size; i++) {
  *     struct twsfwphysx_agent *agent = &crowd.agents[i];
  *     if (i % 2 == 0) {   // kill every second agent
- *	       agent.hp = -1.F;  // to motivate the others
+ *         agent.hp = -1.F;  // to motivate the others
  *     }
  * }
  * \endcode
  */
 struct twsfwphysx_agents {
-	struct twsfwphysx_agent *agents; ///< Pointer to an array of agents
-	int32_t size; ///< Number of agents
+    struct twsfwphysx_agent *agents; ///< Pointer to an array of agents
+    int32_t size; ///< Number of agents
 };
 
 /**
@@ -210,10 +210,10 @@ struct twsfwphysx_agents {
  * \ref twsfwphysx_add_missile to add them to an existing missile batch.
  */
 struct twsfwphysx_missile {
-	struct twsfwphysx_vec r; ///< Position
-	struct twsfwphysx_vec u; ///< Rotation axis
-	float v; ///< Velocity magnitude
-	int32_t payload; ///< Payload
+    struct twsfwphysx_vec r; ///< Position
+    struct twsfwphysx_vec u; ///< Rotation axis
+    float v; ///< Velocity magnitude
+    int32_t payload; ///< Payload
 };
 
 /**
@@ -239,9 +239,9 @@ struct twsfwphysx_missile {
  * \endcode
  */
 struct twsfwphysx_missiles {
-	struct twsfwphysx_missile *missiles; ///< Pointer to an array of missiles
-	int32_t size; ///< Number of missiles
-	int32_t capacity; ///< **Only for internal usage.**
+    struct twsfwphysx_missile *missiles; ///< Pointer to an array of missiles
+    int32_t size; ///< Number of missiles
+    int32_t capacity; ///< **Only for internal usage.**
 };
 
 /**
@@ -253,13 +253,13 @@ struct twsfwphysx_missiles {
  * effect.
  */
 struct twsfwphysx_world {
-	float restitution;
-	///< Coefficient of restitution. (See comment above.)
+    float restitution;
+    ///< Coefficient of restitution. (See comment above.)
 
-	float agent_radius; ///< Radius of cross-section of agents
+    float agent_radius; ///< Radius of cross-section of agents
 
-	float missile_acceleration;
-	///< Acceleration used for missiles propuslion (terminal velocity)
+    float missile_acceleration;
+    ///< Acceleration used for missiles propuslion (terminal velocity)
 };
 
 /**
@@ -306,8 +306,8 @@ void twsfwphysx_delete_agents(struct twsfwphysx_agents *agents);
  * @param index Index (`0 <= index < agents.size`)
  */
 void twsfwphysx_set_agent(const struct twsfwphysx_agents *batch,
-						  struct twsfwphysx_agent agent,
-						  int32_t index);
+                          struct twsfwphysx_agent agent,
+                          int32_t index);
 
 /**
  * @brief Creates a new batch of missiles.
@@ -341,7 +341,7 @@ void twsfwphysx_delete_missile_batch(struct twsfwphysx_missiles *missiles);
  * @param missile New missile
  */
 void twsfwphysx_add_missile(struct twsfwphysx_missiles *missiles,
-							struct twsfwphysx_missile missile);
+                            struct twsfwphysx_missile missile);
 
 /**
  * @brief Creates a missile next to the agent
@@ -357,7 +357,7 @@ void twsfwphysx_add_missile(struct twsfwphysx_missiles *missiles,
  */
 struct twsfwphysx_missile
 twsfwphysx_launch_missile(const struct twsfwphysx_agent *agent,
-						  const struct twsfwphysx_world *world);
+                          const struct twsfwphysx_world *world);
 
 /**
  * @brief Creates a new simulation buffer.
@@ -379,7 +379,7 @@ struct twsfwphysx_simulation_buffer *twsfwphysx_create_simulation_buffer(void);
  * @param buffer The simulation buffer
  */
 void twsfwphysx_delete_simulation_buffer(
-	struct twsfwphysx_simulation_buffer *buffer);
+    struct twsfwphysx_simulation_buffer *buffer);
 
 /**
  * @brief Simulates the movements and interactions of agents and missiles.
@@ -415,11 +415,11 @@ void twsfwphysx_delete_simulation_buffer(
  * @param buffer Simulation buffer (Set to `NULL` if not needed.)
  */
 void twsfwphysx_simulate(struct twsfwphysx_agents *agents,
-						 struct twsfwphysx_missiles *missiles,
-						 const struct twsfwphysx_world *world,
-						 float t,
-						 int32_t n_steps,
-						 struct twsfwphysx_simulation_buffer *buffer);
+                         struct twsfwphysx_missiles *missiles,
+                         const struct twsfwphysx_world *world,
+                         float t,
+                         int32_t n_steps,
+                         struct twsfwphysx_simulation_buffer *buffer);
 
 /**
  * @brief Changes orientation of agent.
@@ -437,380 +437,380 @@ void twsfwphysx_turn_agent(struct twsfwphysx_agent *agent, float angle);
 
 const char *twsfwphysx_version(void)
 {
-	return "0.8.0";
+    return "0.8.0";
 }
 
 struct twsfwphysx_agents twsfwphysx_create_agents(const int32_t size)
 {
-	struct twsfwphysx_agents agents = { NULL, 0 };
-	if (size < 1) {
-		return agents;
-	}
+    struct twsfwphysx_agents agents = { NULL, 0 };
+    if (size < 1) {
+        return agents;
+    }
 
-	agents.agents = (struct twsfwphysx_agent *)malloc(
-		(uint64_t)size * sizeof(struct twsfwphysx_agent));
-	agents.size = size;
+    agents.agents = (struct twsfwphysx_agent *)malloc(
+        (uint64_t)size * sizeof(struct twsfwphysx_agent));
+    agents.size = size;
 
-	return agents;
+    return agents;
 }
 
 void twsfwphysx_delete_agents(struct twsfwphysx_agents *agents)
 {
-	free(agents->agents);
-	agents->agents = NULL;
-	agents->size = 0;
+    free(agents->agents);
+    agents->agents = NULL;
+    agents->size = 0;
 }
 
 void twsfwphysx_set_agent(const struct twsfwphysx_agents *batch,
-						  const struct twsfwphysx_agent agent,
-						  const int32_t index)
+                          const struct twsfwphysx_agent agent,
+                          const int32_t index)
 {
-	assert(index >= 0 && index < batch->size);
-	assert(batch->agents != NULL);
-	batch->agents[index] = agent;
+    assert(index >= 0 && index < batch->size);
+    assert(batch->agents != NULL);
+    batch->agents[index] = agent;
 }
 
 struct twsfwphysx_missiles twsfwphysx_new_missile_batch(void)
 {
-	const struct twsfwphysx_missiles missiles = { NULL, 0, 0 };
-	return missiles;
+    const struct twsfwphysx_missiles missiles = { NULL, 0, 0 };
+    return missiles;
 }
 
 void twsfwphysx_delete_missile_batch(struct twsfwphysx_missiles *missiles)
 {
-	free(missiles->missiles);
-	missiles->missiles = NULL;
-	missiles->size = 0;
-	missiles->capacity = 0;
+    free(missiles->missiles);
+    missiles->missiles = NULL;
+    missiles->size = 0;
+    missiles->capacity = 0;
 }
 
 void twsfwphysx_add_missile(struct twsfwphysx_missiles *missiles,
-							const struct twsfwphysx_missile missile)
+                            const struct twsfwphysx_missile missile)
 {
-	if (missiles->size >= missiles->capacity) {
-		missiles->capacity = missiles->capacity > 0 ? 2 * missiles->capacity :
-													  1;
+    if (missiles->size >= missiles->capacity) {
+        missiles->capacity = missiles->capacity > 0 ? 2 * missiles->capacity :
+                                                      1;
 
-		// NOLINTNEXTLINE(bugprone-suspicious-realloc-usage)
-		missiles->missiles = (struct twsfwphysx_missile *)realloc(
-			missiles->missiles,
-			(uint64_t)missiles->capacity * sizeof(struct twsfwphysx_missile));
-		assert(missiles->missiles != NULL);
-	}
+        // NOLINTNEXTLINE(bugprone-suspicious-realloc-usage)
+        missiles->missiles = (struct twsfwphysx_missile *)realloc(
+            missiles->missiles,
+            (uint64_t)missiles->capacity * sizeof(struct twsfwphysx_missile));
+        assert(missiles->missiles != NULL);
+    }
 
-	missiles->missiles[missiles->size++] = missile;
+    missiles->missiles[missiles->size++] = missile;
 }
 
 static float vec_length(const struct twsfwphysx_vec v)
 {
-	return sqrtf((v.x * v.x) + (v.y * v.y) + (v.z * v.z));
+    return sqrtf((v.x * v.x) + (v.y * v.y) + (v.z * v.z));
 }
 
 static struct twsfwphysx_vec normalize(struct twsfwphysx_vec v)
 {
-	const float length = vec_length(v);
-	v.x /= length;
-	v.y /= length;
-	v.z /= length;
+    const float length = vec_length(v);
+    v.x /= length;
+    v.y /= length;
+    v.z /= length;
 
-	return v;
+    return v;
 }
 
 static float dot(const struct twsfwphysx_vec v, const struct twsfwphysx_vec w)
 {
-	return v.x * w.x + v.y * w.y + v.z * w.z;
+    return v.x * w.x + v.y * w.y + v.z * w.z;
 }
 
 static struct twsfwphysx_vec cross(const struct twsfwphysx_vec v,
-								   const struct twsfwphysx_vec w)
+                                   const struct twsfwphysx_vec w)
 {
-	const struct twsfwphysx_vec res = { v.y * w.z - v.z * w.y,
-										v.z * w.x - v.x * w.z,
-										v.x * w.y - v.y * w.x };
-	return res;
+    const struct twsfwphysx_vec res = { v.y * w.z - v.z * w.y,
+                                        v.z * w.x - v.x * w.z,
+                                        v.x * w.y - v.y * w.x };
+    return res;
 }
 
 static void
 rotate(struct twsfwphysx_vec *r, struct twsfwphysx_vec u, float angle)
 {
-	const float sin_angle = sinf(angle);
-	const float cos_angle = cosf(angle);
+    const float sin_angle = sinf(angle);
+    const float cos_angle = cosf(angle);
 
-	const struct twsfwphysx_vec w = cross(u, *r);
-	r->x = cos_angle * r->x + sin_angle * w.x;
-	r->y = cos_angle * r->y + sin_angle * w.y;
-	r->z = cos_angle * r->z + sin_angle * w.z;
+    const struct twsfwphysx_vec w = cross(u, *r);
+    r->x = cos_angle * r->x + sin_angle * w.x;
+    r->y = cos_angle * r->y + sin_angle * w.y;
+    r->z = cos_angle * r->z + sin_angle * w.z;
 }
 
 static void
 propagate(struct twsfwphysx_vec *r,
-		  const struct twsfwphysx_vec u,
-		  float *v,
-		  const float a, // NOLINT(bugprone-easily-swappable-parameters)
-		  const float dt) // NOLINT(bugprone-easily-swappable-parameters)
+          const struct twsfwphysx_vec u,
+          float *v,
+          const float a, // NOLINT(bugprone-easily-swappable-parameters)
+          const float dt) // NOLINT(bugprone-easily-swappable-parameters)
 {
-	const float theta = (a * dt) - ((*v - a) * expm1f(-dt));
-	rotate(r, u, theta);
+    const float theta = (a * dt) - ((*v - a) * expm1f(-dt));
+    rotate(r, u, theta);
 
-	*v = a - ((a - *v) * expf(-dt));
+    *v = a - ((a - *v) * expf(-dt));
 }
 
 static void collide(struct twsfwphysx_agent *p1,
-					struct twsfwphysx_agent *p2,
-					const float epsilon)
+                    struct twsfwphysx_agent *p2,
+                    const float epsilon)
 {
-	struct twsfwphysx_vec n = { p1->r.x - p2->r.x,
-								p1->r.y - p2->r.y,
-								p1->r.z - p2->r.z };
+    struct twsfwphysx_vec n = { p1->r.x - p2->r.x,
+                                p1->r.y - p2->r.y,
+                                p1->r.z - p2->r.z };
 
-	const float length = vec_length(n);
-	n.x /= length;
-	n.y /= length;
-	n.z /= length;
+    const float length = vec_length(n);
+    n.x /= length;
+    n.y /= length;
+    n.z /= length;
 
-	struct twsfwphysx_vec v1 = cross(p1->u, p1->r);
-	v1.x *= p1->v;
-	v1.y *= p1->v;
-	v1.z *= p1->v;
+    struct twsfwphysx_vec v1 = cross(p1->u, p1->r);
+    v1.x *= p1->v;
+    v1.y *= p1->v;
+    v1.z *= p1->v;
 
-	struct twsfwphysx_vec v2 = cross(p2->u, p2->r);
-	v2.x *= p2->v;
-	v2.y *= p2->v;
-	v2.z *= p2->v;
+    struct twsfwphysx_vec v2 = cross(p2->u, p2->r);
+    v2.x *= p2->v;
+    v2.y *= p2->v;
+    v2.z *= p2->v;
 
-	const struct twsfwphysx_vec dv = { v1.x - v2.x, v1.y - v2.y, v1.z - v2.z };
-	const float J = (1.F + epsilon) / 2.F * dot(n, dv);
+    const struct twsfwphysx_vec dv = { v1.x - v2.x, v1.y - v2.y, v1.z - v2.z };
+    const float J = (1.F + epsilon) / 2.F * dot(n, dv);
 
-	v1.x = v1.x - J * n.x;
-	v1.y = v1.y - J * n.y;
-	v1.z = v1.z - J * n.z;
+    v1.x = v1.x - J * n.x;
+    v1.y = v1.y - J * n.y;
+    v1.z = v1.z - J * n.z;
 
-	v2.x = v2.x + J * n.x;
-	v2.y = v2.y + J * n.y;
-	v2.z = v2.z + J * n.z;
+    v2.x = v2.x + J * n.x;
+    v2.y = v2.y + J * n.y;
+    v2.z = v2.z + J * n.z;
 
-	p1->v = vec_length(v1);
-	p2->v = vec_length(v2);
+    p1->v = vec_length(v1);
+    p2->v = vec_length(v2);
 
-	if (p1->v > 1e-10F) {
-		p1->u = normalize(cross(p1->r, v1));
-	}
+    if (p1->v > 1e-10F) {
+        p1->u = normalize(cross(p1->r, v1));
+    }
 
-	if (p2->v > 1e-10F) {
-		p2->u = normalize(cross(p2->r, v2));
-	}
+    if (p2->v > 1e-10F) {
+        p2->u = normalize(cross(p2->r, v2));
+    }
 }
 
 static void fill_distance_buffer(const struct twsfwphysx_agent *agents,
-								 float *buffer,
-								 int32_t n)
+                                 float *buffer,
+                                 int32_t n)
 {
-	assert(agents != NULL || n < 2);
-	assert(buffer != NULL || n < 2);
+    assert(agents != NULL || n < 2);
+    assert(buffer != NULL || n < 2);
 
-	int32_t k = 0;
-	for (int i = 0; i < n; i++) {
-		for (int j = i + 1; j < n; j++) {
-			buffer[k++] = dot(agents[i].r, agents[j].r);
-		}
-	}
+    int32_t k = 0;
+    for (int i = 0; i < n; i++) {
+        for (int j = i + 1; j < n; j++) {
+            buffer[k++] = dot(agents[i].r, agents[j].r);
+        }
+    }
 }
 
 static void hit(struct twsfwphysx_agent *agent,
-				struct twsfwphysx_missiles *missiles,
-				const int32_t i)
+                struct twsfwphysx_missiles *missiles,
+                const int32_t i)
 {
-	const struct twsfwphysx_missile missile = missiles->missiles[i];
-	const float cos_theta = dot(agent->u, missile.u);
-	const float damage = 2.F + cos_theta;
+    const struct twsfwphysx_missile missile = missiles->missiles[i];
+    const float cos_theta = dot(agent->u, missile.u);
+    const float damage = 2.F + cos_theta;
 
-	agent->hp -= damage;
+    agent->hp -= damage;
 
-	missiles->size -= 1;
-	if (i < missiles->size) {
-		missiles->missiles[i] = missiles->missiles[missiles->size];
-	}
+    missiles->size -= 1;
+    if (i < missiles->size) {
+        missiles->missiles[i] = missiles->missiles[missiles->size];
+    }
 }
 
 static int32_t nearest_hit(const struct twsfwphysx_agents *agents,
-						   const struct twsfwphysx_missile missile,
-						   const float threshold)
+                           const struct twsfwphysx_missile missile,
+                           const float threshold)
 {
-	int32_t i_max = -1;
-	float s_max = -2.F; // -1 <= dot(.) <= +1
-	for (int32_t i = 0; i < agents->size; i++) {
-		if (agents->agents[i].hp > 0.F) {
-			const float s = dot(agents->agents[i].r, missile.r);
-			if (s > threshold && s > s_max) {
-				i_max = i;
-				s_max = s;
-			}
-		}
-	}
+    int32_t i_max = -1;
+    float s_max = -2.F; // -1 <= dot(.) <= +1
+    for (int32_t i = 0; i < agents->size; i++) {
+        if (agents->agents[i].hp > 0.F) {
+            const float s = dot(agents->agents[i].r, missile.r);
+            if (s > threshold && s > s_max) {
+                i_max = i;
+                s_max = s;
+            }
+        }
+    }
 
-	return i_max;
+    return i_max;
 }
 
 struct twsfwphysx_simulation_buffer {
-	struct twsfwphysx_agent *p;
-	float *s1;
-	float *s2;
-	int32_t capacity;
+    struct twsfwphysx_agent *p;
+    float *s1;
+    float *s2;
+    int32_t capacity;
 };
 
 struct twsfwphysx_simulation_buffer *twsfwphysx_create_simulation_buffer(void)
 {
-	struct twsfwphysx_simulation_buffer *buffer =
-		(struct twsfwphysx_simulation_buffer *)malloc(
-			sizeof(struct twsfwphysx_simulation_buffer));
-	buffer->p = NULL;
-	buffer->s1 = NULL;
-	buffer->s2 = NULL;
-	buffer->capacity = 0;
+    struct twsfwphysx_simulation_buffer *buffer =
+        (struct twsfwphysx_simulation_buffer *)malloc(
+            sizeof(struct twsfwphysx_simulation_buffer));
+    buffer->p = NULL;
+    buffer->s1 = NULL;
+    buffer->s2 = NULL;
+    buffer->capacity = 0;
 
-	return buffer;
+    return buffer;
 }
 
 void twsfwphysx_delete_simulation_buffer(
-	struct twsfwphysx_simulation_buffer *buffer)
+    struct twsfwphysx_simulation_buffer *buffer)
 {
-	if (buffer != NULL) {
-		free(buffer->p);
-		free(buffer->s1);
-		free(buffer->s2);
-		free(buffer);
-	}
+    if (buffer != NULL) {
+        free(buffer->p);
+        free(buffer->s1);
+        free(buffer->s2);
+        free(buffer);
+    }
 }
 
 static struct twsfwphysx_simulation_buffer
 update_simulation_buffer(struct twsfwphysx_simulation_buffer buffer,
-						 const int32_t n_agents)
+                         const int32_t n_agents)
 {
-	assert(buffer.capacity >= 0);
+    assert(buffer.capacity >= 0);
 
-	if (n_agents > buffer.capacity) {
-		buffer.capacity = n_agents;
+    if (n_agents > buffer.capacity) {
+        buffer.capacity = n_agents;
 
-		const uint64_t n = (uint64_t)n_agents;
+        const uint64_t n = (uint64_t)n_agents;
 
-		buffer.p = (struct twsfwphysx_agent *)
-			// NOLINTNEXTLINE(bugprone-suspicious-realloc-usage)
-			realloc(buffer.p, n * sizeof(struct twsfwphysx_agent));
-		assert(buffer.p != NULL);
+        buffer.p = (struct twsfwphysx_agent *)
+            // NOLINTNEXTLINE(bugprone-suspicious-realloc-usage)
+            realloc(buffer.p, n * sizeof(struct twsfwphysx_agent));
+        assert(buffer.p != NULL);
 
-		if (n_agents > 1) {
-			const uint64_t size = (n * (n - 1)) / 2 * sizeof(float);
+        if (n_agents > 1) {
+            const uint64_t size = (n * (n - 1)) / 2 * sizeof(float);
 
-			// NOLINTNEXTLINE(bugprone-suspicious-realloc-usage)
-			buffer.s1 = (float *)realloc(buffer.s1, size);
-			assert(buffer.s1 != NULL);
+            // NOLINTNEXTLINE(bugprone-suspicious-realloc-usage)
+            buffer.s1 = (float *)realloc(buffer.s1, size);
+            assert(buffer.s1 != NULL);
 
-			// NOLINTNEXTLINE(bugprone-suspicious-realloc-usage)
-			buffer.s2 = (float *)realloc(buffer.s2, size);
-			assert(buffer.s2 != NULL);
-		}
-	}
+            // NOLINTNEXTLINE(bugprone-suspicious-realloc-usage)
+            buffer.s2 = (float *)realloc(buffer.s2, size);
+            assert(buffer.s2 != NULL);
+        }
+    }
 
-	return buffer;
+    return buffer;
 }
 
 void twsfwphysx_simulate(struct twsfwphysx_agents *agents,
-						 struct twsfwphysx_missiles *missiles,
-						 const struct twsfwphysx_world *world,
-						 const float t,
-						 int32_t n_steps,
-						 struct twsfwphysx_simulation_buffer *buffer)
+                         struct twsfwphysx_missiles *missiles,
+                         const struct twsfwphysx_world *world,
+                         const float t,
+                         int32_t n_steps,
+                         struct twsfwphysx_simulation_buffer *buffer)
 {
-	struct twsfwphysx_simulation_buffer bffr = { NULL, NULL, NULL, 0 };
-	if (buffer == NULL) {
-		buffer = &bffr;
-	}
+    struct twsfwphysx_simulation_buffer bffr = { NULL, NULL, NULL, 0 };
+    if (buffer == NULL) {
+        buffer = &bffr;
+    }
 
-	const int32_t n_agents = agents->size;
-	*buffer = update_simulation_buffer(*buffer, n_agents);
+    const int32_t n_agents = agents->size;
+    *buffer = update_simulation_buffer(*buffer, n_agents);
 
-	// !!! WARNING !!!
-	// cos(.) makes small angles large and large angles small!
-	// Hence, search for distances *above* `*_threshold` when looking for
-	// *close* objects.
-	const float missile_agent_threshold = cosf(world->agent_radius);
-	const float agent_agent_threshold = cosf(2.F * world->agent_radius);
+    // !!! WARNING !!!
+    // cos(.) makes small angles large and large angles small!
+    // Hence, search for distances *above* `*_threshold` when looking for
+    // *close* objects.
+    const float missile_agent_threshold = cosf(world->agent_radius);
+    const float agent_agent_threshold = cosf(2.F * world->agent_radius);
 
-	struct twsfwphysx_agent *p = agents->agents;
+    struct twsfwphysx_agent *p = agents->agents;
 
-	const float dt = t / (float)n_steps;
-	while (n_steps-- > 0) {
-		for (int i = missiles->size - 1; i >= 0; i--) {
-			const int j = nearest_hit(agents,
-									  missiles->missiles[i],
-									  missile_agent_threshold);
-			if (j >= 0) {
-				hit(&p[j], missiles, i);
-			} else {
-				propagate(&missiles->missiles[i].r,
-						  missiles->missiles[i].u,
-						  &missiles->missiles[i].v,
-						  world->missile_acceleration,
-						  dt);
-			}
-		}
+    const float dt = t / (float)n_steps;
+    while (n_steps-- > 0) {
+        for (int i = missiles->size - 1; i >= 0; i--) {
+            const int j = nearest_hit(agents,
+                                      missiles->missiles[i],
+                                      missile_agent_threshold);
+            if (j >= 0) {
+                hit(&p[j], missiles, i);
+            } else {
+                propagate(&missiles->missiles[i].r,
+                          missiles->missiles[i].u,
+                          &missiles->missiles[i].v,
+                          world->missile_acceleration,
+                          dt);
+            }
+        }
 
-		fill_distance_buffer(p, buffer->s1, n_agents);
-		for (int i = 0; i < n_agents; i++) {
-			buffer->p[i] = p[i];
-			propagate(&buffer->p[i].r,
-					  buffer->p[i].u,
-					  &buffer->p[i].v,
-					  buffer->p[i].a,
-					  dt);
-		}
-		fill_distance_buffer(buffer->p, buffer->s2, n_agents);
+        fill_distance_buffer(p, buffer->s1, n_agents);
+        for (int i = 0; i < n_agents; i++) {
+            buffer->p[i] = p[i];
+            propagate(&buffer->p[i].r,
+                      buffer->p[i].u,
+                      &buffer->p[i].v,
+                      buffer->p[i].a,
+                      dt);
+        }
+        fill_distance_buffer(buffer->p, buffer->s2, n_agents);
 
-		int32_t k = 0;
-		for (int i = 0; i < n_agents; i++) {
-			for (int j = i + 1; j < n_agents; j++) {
-				const int both_alive = p[i].hp > 0.F && p[j].hp > 0.F;
-				const int too_close = buffer->s1[k] > agent_agent_threshold ||
-									  buffer->s2[k] > agent_agent_threshold;
-				const int distance_decreases = buffer->s1[k] < buffer->s2[k];
+        int32_t k = 0;
+        for (int i = 0; i < n_agents; i++) {
+            for (int j = i + 1; j < n_agents; j++) {
+                const int both_alive = p[i].hp > 0.F && p[j].hp > 0.F;
+                const int too_close = buffer->s1[k] > agent_agent_threshold ||
+                                      buffer->s2[k] > agent_agent_threshold;
+                const int distance_decreases = buffer->s1[k] < buffer->s2[k];
 
-				if (both_alive && too_close && distance_decreases) {
-					buffer->p[i] = p[i];
-					buffer->p[j] = p[j];
-					collide(&buffer->p[i], &buffer->p[j], world->restitution);
-				}
+                if (both_alive && too_close && distance_decreases) {
+                    buffer->p[i] = p[i];
+                    buffer->p[j] = p[j];
+                    collide(&buffer->p[i], &buffer->p[j], world->restitution);
+                }
 
-				k += 1;
-			}
-		}
+                k += 1;
+            }
+        }
 
-		struct twsfwphysx_agent *tmp = p;
-		p = buffer->p;
-		buffer->p = tmp;
-	}
+        struct twsfwphysx_agent *tmp = p;
+        p = buffer->p;
+        buffer->p = tmp;
+    }
 
-	agents->agents = p;
+    agents->agents = p;
 
-	free(bffr.p);
-	free(bffr.s1);
-	free(bffr.s2);
+    free(bffr.p);
+    free(bffr.s1);
+    free(bffr.s2);
 }
 
 void twsfwphysx_turn_agent(struct twsfwphysx_agent *agent, float angle)
 {
-	rotate(&agent->u, agent->r, angle);
+    rotate(&agent->u, agent->r, angle);
 }
 
 struct twsfwphysx_missile
 twsfwphysx_launch_missile(const struct twsfwphysx_agent *agent,
-						  const struct twsfwphysx_world *world)
+                          const struct twsfwphysx_world *world)
 {
-	struct twsfwphysx_missile missile = { agent->r, agent->u, agent->v, -1 };
+    struct twsfwphysx_missile missile = { agent->r, agent->u, agent->v, -1 };
 
-	const float distance = world->agent_radius + world->agent_radius * 1e-4F;
-	rotate(&missile.r, missile.u, distance);
+    const float distance = world->agent_radius + world->agent_radius * 1e-4F;
+    rotate(&missile.r, missile.u, distance);
 
-	return missile;
+    return missile;
 }
 
 #endif
