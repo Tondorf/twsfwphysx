@@ -1,0 +1,43 @@
+name: Validation of WASM binding
+
+on:
+  pull_request:
+
+  push:
+    branches:
+      - main
+      - dev
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Git repository
+        uses: actions/checkout@v4
+
+      - name: Run clang-format
+        working-directory: wasm-binding
+        run: |
+          clang-format --dry-run -Werror binding.cpp
+          clang-format --dry-run -Werror tests.cxx
+
+  tests:
+    needs: [ lint ]
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Set up Git repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          fetch-tags: true
+          submodules: true
+
+      - name: Compile WASM module and tests
+        working-directory: wasm-binding
+        run: make
+
+      - name: Run test suite
+        working-directory: wasm-binding
+        run: ./run_all_tests

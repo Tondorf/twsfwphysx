@@ -322,10 +322,25 @@ void twsfwphysx_set_agent(const struct twsfwphysx_agents *batch,
 struct twsfwphysx_missiles twsfwphysx_new_missile_batch(void);
 
 /**
+ * @brief Clears missile batch.
+ *
+ * Resets a batch of missiles that was previously created with
+ * \ref twsfwphysx_new_missile_batch. This removes all missiles but does not
+ * free the already allocated memory. After calling,
+ * \ref twsfwphysx_add_missile_batch will start adding missiles at the beginning
+ * of the batch.
+ *
+ * @param missiles The missile batch
+ */
+void twsfwphysx_clear_missile_batch(struct twsfwphysx_missiles *missiles);
+
+/**
  * @brief Deletes missile batch.
  *
  * Deletes a batch of missiles that was previously created with
- * \ref twsfwphysx_new_missile_batch.
+ * \ref twsfwphysx_new_missile_batch. Don't use this buffer after calling this
+ * function! (See \ref twsfwphysx_clear_missile_batch if you only want to reset
+ * the batch.)
  *
  * @param missiles The missile batch
  */
@@ -437,7 +452,7 @@ void twsfwphysx_turn_agent(struct twsfwphysx_agent *agent, float angle);
 
 const char *twsfwphysx_version(void)
 {
-    return "0.8.0";
+    return "0.9.0";
 }
 
 struct twsfwphysx_agents twsfwphysx_create_agents(const int32_t size)
@@ -474,6 +489,12 @@ struct twsfwphysx_missiles twsfwphysx_new_missile_batch(void)
 {
     const struct twsfwphysx_missiles missiles = { NULL, 0, 0 };
     return missiles;
+}
+
+void twsfwphysx_clear_missile_batch(struct twsfwphysx_missiles *missiles)
+{
+    assert(missiles != NULL);
+    missiles->size = 0;
 }
 
 void twsfwphysx_delete_missile_batch(struct twsfwphysx_missiles *missiles)

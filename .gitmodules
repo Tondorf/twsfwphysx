@@ -1,0 +1,6 @@
+[submodule "wasm-binding/flatbuffers"]
+	path = wasm-binding/flatbuffers
+	url = https://github.com/google/flatbuffers.git
+[submodule "wasm-binding/emsdk"]
+	path = wasm-binding/emsdk
+	url = https://github.com/emscripten-core/emsdk.git
