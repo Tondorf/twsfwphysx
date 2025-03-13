@@ -4,12 +4,12 @@ CXXFLAGS = -Werror -Wall -Wextra -pedantic -std=c++23
 
 .PHONY: all clean format
 
-all: twsfwphysx.wasm run_all_tests format
+all: build/twsfwphysx.wasm build/run_all_tests format
 
 clean:
-	rm -rf twsfwphysx.wasm twsfwphysx_world_state_generated.h run_all_tests
+	rm -rf build/ 
 
-format: binding.cpp tests.cxx
+format: source/binding.cpp source/tests.cxx
 	clang-format -i $^
 
 emsdk/.emscripten:
@@ -23,12 +23,12 @@ flatbuffers/build/flatc:
 	cmake -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Release .. && \
 	make -j flatc
 
-twsfwphysx_world_state_generated.h: ../twsfwphysx_world_state.fbs flatbuffers/build/flatc
-	./flatbuffers/build/flatc --cpp ../twsfwphysx_world_state.fbs
+build/twsfwphysx_world_state_generated.h: ../twsfwphysx_world_state.fbs flatbuffers/build/flatc
+	./flatbuffers/build/flatc --cpp -o build/ ../twsfwphysx_world_state.fbs
 
-twsfwphysx.wasm: binding.cpp twsfwphysx_world_state_generated.h emsdk/.emscripten
+build/twsfwphysx.wasm: source/binding.cpp build/twsfwphysx_world_state_generated.h emsdk/.emscripten
 	source emsdk/emsdk_env.sh && \
-	emcc binding.cpp -O3 $(CXXFLAGS) -I../include -Iflatbuffers/include --no-entry -o $@
+	emcc source/binding.cpp -O3 $(CXXFLAGS) -Ibuild/ -I../include -Iflatbuffers/include --no-entry -o $@
 
-run_all_tests: tests.cxx binding.cpp twsfwphysx_world_state_generated.h
-	$(CXX) -O0 -g $(CXXFLAGS) -I../include -Iflatbuffers/include -fsanitize=address,undefined tests.cxx binding.cpp -o $@
+build/run_all_tests: source/tests.cxx source/binding.cpp build/twsfwphysx_world_state_generated.h
+	$(CXX) -O0 -g $(CXXFLAGS) -Ibuild/ -I../include -Iflatbuffers/include -fsanitize=address,undefined source/tests.cxx source/binding.cpp -o $@
